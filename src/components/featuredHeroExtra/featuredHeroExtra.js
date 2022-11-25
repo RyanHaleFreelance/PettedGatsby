@@ -12,7 +12,7 @@ const Layout = ({ section, title }) => {
 	let mobImage = (section.heroImageMobile) ? section.heroImageMobile.sourceUrl : false;
 	let heroVideoId = (section.heroVideoId) ? section.heroVideoId : false;
 	let image = (section.heroImage) ? section.heroImage.sourceUrl : false;
-	let modalId = makeid(10);
+	let modalId = 'gisele-modal';
 
 	function makeid(length) {
 		var result           = '';
@@ -26,6 +26,7 @@ const Layout = ({ section, title }) => {
 
 	const openModal = (elem) => {
 		if (typeof window !== 'undefined') {
+			console.log(modalId);
 			let video = document.getElementById(modalId).querySelector('.embedIframe').dataset.src;
 			document.getElementById(modalId).querySelector('.embedIframe').src = video;
 			document.getElementById(modalId).classList.add('modalActive');
