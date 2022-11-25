@@ -1,0 +1,174 @@
+/**
+ * Clearing and floating
+ */
+
+.align-none {
+    width: 100%;
+}
+
+.alignleft,
+.float-left {
+    float: left;
+    img & {
+        margin-right: $sp-unit;
+    }
+}
+
+.alignright,
+.float-right {
+    float: right;
+    img & {
+        margin-left: $sp-unit;
+    }
+}
+
+.aligncenter,
+.float-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    img & {
+        margin-bottom: $sp-unit;
+    }
+}
+
+.clearfix {
+    @include clearfix();
+}
+
+.center-small {
+    @include resp-max($md) {
+        text-align: center;
+    }
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/**
+ * Text aligments
+ */
+
+.align-text-left {
+    text-align: left;
+}
+
+.align-text-right {
+    text-align: right;
+}
+
+.align-text-center, .alignTextCenter {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex-reverse,.flexReverse {
+    flex-direction: row-reverse;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.flex-space {
+    justify-content: space-between;
+}
+
+.flex-space-around {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.flexwrap {
+    flex-wrap: wrap;
+}
+
+.items-center {
+    align-items: center;  
+}
+
+.no-bm {
+    margin-bottom: 0 !important;
+}
+
+.mt {
+    margin-top: $sp-unit;
+    
+    @include respond-min($md) {
+        margin-top: $sp-unit*2;
+    }
+}
+
+
+/**
+ * Elements visibility
+ */
+
+.visible-on-mobile {
+    display: none !important;
+    @include resp-max($breakpoint-md) {
+        display: inline-block !important;
+    }
+}
+
+.visible-on-tablet {
+    display: none !important;
+    @include resp-max($breakpoint-md) {
+        display: block !important;
+    }
+    @include resp-max($breakpoint-sm) {
+        display: none !important;
+    }
+}
+
+.visible-on-desktop {
+    @include resp-max($breakpoint-md) {
+        display: none !important;
+    }
+}
+
+.med-up {
+    display: none !important;
+    @include respond-min($md) {
+        display: block !important;
+    }
+}
+
+.med-down {
+    display: block !important;
+    @include respond-min($lg) {
+        display: none !important;
+    }
+}
+ 
+.l-only {
+    display: none !important;
+    @include respond-min($lg) {
+        display: block !important;
+    }
+}
+
+//Accessibly hide elements
+%visuallyhidden {
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}
+
+.underline {
+    text-decoration: underline;
+}

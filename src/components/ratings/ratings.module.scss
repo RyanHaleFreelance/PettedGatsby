@@ -1,0 +1,76 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.ratings {
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+
+    @include resp-max($lg) {
+        font-size: 10px;
+        margin-top: 20px;
+    }
+
+    &Title {
+        @include font-size(14);
+        margin: 0;
+        font-weight: 700;
+        display: none;
+
+        @include resp-max($md) {
+            font-size: 11px;
+        }
+
+    }
+
+    &Inner {
+        justify-content: center;
+
+        @include resp-max($md) {
+            flex-wrap: wrap;
+        }
+    }
+
+    a {
+        display: block;
+        color: $color-text;
+        padding: $sp-unit 0;
+        text-decoration: none; 
+
+        &:hover {
+            .ratingsVal,
+            .ratingsNum {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    img {
+        margin-right: 3px; 
+        width: 17px;
+        height: 17px;
+
+        @include resp-max($md) {
+            width: 13px;
+            height: 13px;
+        }
+    }
+
+    &Stars {
+        @include respond-min($md) {
+            margin-left: -3px;
+            position: relative;
+            top: -2px;
+        }
+    }
+
+    &Val {
+        font-weight: 500;
+        padding-left: 5px;
+    }
+
+    &Num {
+        font-weight: 400;
+        padding-left: 15px;
+    }
+}

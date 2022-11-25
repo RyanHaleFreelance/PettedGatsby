@@ -1,0 +1,26 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.featuredHero {
+    &Image {
+        margin-top: -130px;
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        padding: 0 15px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include respond-min($lg) {
+             margin-top: -350px;
+             max-width: 1000px;
+        }
+
+        .contentVideo {
+            max-width: 1000px;
+            width: 80%;
+            margin: 0 auto;
+            padding-bottom: 46.25%; 
+        }
+    }
+}

@@ -1,0 +1,202 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+
+.pageHeader {
+    background: rgb(116,82,255);
+    background: linear-gradient(148deg, rgba(116,82,255,1) 0%, rgba(69,128,216,1) 100%);
+    padding: 120px 0 40px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    margin-top: -60px;
+
+    @include respond-min($lg) {
+        padding: 120px 0;
+        margin-top: -86px;
+    }
+
+    .pageChild &,
+    .single & {
+        padding: 90px 0 60px 0px;
+
+        @include respond-min($lg) {
+            padding: 40px 0 60px 0px;
+        }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/header-texture.png');
+        height: 1069px;
+        width: 1058px;
+        left: 40%;
+        bottom: -100px;
+        pointer-events: none;
+    }
+
+    &:after {
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/wave-mobile.png');
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        content: "";
+        width: 100%;
+        position: absolute;
+        bottom: -10px;
+        height: 0;
+        padding-bottom: 13%;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+
+        @include respond-min($md) {
+            background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/wave.png');
+            height: 71px;
+            left: 0;
+            bottom: -1px;
+            transform: none;
+        }
+    }
+
+    h2 {
+        @include resp-max($sm) {
+            font-size: 14px;
+        }
+    }
+
+    &Title {
+        margin: 0 0 10px;
+        padding-right: 20%;
+
+        @media(min-width: $md) {
+            padding: 0;
+        }
+
+        @media(min-width: $lg) {
+            margin: $sp-unit*3 0 $sp-unit;
+        }
+    }
+
+    ul {
+        margin: 0 0 $sp-unit;
+        list-style-type: none;
+
+        @include respond-min($md) {
+            margin: 0 0 $sp-unit*2;
+        }
+
+        li {
+            padding-left: 20px;
+            position: relative;
+            margin: 3px 0;
+
+            @include respond-min($md) {
+                padding-left: 36px;
+                font-size: 18px;
+                margin: 5px 0;
+            }
+
+            &:before {
+                width: 12px;
+                height: 12px;
+                content: "";
+                background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/icon-tick.svg');
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: center;
+                position: absolute;
+                left: 0;
+                top: 6px;
+
+                @include respond-min($md) {
+                    width: 18px;
+                    height: 18px;
+                    top: 7px;
+                }
+            }
+        }
+    }
+
+    a.btn {
+        position: relative;
+        z-index: 10;
+    }
+
+    &--alt {
+        &:after {
+            background-image: url('https://via.placeholder.com/1000');
+
+            @include respond-min($md) {
+                background-image: url('https://via.placeholder.com/1000');
+            }
+        }
+    }
+}
+
+.heroImage {
+    max-width: none;
+    position: absolute;
+    left: 200px;
+    z-index: 5;
+    bottom: 0;
+    pointer-events: none;
+
+    @include respond-min(350px) {
+        left: auto;
+        right: 0;
+    }
+
+    @include respond-min($md) {
+        max-width: 72%;
+        position: absolute;
+        right: 0;
+        z-index: 5;
+    }
+
+    @include respond-min(1100px) {
+        max-width: none;
+        height: 90%;
+        bottom: 10%;
+    }
+
+    @include respond-min(1200px) {
+        bottom: 0;
+    }
+
+    img {
+        height: 370px;
+        max-width: none;
+        @include respond-min($md) {
+            height: 610px;
+        }
+        @include respond-min($lg) {
+            height: 100%;
+        }
+    }
+}
+
+
+.home {
+    &.pageHeader {
+        h2 {
+            font-size: 30px;
+            line-height: 1.1;
+        
+            @media(min-width: $breakpoint-lg) {
+                font-size: 65px;
+            }
+        }
+        
+        h1 {
+            font-size: 20px;
+            line-height: 1.4;
+            width: 100%;
+        
+            @include respond-min($lg) {
+                font-size: 24px;
+            }
+        }
+    }
+}

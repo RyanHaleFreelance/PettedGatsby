@@ -1,0 +1,39 @@
+query SINGLE_CONTENT_QUERY($id: ID!) {
+  postFormat(id: $id) {
+    contentNodes(first: 100) {
+      nodes {
+        id
+        __typename
+      }
+    }
+
+    count
+    databaseId
+    description
+    id
+    isContentNode
+    isTermNode
+    link
+    name
+
+    posts(first: 100) {
+      nodes {
+        id
+      }
+    }
+
+    slug
+
+    taxonomy {
+      node {
+        id
+      }
+    }
+
+    taxonomyName
+    termGroupId
+    termTaxonomyId
+    uri
+    __typename
+  }
+}

@@ -1,0 +1,132 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+$accordion-border-width: 1px !default;
+$accordion-border-color: $color-text !default;
+$accordion-bg: #fff !default;
+$accordion-text-color: $color-text !default;
+
+$accordion-trigger-bg: #fff !default;
+$accordion-trigger-bg--focus: $bg-alt !default;
+$accordion-trigger-bg--highlight: $bg-alt !default;
+$accordion-trigger-text-size: 1.25rem !default;
+
+$accordion-handle-width: 3rem !default;
+$accordion-handle-bg: #fff !default;
+$accordion-handle-bg--focus: $bg-alt !default;
+$accordion-handle-bg--highlight: $bg-alt !default;
+
+$accordion-arrow-scale: 0.3 !default;
+$accordion-arrow-stroke: 3px !default;
+$accordion-arrow-color: #fff !default;
+$accordion-arrow-color--focus: $accordion-arrow-color !default;
+$accordion-arrow-color--highlight: $accordion-arrow-color !default;
+$accordion-arrow-transition--timing: 0.3s !default;
+
+$accordion-content-vpad: 1rem !default;
+$accordion-content-hpad: 1.5rem !default;
+
+// Size of the gap between each accordion item
+$accordion-gap: 1em;
+
+.accordionWrapper {
+    max-width: 765px;
+    margin-top: ($accordion-gap * 3);
+    margin-bottom: 0;
+    
+    @include respond-min($md) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: ($accordion-gap * 3);
+        margin-bottom: ($accordion-gap * 2);
+        max-width: 80%;
+    }
+}
+
+.accordion {
+  
+    &Item {
+        background-color: $accordion-bg;
+        margin-top: $accordion-gap;
+    }
+
+    &Title {
+        font-size: 14px;
+        margin: 0;
+
+        @include respond-min($lg) {
+            font-size: 20px;
+        }
+    }
+
+    &Trigger {
+        color: $accordion-text-color;
+        font-weight: 500;
+        margin: 0;
+        width: 100%;
+        border: 0;
+        padding: 10px 50px 10px 10px;
+        position: relative;
+        background: $accordion-trigger-bg;
+        font-size: inherit;
+        font-family: $base-font-family; 
+        text-align: left;
+        cursor: pointer;
+        border-radius: 30px;
+
+        @include respond-min($md) {
+            padding: $accordion-content-vpad ($accordion-content-hpad + $accordion-handle-width) $accordion-content-vpad $accordion-content-hpad;
+        }
+
+        .focussedTrigger & {
+          background: $accordion-trigger-bg--highlight;
+        }
+
+        &:focus {
+          background: $accordion-trigger-bg--focus;
+        }
+
+        .textAccordionBlock & {
+            @include respond-min($md) {
+                padding: 10px 50px 10px 20px;            
+            }
+        }
+
+    }
+    &Handle {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        height: 100%;
+        width: $accordion-handle-width;
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/icon-plus.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @include resp-max($md) {
+            background-size: 20px 20px;
+            right: 0px;
+        }
+    }
+
+    &Item.open &Handle {
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/icon-minus.svg');
+    }
+    &Content {
+        display: none;
+        padding: $accordion-content-vpad $accordion-content-hpad;
+        &>*:first-child {
+            margin-top: 0;
+        }
+        &>*:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &ContentActive {
+      display: block;
+    }
+}
+
+/* purgecss start ignore */
+
+/* purgecss end ignore */

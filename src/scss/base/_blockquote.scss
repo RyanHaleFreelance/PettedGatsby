@@ -1,0 +1,71 @@
+blockquote {
+    position: relative;
+    padding: $sp-unit;
+    line-height: 1.8;
+    color: #7452ff;
+    font-weight: 400;
+    @include font-size(14);
+    @media screen and (min-width: $sm) {
+        @include font-size(18);
+    }
+    @media screen and (min-width: $lg) {
+        padding-top: 40px;
+    }
+    &:before {
+        content: '';
+        display: block;
+        // background: url('../../../static/images/icon--quote.png') no-repeat center center;
+        background-size: contain;
+        width: 75px;
+        height: 54px;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @media screen and (min-width: $md) {
+            width: 80px;
+            height: 75px;
+        }
+    }
+}
+
+.main-content blockquote {
+    margin: $sp-unit*2 0;
+}
+
+.cta {
+    blockquote {
+        color: #000;
+        font-weight: 700;
+        @include font-size(22);
+        line-height: 1.4;
+        padding-top: 0;
+
+        @include respond-min($lg) {
+            @include font-size(36);
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+
+    figcaption {
+        color: rgba(40,40,40,0.2);
+        font-weight: 600;
+        @include font-size(12);
+        margin-top: -10px;
+
+        @include respond-min($lg) {
+            @include font-size(14);
+        }
+    }
+}
+
+.quote + img {
+    margin-top: $sp-unit*2;
+
+    @include respond-min($md) {
+        margin-top: $sp-unit*4;
+    }
+}

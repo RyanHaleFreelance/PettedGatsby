@@ -1,0 +1,515 @@
+/**
+ * Blanket input styles for normalisation
+ */
+
+form {
+    padding: 0 30px;
+
+    @include respond-min($lg) {
+        padding: 0;
+    }
+}
+
+input,
+select,
+textarea {
+    font-family: $base-font-family;
+    font-size: 16px;
+    background-color: $base-background-color;
+    border: solid 1px $border-color;
+    border-radius: 5px;
+    color: $base-color;
+    height: ($sp-unit * 1.5);
+    padding: 0 ($sp-unit / 2);
+    width: 100%;
+    -webkit-appearance: none;
+    margin-bottom: ($sp-unit / 2);
+    resize: none;
+
+    @include respond-min($lg) {
+        height: 50px;
+        margin-bottom: $sp-unit;
+    }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    background: transparent;
+    border: 0;
+    line-height: normal;
+    height: auto;
+    width: auto;
+}
+
+input[type="file"] {
+    line-height: normal;
+    height: auto;
+    padding: ($sp-unit / 4) ($sp-unit / 2);
+}
+
+input[type="submit"]:not(.btn) {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+
+    // @include resp-max($lg) {
+    //     padding-bottom: 40px;
+    // }
+}
+
+input.btn {
+    min-height: 50px;
+}
+
+input[type="submit"].btn {
+    width: auto;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 30px;
+
+    @include resp-max($md) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+input[disabled] {
+    background-color: whitesmoke;
+    cursor: not-allowed;
+}
+
+select {
+    line-height: normal;
+    padding: 0;
+    padding-left: ($sp-unit / 2);
+}
+
+textarea {
+    min-height: ($sp-unit * 4);
+    overflow: auto;
+    vertical-align: top;
+    resize: none;
+    padding: ($sp-unit / 2);
+
+    @include respond-min($lg) {
+        height: 175px;
+    }
+}
+
+
+/**
+ * Form utility classes
+ */
+
+.checkbox,
+.radio {
+    display: block;
+    margin-bottom: $sp-unit;
+    margin-top: 10px;
+    &.inline {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    >input {
+        float: left;
+        margin-left: -($sp-unit);
+        -webkit-appearance: none
+    }
+    label {
+        padding-left: $sp-unit;
+        position: relative;
+        cursor: pointer;
+    }
+    label:before {
+        content: "";
+        display: block;
+        border: 1px solid #9fa6b2;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 3px;
+        left: 0;
+    }
+    input:checked + label:before {
+        background-color: $brand-color;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E");
+    }
+    input:disabled + label {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}
+
+.form__group {
+    display: block;
+    margin-bottom: $sp-unit;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+
+    @include respond-min($md) {
+        font-size: 14px;
+    }
+}
+
+// Gravity Forms overrides
+
+.gform_fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gfield {
+    width: 100%;
+
+    @include respond-min($lg) {
+        padding: 0 10px;
+        width: 50%;
+    }
+}
+
+.gfield--width-full {
+    width: 100%;
+}
+
+.gform_validation_container {
+    visibility: hidden;
+    height: 0;
+}
+
+form .gform_button,
+.bg-alt form .gform_button {
+    @extend .btn;
+    margin-top: $sp-unit;
+    color: $color-white;
+    background-color: $btn-bg;
+    width: auto;
+    display: inline;
+    margin-bottom: 0;
+    cursor: pointer;
+    border-radius: 30px;
+
+    @include respond-min($md) {
+        height: 60px;
+    }
+
+    @include respond-min($lg) {
+        display: block;
+        margin-left: 10px;
+    }
+
+    &:hover {
+        background: transparent;
+        color: $brand-color;
+    }
+}
+
+.gform_submission_error {
+    text-align: left;
+    font-size: 16px;
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+.gfield_error input,
+.gfield_error textarea {
+    border-color: red;
+}
+
+.validation_message {
+    text-align: left;
+    position: relative;
+    top: -10px;
+    font-size: 14px;
+    font-weight: 500;
+
+    @include respond-min($lg) {
+        top: -22px;
+    }
+}
+
+.ginput_recaptcha + .validation_message {
+    top: 0;
+}
+
+.gform_confirmation_message {
+    font-weight: 600;
+    padding: 0 50px;
+}
+
+
+/**
+ * Input Group
+ *
+ * Allows for prepend/append of elements 
+ * (such as icons) on an input.
+ */
+
+.input-group {
+    position: relative;
+    >input {
+        padding: 0 ($sp-unit * 2);
+    }
+    .input-group__addon {
+        line-height: ($sp-unit * 1.5);
+        height: ($sp-unit * 1.5);
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: ($sp-unit * 1.5);
+        &:first-child {
+            left: 0;
+        }
+        &:last-child {
+            right: 0;
+        }
+    }
+}
+
+.search-form {
+    // margin: 0 0 $sp-unit*2;
+}
+
+.search-wrap {
+    @extend %clearfix;
+    .screen-reader-text {
+        display: block;
+    }
+    .search-field {
+        margin: 0 0 $sp-unit/2;
+        @media screen and (min-width: $breakpoint-md) {
+            width: 75%;
+            margin: 0;
+            float: left;
+        }
+    }
+    .search-button {
+        padding: 0;
+        border: 0;
+        border-radius: 2px;
+        // background-image: url('../../../static/images/search.svg');
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: center center;
+        text-indent: -9999px;
+        @media screen and (min-width: $breakpoint-md) {
+            width: 20%;
+            float: right;
+        }
+    }
+}
+
+.ginput_container_consent {
+    input {
+        height: 17px;
+        width: 17px;
+        border: 1px solid #dedede;
+        border-radius: 5px;
+        background: #fff;
+        padding: 0;
+        float: left;
+        margin-right: 12px;
+        position: relative;
+        top: 4px;
+        cursor: pointer;
+
+        + label {
+            cursor: pointer;
+        }
+
+        &:checked {
+            // background: #fff url(../../../static/images/icon--tick-simple.svg) no-repeat center;
+        }
+    }
+}
+
+.content-form {
+    border-radius: 20px;
+    background-color: $bg-alt;
+    padding: $sp-unit*2 $sp-unit;
+    margin: $sp-unit*2 0;
+
+    @include respond-min($md) {
+        padding: $sp-unit*2;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $brand-color;
+    }
+
+    form {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .full-width {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .gfield {
+        @include respond-min($md) {
+            padding: 0 10px;
+        }
+    }
+
+    .gfield--half {
+        @include respond-min($md) {
+            width: 50% !important;
+        }
+    }
+
+    input[type=submit] {
+        @extend .btn--trans;
+    }
+
+    .gform_confirmation_message {
+        padding-left: 0;
+    }
+}
+
+.hidden_label {
+    .gfield_label {
+        display: none;
+    }
+}
+
+.glsr-default form.glsr-form {
+    margin-top: $sp-unit*2;
+    max-width: 586px;
+    row-gap: 2rem !important;
+
+    @include resp-max($md) {
+        padding: 0;
+    }
+
+    @include respond-min($md) {
+        grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+        column-gap: 2rem !important;
+    }
+
+    .glsr-field-choice,
+    [data-field="breed"],
+    [data-field="title"],
+    [data-field="content"],
+    [data-field="assigned_terms"],
+    .glsr-field-dropzone,
+    .glsr-form-message {
+        grid-column: 1/-1;
+    }
+}
+
+.glsr-form-wrap {
+    [data-field=submit-button] {
+        @include resp-max($md) {
+            text-align: center;
+        }
+    }
+
+    .glsr-button {
+        @include resp-max($md) {
+            min-height: 40px;
+            font-size: 16px;
+        }
+    }
+}
+
+.glsr-default form.glsr-form select.glsr-select,
+.glsr-default form.glsr-form .glsr-input-text,
+.glsr-default form.glsr-form .glsr-input-email {
+    min-height: 50px;
+}
+
+.glsr-default form.glsr-form .glsr-field-checkbox, 
+.glsr-default form.glsr-form .glsr-field-radio {
+    float: left;
+    margin-right: $sp-unit;
+    margin-top: 10px;
+
+    input {
+        margin-top: 2px !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+.glsr-dropzone.dz-clickable {
+    background: transparent;
+    border: 2px dashed #dedede;
+    font-family: $base-font-family !important;
+    font-size: 12px !important;
+    padding-top: 70px !important;
+    margin-top: 12px;
+    // background: url(../../../static/images/icon--upload.svg) no-repeat center 20px / 48px auto ;
+
+    &:after {
+        background: transparent !important;
+    }
+}
+
+.glsr-default form.glsr-form [data-star-rating] {
+    margin-top: 12px;
+}
+
+.glsr-default form.glsr-form .glsr-toggle input[type=checkbox]:checked+.glsr-toggle-track:before,
+.glsr-default form.glsr-form input[type=checkbox].glsr-input-checkbox:checked, 
+.glsr-default form.glsr-form input[type=radio].glsr-input-radio:checked {
+    background-color: $brand-color !important;
+}
+
+.glsr-field-toggle + .glsr-field-error {
+    margin-top: 5px;
+}
+
+.custom-filters {
+    margin-top: 2rem;
+    padding: 0;
+}
+
+#filter-breed,
+.custom-filters {
+    .choices__list--dropdown .choices__item--selectable, 
+    .choices__list[aria-expanded] .choices__item--selectable {
+        padding-right: 0 !important;
+    }
+}
+
+.choices {
+    text-align: left;
+}
+
+#filter-breed {
+    padding: 0;
+
+    .flex {
+        width: 100%;
+
+        @include resp-max($sm) {
+            flex-wrap: wrap;
+        }
+        
+        > div {
+            min-width: 90px;
+            margin-bottom: $sp-unit;
+
+            @include resp-max($sm) {
+                min-width: 100%;
+            }
+
+            &:nth-child(2) {
+                flex: 1;
+
+                @include respond-min($sm) {
+                    padding-left: 20px;
+                }
+            }
+        }    
+    }
+}
+
+.gform_required_legend {
+    display: none; 
+}

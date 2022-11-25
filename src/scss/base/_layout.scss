@@ -1,0 +1,1274 @@
+.single-column {
+    margin: 0 auto;
+    max-width: 640px;
+    padding: 0 $sp-unit;
+
+    .featured-paragraph {
+        @include font-size(20);
+        font-weight: 500;
+    }
+}
+
+.one-column {
+    width: 100%;
+    @extend %clearfix;
+    .single-col {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
+
+.two-column {
+    width: 100%;
+    @extend %clearfix;
+    @media(min-width: $breakpoint-md) {
+        @supports (display: flex) {
+            display: flex;
+        }
+    }
+    &--centered {
+        align-items: center;
+    }
+    .single-col {
+        margin: 40px 0 0;
+        &:first-child {
+            margin: 0;
+        }
+        @media(min-width: $breakpoint-md) {
+            width: 47.5%;
+            float: left;
+            margin: 0 0 0 5%;
+            &:nth-child(2n+1) {
+                clear: both;
+                margin: 0;
+            }
+            &:only-child {
+                padding-right: 2em;
+            }
+        }
+    }
+}
+
+
+/**
+*   Used in tinyMCE as a format for two-col lists withing content
+*/
+
+.two-column-list {
+    @extend %clearfix;
+    list-style-type: none;
+    padding: 0;
+    margin: 30px 0;
+    li {
+        margin: 0 0 12px;
+        padding-left: 25px;
+        text-align: left;
+        position: relative;
+        font-weight: 500;
+        @media(min-width: $breakpoint-md) {
+            width: 47.5%;
+            float: left;
+            margin: 0 0 12px 5%;
+            &:nth-child(2n+1) {
+                clear: both;
+                margin: 0 0 12px;
+            }
+        }
+
+        &:before {
+            // background: url('../../../static/images/icon--tick-purple.svg') no-repeat center center;
+            width: 16px;
+            height: 16px;
+            background-size: 100%;
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+    }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+
+    @include respond-min($md) {
+        max-width:$container-max + ($gutter*2);
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    &.container--full {
+        @include respond-min($md) {
+            max-width:none;
+            width: 100%;
+        }
+    }
+    
+    .container:not(.full) {
+        max-width: 1080px;
+    }
+
+    &--no-flex {
+        display: block;
+    }
+
+    &--center {
+        margin: 0 auto;
+    }
+
+    &.containerAlignCenter {
+        align-items: center;
+    }
+}
+.col {
+    margin-left: $gutter/2;
+    margin-right: $gutter/2;
+    width: calc(100% - #{$gutter});
+
+    @include respond-min($md) {
+        margin-left: $gutter;
+        margin-right: $gutter;
+    }
+
+    &.col--full {
+        padding-left: $gutter;
+        padding-right: $gutter;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: content-box;
+        * {
+            box-sizing:border-box;
+        }
+    }
+}
+////////////////////
+//// NO BREAKPOINT
+////////////////////
+.col-no-1-2 {
+    @include layout(0,1,2);
+}
+.col-no-4-5 {
+    @include layout(0,4,5); 
+}
+////////////////////
+//// XS BREAKPOINT
+////////////////////
+.col-xs-1-1 {
+    @include layout($xs,1,1);
+}
+.col-xs-1-2 {
+    @include layout($xs,1,2);
+}
+.col-xs-1-3 {
+    @include layout($xs,1,3);
+}
+.col-xs-2-3 {
+    @include layout($xs,2,3);
+}
+.col-xs-4-5 {
+    @include layout($xs,4,5); 
+}
+.align-xs-right {
+    @include respond-min($xs) {
+        margin-left:auto;
+    }
+}
+// .push-xs-1-2 {
+//     @include pushpull($xs,1,2,'push');
+// }
+// .pull-xs-1-3 {
+//     @include pushpull($xs,1,3,'pull');
+// }
+////////////////////
+//// SM BREAKPOINT
+////////////////////
+.col-sm-1-1 {
+    @include layout($sm,1,1);
+}
+.col-sm-1-2 {
+    @include layout($sm,1,2);
+}
+.col-sm-1-3 {
+    @include layout($sm,1,3);
+}
+.col-sm-2-3 {
+    @include layout($sm,2,3);
+}
+.col-sm-1-4 {
+    @include layout($sm,1,4);
+}
+.col-sm-3-4 {
+    @include layout($sm,3,4);
+}
+.col-sm-1-6 {
+    @include layout($sm,1,6);
+}
+.col-sm-5-6 {
+    @include layout($sm,5,6);
+}
+.align-sm-right {
+    @include respond-min($sm) {
+        margin-left:auto;
+    }
+}
+// .push-sm-1-2 {
+//     @include pushpull($sm,1,2,'push');
+// }
+// .pull-sm-1-3 {
+//     @include pushpull($sm,1,3,'pull');
+// }
+////////////////////
+//// MD BREAKPOINT
+////////////////////
+.col-md-1-1 {
+    @include layout($md,1,1);
+}
+.col-md-1-2 {
+    @include layout($md,1,2);
+}
+.col-md-1-3 {
+    @include layout($md,1,3);
+}
+.col-md-2-3 {
+    @include layout($md,2,3);
+}
+.col-md-2-5 {
+    @include layout($md,2,5);
+}
+.col-md-1-4 {
+    @include layout($md,1,4);
+}
+.col-md-3-4 {
+    @include layout($md,3,4);
+}
+.col-md-3-5 {
+    @include layout($md,3,5);
+}
+.col-md-1-6 {
+    @include layout($md,1,6);
+}
+.col-md-1-7 {
+    @include layout($md,1,7);
+}
+.col-md-4-7 {
+    @include layout($md,4,7);
+}
+.col-md-2-7 {
+    @include layout($md,2,7);
+}
+.col-md-5-6 {
+    @include layout($md,5,6);
+}
+.col-md-1-8 {
+    @include layout($md,1,8);
+}
+.col-md-3-8 {
+    @include layout($md,3,8);
+}
+.col-md-5-8 {
+    @include layout($md,5,8);
+}
+.col-md-7-8 {
+    @include layout($md,7,8);
+}
+.col-md-1-12 {
+    @include layout($md,1,12);
+}
+.col-md-5-12 {
+    @include layout($md,5,12);
+}
+.col-md-7-12 {
+    @include layout($md,7,12);
+}
+.col-md-11-12 {
+    @include layout($md,11,12);
+}
+.align-md-right {
+    @include respond-min($md) {
+        margin-left:auto;
+    }
+}
+// .push-md-1-2 {
+//     @include pushpull($md,1,2,'push');
+// }
+.push-md-1-12 {
+    @include pushpull($md,1,12,'push');
+}
+// .pull-md-1-3 {
+//     @include pushpull($md,1,3,'pull');
+// }
+////////////////////
+//// LG BREAKPOINT
+////////////////////
+.col-lg-1-1 {
+    @include layout($lg,1,1);
+}
+.col-lg-1-2 {
+    @include layout($lg,1,2);
+}
+.col-lg-1-3 {
+    @include layout($lg,1,3);
+}
+.col-lg-2-3 {
+    @include layout($lg,2,3);
+}
+.col-lg-1-4 {
+    @include layout($lg,1,4);
+}
+.col-lg-3-4 {
+    @include layout($lg,3,4);
+}
+.col-lg-2-5 {
+    @include layout($lg,2,5);
+}
+.col-lg-3-5 {
+    @include layout($lg,3,5);
+}
+.col-lg-1-6 {
+    @include layout($lg,1,6);
+}
+.col-lg-1-7 {
+    @include layout($lg,1,7);
+}
+.col-lg-4-7 {
+    @include layout($lg,4,7);
+}
+.col-lg-2-7 {
+    @include layout($lg,2,7);
+} 
+.col-lg-5-6 {
+    @include layout($lg,5,6);
+}
+.col-lg-1-8 {
+    @include layout($lg,1,8);
+}
+.col-lg-3-8 {
+    @include layout($lg,3,8);
+}
+.col-lg-5-8 {
+    @include layout($lg,5,8);
+}
+.col-lg-7-8 {
+    @include layout($lg,7,8);
+}
+.col-lg-1-12 {
+    @include layout($lg,1,12);
+}
+.col-lg-5-12 {
+    @include layout($lg,5,12);
+}
+.col-lg-7-12 {
+    @include layout($lg,7,12);
+}
+.col-lg-11-12 {
+    @include layout($lg,11,12);
+}
+.align-lg-right {
+    @include respond-min($md) {
+        margin-left:auto;
+    }
+}
+// .push-lg-1-2 {
+//     @include pushpull($lg,1,2,'push');
+// }
+// .pull-lg-1-3 {
+//     @include pushpull($lg,1,3,'pull');
+// }
+////////////////////
+//// XL BREAKPOINT
+////////////////////
+.col-xl-1-1 {
+    @include layout($xl,1,1);
+}
+.col-xl-1-2 {
+    @include layout($xl,1,2);
+}
+.col-xl-1-3 {
+    @include layout($xl,1,3);
+}
+.col-xl-2-3 {
+    @include layout($xl,2,3);
+}
+.col-xl-1-4 {
+    @include layout($xl,1,4);
+}
+.col-xl-3-4 {
+    @include layout($xl,3,4);
+}
+.col-xl-1-6 {
+    @include layout($xl,1,6);
+}
+.col-xl-5-6 {
+    @include layout($xl,5,6);
+}
+.col-xl-1-8 {
+    @include layout($xl,1,8);
+}
+.col-xl-3-8 {
+    @include layout($xl,3,8);
+}
+.col-xl-5-8 {
+    @include layout($xl,5,8);
+}
+.col-xl-7-8 {
+    @include layout($xl,7,8);
+}
+.col-xl-1-12 {
+    @include layout($xl,1,12);
+}
+.col-xl-5-12 {
+    @include layout($xl,5,12);
+}
+.col-xl-7-12 {
+    @include layout($xl,7,12);
+}
+.col-xl-11-12 {
+    @include layout($xl,11,12);
+}
+.align-xl-right {
+    @include respond-min($xl) {
+        margin-left:auto;
+    }
+}
+
+.order-sm-0 {
+    @include resp-max($lg) {
+        order: 0;
+    }
+}
+
+.order-sm-1 {
+    @include resp-max($lg) {
+        order: 1;
+    }
+}
+
+.order-sm-2 {
+    @include resp-max($lg) {
+        order: 2;
+    }
+}
+
+.no-margin-ps {
+    p {
+        margin: 0;
+    }
+}
+
+.resp-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    width: 100%;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+//Cookie plugin override including their media
+body .cli-style-v2 .cli-bar-message {
+    font-size: 12px;
+
+    @media only screen and (min-width: 985px) {
+        width: calc(100% - 300px);
+    }
+}
+
+body .cli-tab-footer .wt-cli-privacy-accept-btn {
+    background-color: $brand-color;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: $brand-green;
+        color: $color-white;
+    }
+}
+
+.margin-top-bot {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.petted-calculator {
+    border: 1px solid #BDCFE3;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: $color-white;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 20px;
+
+        p {
+            font-family: $sans-serif-font-family;
+            font-weight: 700;
+            margin: 0;
+            font-size: 20px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        select {
+            border: 1px solid #BDCFE3;
+            border-radius: 2px;
+            padding-right: 25px;
+            margin: 0;
+        }
+    }
+
+    &__amount {
+        width: 100%;
+        margin-bottom: 20px;
+
+        p {
+            margin: 0;
+            margin-bottom: 5px;
+            color: #6F6F6F;
+            font-family: $sans-serif-font-family;
+            font-size: 10.5px;
+            font-weight: 500;
+            
+            @include resp-min($lg) {
+                font-size: 12px;
+            }
+        }
+
+        @include resp-min($md) {
+            width: calc(60% - 10px);
+        }
+
+        @include resp-min($lg) {
+            width: calc(66.6666% - 20px);
+        }
+    }
+
+    &__time {
+        width: 100%;
+        margin-bottom: 20px;
+
+        p {
+            margin: 0;
+            margin-bottom: 5px;
+            color: #6F6F6F;
+            font-family: $sans-serif-font-family;
+            font-size: 10.5px;
+            font-weight: 500;
+            
+            @include resp-min($lg) {
+                font-size: 12px;
+            }
+        }
+
+        @include resp-min($md) {
+            width: calc(40% - 10px);
+        }
+
+        @include resp-min($lg) {
+            width: calc(33.3333% - 20px);
+        }
+    }
+
+    &__treatment {
+        width: 100%;
+        margin-bottom: 20px;
+
+        p {
+            margin: 0;
+            margin-bottom: 5px;
+            color: #6F6F6F;
+            font-family: $sans-serif-font-family;
+            font-size: 10.5px;
+            font-weight: 500;
+            
+            @include resp-min($lg) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    &__amount-wrapper,
+    &__time-wrapper,
+    &__treatment-wrapper {
+        position: relative;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 26.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 330 206' style='enable-background:new 0 0 330 206;' xml:space='preserve'%3E%3Cpath d='M7.9,31.7l1.8,2.1l136,156.5c4.6,5.3,11.5,8.6,19.2,8.6s14.6-3.4,19.2-8.6L320,34.1l2.3-2.6C324,29,325,26,325,22.8 c0-8.7-7.4-15.8-16.6-15.8l0,0H21.6l0,0C12.4,7,5,14.1,5,22.8C5,26.1,6.1,29.2,7.9,31.7z'/%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            pointer-events: none;
+        }
+    }
+
+    &__results {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+        display: none;
+
+        p {
+            margin: 0;
+            font-size: 14px;
+
+            &.result-second {
+                font-size: 24px;
+                font-weight: 700;
+                font-family: $sans-serif-font-family;
+            }
+        }
+    }
+
+    &__button {
+        width: 100%;
+
+        a {
+            width: 100%;
+            font-size: 14px;
+        }
+    }
+}
+
+.mobile-center {
+    text-align: center;
+
+    @include resp-min($md) {
+        text-align: left;
+    }
+}
+
+.purple-bg-mobile {
+    position: relative;
+    padding: 30px 0px;
+    margin-top: 25px;
+
+    @include resp-min($md) {
+        padding: 0;
+        margin-top: 0;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 200%;
+        transform: translateX(-50%);
+        height: 100%;
+        background-color: #F6F5FF;
+        z-index: -1;
+
+        @include resp-min($md) {
+            display: none;
+        }
+    }
+
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        width: 150%;
+        height: 20px;
+        background-image: url('https://www.petted.com/wp-content/uploads/2022/01/alt-top.svg');
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: right;
+        transform: translateY(-100%) translateX(-50%);
+
+        @include resp-min($md) {
+            display: none;
+        }
+    }
+}
+
+.covered-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    h3 {
+        margin-right: 20px;
+        margin-bottom: 0;
+
+        @include resp-min($md) {
+            margin-bottom: 1em;
+        }
+    }
+
+    p {
+        color: #1DAC5F;
+        font-size: 13px;
+        font-weight: 600;
+        position: relative;
+        padding-left: 20px;
+        width: 100%;
+
+        @include resp-min($md) {
+            width: auto;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            background-image: url('https://www.petted.com/wp-content/uploads/2022/03/tick-shield.svg');
+            background-repeat: no-repeat;
+            background-size: 15px;
+            background-position: center;
+        }
+    }
+}
+
+.customDropdown {
+    ul.subMenu,
+    ul.nav-module--subMenu--d0a6a {
+        display: none;
+        padding-left: 20px;
+
+        @include respond-min($navbreak) {
+            display: block;
+            position: absolute;
+            left: 50%;
+            background-color: $color-white;
+            min-width: 340px;
+            padding: 20px;
+            transform: translateX(-50%);
+            border-radius: 10px;
+            box-shadow: 0px 2px 35px rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: left;
+            pointer-events: none;
+        }
+
+        a {
+            color: $color-text;
+            font-size: 13px;
+
+            @include respond-min($md) {
+                font-size: 16px;
+            }
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -4px;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid $color-white;
+            display: none;
+
+            @include respond-min($navbreak) {
+                display: block;
+            }
+        }
+    }
+
+    &:hover {
+        .subMenu, .nav-module--subMenu--d0a6a {
+            @include respond-min($navbreak) {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+
+    a {
+        padding-right: 0 !important;
+
+        &:after {
+            @include respond-min($navbreak) {
+                display: none;
+            }
+        }
+    }
+
+    &.open {
+        ul.subMenu,
+        ul.nav-module--subMenu--d0a6a {
+            display: block;
+        }
+    }
+
+    &Breeds,
+    &States {
+        padding-left: 50px !important;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-image: url('https://www.petted.com/wp-content/uploads/2022/05/dog-icon-thicker.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        a {
+            text-decoration: none !important;
+            font-weight: 700;
+            line-height: 1.4;
+            position: relative;
+
+            &:after {
+                content: '';
+                left: 0;
+                display: block;
+                color: #747474;
+                font-size: 12px;
+                padding-right: 20px;
+                font-weight: 400;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%) translateX(0px);
+                width: 17px;
+                height: 20px;
+                background-image: url('https://www.petted.com/wp-content/uploads/2022/05/foward.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                opacity: 0.2;
+                background-size: contain;
+                transition: transform 0.3s ease;
+                z-index: 10;
+            }
+
+            &:hover {
+                &:before {
+                    transform: translateY(-50%) translateX(8px);
+                }
+            }
+        }
+    }
+
+    &States {
+        margin-bottom: 15px;
+
+        @include respond-min($md) {
+            margin-bottom: 20px;
+        }
+
+        @include respond-min($navbreak) {
+            margin-bottom: 0;
+        }
+
+        a {
+            &:after {
+                content: 'See the best insurance by State';
+            }
+        }
+
+        &:before {
+            background-image: url('https://www.petted.com/wp-content/uploads/2022/05/map-icon-thicker.svg');
+        }
+    }
+
+    &Breeds {
+        margin-bottom: 15px;
+
+        @include respond-min($md) {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        @include respond-min($navbreak) {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        a {
+            &:after {
+                content: 'Compare insurance by Breed';
+            }
+        }
+    }
+}
+
+li.headerBtn {
+    padding: 0;
+    margin-left: 20px;
+    font-size: 12px;
+
+    a {
+        background-color: $brand-green;
+        background: $btn-bg-alt;
+        border-color: $btn-bg-alt;
+        color: #fff !important;
+        padding: 12px 30px;
+        display: inline-block !important;
+        // color: $btn-text;
+        // background: $btn-bg;
+        border: 2px solid $btn-bg-alt;
+        font-size: 16px !important;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 20px;
+        transition: background-color .3s ease-in-out, color .3s ease-in-out, border-color .3s ease-in-out;
+
+        @include respond-min($md) {
+            font-size: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: ​40px;
+            border-radius: 30px;
+            padding-right: ​40px;
+        }
+
+        @include respond-min($navbreak) {
+            color: #202020 !important;
+        }
+
+        &:hover,
+        &:focus {
+            color: $btn-bg;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            background-color: $btn-bg;
+            border-color: $btn-bg;
+
+            .page-header & {
+                color: #fff;
+                background-color: transparent;
+                border-color: $btn-bg-alt;  
+            }
+        }
+        padding: 5px 14px;
+    
+        @media screen and (min-width: $navbreak) {
+            font-size: 16px !important;
+            padding: 6px 23px;
+        }
+
+        @include resp-max($navbreak) {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            font-size: 16px;
+            background-color: $brand-color;
+            border-color: $brand-color;
+            color: $color-white;
+            padding: 12px 30px; 
+            border-radius: 30px;
+
+            @media (orientation: landscape) {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding: 5px 20px;
+            }
+        }
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+li.headerBtn a:hover {
+    @include respond-min(1023px) {
+        border-color: $brand-green;
+        background: $brand-green;
+        color: $color-text;
+    }
+    @include respond-min(1180px) {  
+        border-color: $brand-green;
+        background: transparent;
+        color: $color-white !important;
+    }
+}
+
+#page-header {
+    .ratings-module--ratingsNum--83ad2 {
+        @include resp-max($md) {
+            padding-left: 0;
+            padding-top: 3px;
+            min-width: 100%;
+        }
+    }
+
+    .ratings-module--ratingsInner--f2c60 {
+        justify-content: flex-start;
+    }
+
+    .ratings {
+        @include respond-min($md) {
+            margin: $sp-unit 0;
+        }
+
+        a {
+            color: $color-white;
+        }
+    }
+
+    .ratings-module--ratingsTitle--09d58 {
+        display: block;
+    }
+
+    .btn--alt {
+        &:hover {
+            color: #fff;
+            background-color: transparent;
+            border-color: #42f8d7;
+        }
+    }
+}
+
+.bg--dark {
+    background: rgb(69,128,216);
+    background: linear-gradient(45deg, rgba(69,128,216,1) 0%, rgba(116,82,255,1) 100%);
+    color: $color-white;
+    max-width: none;
+    width: calc(100% + (#{$gutter}*2));
+    margin-left: -10px;
+    margin-right: -10px;
+
+    @include respond-min($md) {
+        width: calc(100% + 60px);
+        margin-left: -30px;
+        margin-right: -30px;
+    }
+
+    &:before, &:after {
+        content: "";
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/bg-dark-top.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center 0;
+        height: 38px;
+        width: 100%;
+        position: absolute;
+        top: -1px;
+        left: 0;
+    }
+
+    &:after {
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/bg-dark-bottom.png');
+        background-position: center 100%;
+        top: auto;
+        bottom: -2px;
+    }
+}
+
+.text-accordion-block .btn {
+    @include resp-max($md) {
+        margin-bottom: calc($sp-unit*2);
+    }
+}
+
+.text-accordion-block .textAccordion-module--accordionTrigger--04f95, .text-accordion-block .accordion-module--accordionTrigger--ee71c {
+    padding: 10px 50px 10px 20px;
+}
+
+.ratings__title, address, dl, h1, h2, h3, h4, h5, h6, hr, ol, p, ul {
+    margin-bottom: 24.5px;
+}
+
+.nav-module--nav--b7415 {
+    &.navActive {
+        transform: translateX(0);
+        transition-delay: 0s;
+
+        > li {
+            @media screen and (max-width: $navbreak) {
+                left: 0;
+                opacity: 1;
+                transition-delay: 0.3s;
+            }
+        }
+    }
+
+    // .nav-module--menuItemHasChildren--bd206.open {
+
+    // }
+}
+
+.menuOpen {
+    .nav-module--menuHeaderMenuContainer--25cc3 {
+        &:before {
+            transform: translate(50%, -50%) scale(60);
+        }
+    }
+
+    .header-module--menuBg--238fe {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .header-module--hamburger--b8439 {
+        .header-module--hamburgerBar--d39e1 {
+            background: rgba(0, 0, 0, 0);
+
+            &:after {
+                background: $color-text;
+                top: 0;
+                transform: rotate(45deg);
+                transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+                ;
+            }
+
+            &:before {
+                background: $color-text;
+                bottom: 0;
+                transform: rotate(-45deg);
+                transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+                ;
+            }
+        }
+    }
+    
+    @include resp-max($md) {
+        @media (orientation: portrait) {
+            .header-module--brandLogo--92a21 {
+                transition-delay: .3s;
+    
+                .logo {
+                    opacity: 0;
+                }
+                .header-module--menuLogo--bd388 {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
+}
+
+
+// &.open>.dropdown-toggle {
+//     &:after {
+//         transform: rotate(180deg);
+//     }
+// }
+
+
+.headroom {
+    will-change: transform !important;
+    transition: transform 200ms linear, background-color .3s ease 0s !important;
+    z-index: 100 !important;
+}
+.headroom--pinned {
+    transform: translateY(0%) !important;
+    background-color: #7254fd !important;
+    background-color: rgba(114, 84, 253, 0.95) !important;
+    transition: transform 200ms linear, background-color 0.2s ease 0s !important;
+}
+.headroom--unpinned {
+    transform: translateY(-100%) !important;
+}
+
+.headroom--unfixed {
+    background-color: transparent !important;
+    transition-delay: 0 !important;
+}
+
+.embed-container { 
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden; 
+    max-width: 100%; 
+    margin: $sp-unit 0;
+} 
+
+.embed-container iframe, 
+.embed-container object, 
+.embed-container embed { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+}
+
+.contentVideo {
+    border-radius: 10px;
+    background-size: cover;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .5s ease;
+    background-position: center;
+
+    &:after {
+        background: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/icon-play.svg') no-repeat center / 100% auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: "";
+        z-index: 2;
+        width: 10%;
+        max-width: 80px;
+        min-width: 30px;
+        height: 71px;
+    }
+
+    &:before {
+        content: "";
+        background: rgb(116,82,255);
+        background: linear-gradient(137deg, rgba(116,82,255,1) 6%, rgba(69,128,216,1) 94%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        left: 0;
+        top: 0;
+        transition: opacity ease .3s;
+    }
+
+    &:hover:before {
+        opacity: 0.7;
+    }
+}
+
+.modalActive {
+    display: block !important;
+}
+
+  /* this is added to the body when a dialog is open */
+.hasModal {
+    overflow: hidden;
+}

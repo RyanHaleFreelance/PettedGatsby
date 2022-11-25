@@ -1,0 +1,385 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.menuHeaderMenuContainer {
+    &:before {
+        content: "";
+        background: #fff;
+        display: block;
+        width: 32px;
+        height: 30px;
+        height: 32px;
+        border-radius: 50%;
+        position: absolute;
+        top: 30px;
+        right: 34px;
+        transform: translate(50%,-50%) scale(0);
+        transform-origin: center;
+        transition: transform .4s ease-in-out;
+        pointer-events: none;
+        z-index: 2;
+
+        @include respond-min($md) {
+            display: none;
+        }
+
+        @media (orientation: landscape) {
+            display: none;
+        }
+    }
+}
+
+.nav {
+    list-style: none;
+    margin: 0;
+    transform: translateX(100%);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding-top: 120px;
+    min-height: 100vh;
+    transition-delay: 1s;
+    z-index: 3;
+
+    @media (orientation: landscape) {
+        padding-top: 40px;
+
+        @include respond-min($md) {
+            padding-top: 80px;
+        }
+    }
+
+    @include respond-min($md) {
+        background: #fff;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    @media (orientation: landscape) {
+        background: #fff;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    // &:before {
+    //     content: "";
+    //     background: #fff;
+    //     display: block;
+    //     width: 32px;
+    //     height: 30px;
+    //     height: 32px;
+    //     border-radius: 50%;
+    //     position: absolute;
+    //     top: 30px;
+    //     right: 34px;
+    //     transform: translate(50%,-50%) scale(0);
+    //     transform-origin: center;
+    //     transition: transform .4s ease-in-out;
+    //     pointer-events: none;
+
+    //     .menu-open & {
+    //         transform: translate(50%, -50%) scale(39);
+    //     }
+    // }
+
+    @media (orientation: landscape) {
+        max-width: 70%;
+    }
+
+    @media screen and (min-width: $md) {
+        padding-left: 30px;
+        max-width: 440px;
+    }
+    @media screen and (min-width: $navbreak) {
+        box-shadow: none;
+        max-width: none;
+        text-align: right;
+        display: block !important;
+        position: static;
+        background: transparent;
+        overflow: visible;
+        transition: none;
+        transform: translateX(0);
+        padding: 0;
+        min-height: 0;
+    }
+    >.menuItemHasChildren {
+        @at-root .nav-sec>li.menuItemHasChildren>a,
+        &>a {
+            position: relative;
+            @media screen and (min-width: $navbreak) {
+                padding-right: 20px;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    width: 14px;
+                    height: 10px;
+                    background: url("https://via.placeholder.com/50") no-repeat center center;
+                    background-size: contain;
+                    margin: -5px 0 0;
+                }
+            }
+        }
+    }
+    .menuItemHasChildren {
+        >.dropdownToggle {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            bottom: 0;
+            width: 40px;
+            padding: 0;
+            overflow: hidden;
+            text-indent: -9999px;
+            background-color: $color-white;
+            transition: background-color 0.25s ease-in-out;
+            @media screen and (min-width: $navbreak) {
+                display: none;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 18px;
+                height: 16px;
+                width: 16px;
+                left: 20px;
+                background: url("https://www.petted.com/wp-content/uploads/2022/05/downarrow.svg") no-repeat center center;
+                background-size: 100% auto;
+                transition: transform 0.25s ease-in-out;
+
+                @media screen and (min-width: $navbreak) {
+                    width: 12px;
+                }
+            }
+        }
+        // &.open>.dropdown-toggle {
+        //     &:after {
+        //         transform: rotate(180deg);
+        //     }
+        // }
+    }
+    .pll-parent-menu-item {
+        display: block;
+        border-top: 2px solid #D5D5D5;
+        &>a {
+            display: none;
+        }
+        .subMenu {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            li {
+                padding: 0;
+                flex: 1;
+            }
+            a {
+                text-indent: 150%;
+                overflow: hidden;
+                white-space: nowrap;
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                span {
+                    display: none;
+                }
+            }
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        @media screen and (min-width: $navbreak) {
+            display: none;
+        }
+    }
+    >li {
+        position: relative;
+        // background: white;
+        padding: 0 6 0px 0 0;
+        @media screen and (max-width: $navbreak) {
+            left: 50px;
+            opacity: 0;
+            transition: left .4s ease, opacity .4s ease;
+            transition-delay: 0s;
+        }
+        @media screen and (min-width: $navbreak) {
+            padding: 10px;
+        }
+        @media screen and (min-width: $navbreak) {
+            display: inline-block;
+            // margin-left: $sp-unit / 2;
+            padding-left: $sp-unit / 2;
+            white-space: nowrap;
+            background: transparent;
+            min-width: 70px;
+            &:nth-child(odd) {
+                background: transparent;
+            }
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        &.noLink,
+        >a {
+            display: block;
+            color: $color-text;
+            text-shadow: none;
+            font-size: 30px;
+
+            @media (orientation: landscape) {
+                @include resp-max($md) {
+                    font-size: 20px;
+                }
+            }
+
+            @include respond-min($navbreak) {
+                color: $color-white;
+                font-size: inherit;
+            }
+        }
+        &.noLink {
+            @include respond-min($navbreak) {
+                display: inline-block;
+            }
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        // &.open>a {
+        //     background: $brand-color;
+        //     color: white;
+        // }
+        >ul {
+            top: 100%;
+            list-style: none;
+            margin: 0;
+        }
+        li {
+            padding: 0 40px 0 0;
+            @media screen and (min-width: $navbreak) {
+                padding: 5px 15px;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .noLink,
+    a {
+        text-decoration: none;
+        display: block;
+        font-weight: 500;
+        &:hover {
+            text-decoration: underline;
+        }
+        @media screen and (max-width: ($navbreak - 1px)) {
+            padding: 0 20px;
+            font-weight: 700;
+        }
+        // @media screen and (min-width: $breakpoint-md) {
+        //     padding: initial;
+        // }
+    }
+    .current-menu-item {
+        >a {
+            color: $btn-bg;
+            @include respond-min($navbreak) {
+                color: $color-white;
+                text-decoration: underline;
+            }
+        }
+    }
+    .hidden-desktop {
+        @media screen and (min-width: $navbreak) {
+            display: none !important;
+        }
+    }
+    >li.menu-item-search {
+        display: none;
+        @media screen and (min-width: $navbreak) { 
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            background: url('https://via.placeholder.com/50') no-repeat center center;
+            background-size: 20px auto;
+            height: 40px;
+            overflow: hidden;
+            right: 0;
+            text-indent: -9999px;
+            display: block;
+            min-width: 40px;
+            margin: -20px 0 0;
+            padding: 0;
+            a {
+                height: 40px;
+                display: block;
+                min-width: 40px;
+            }
+        }
+    }
+}
+
+.nav-sec {
+    list-style: none;
+    margin: 0;
+
+    > li {
+        display: inline-block;
+        margin: 0 15px;
+        vertical-align: top;
+        // li {
+        //     display: none;
+        // }
+    }
+}
+
+.header {
+    &__nav {
+        @include respond-min($navbreak) {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+    .nav-sec {
+        font-size: 0.75em;
+        margin: 0;
+        position: relative;
+        top: -10px;
+        display: none;
+        @media(min-width: $navbreak) {
+            display: block;
+        }
+        li {
+            position: relative;
+        }
+        a {
+            font-weight: bold;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &.headroom--not-top.headroom--pinned {
+        .nav-sec {
+            display: none;
+        }
+    }
+}
+
+.headerMobileBtn {
+    position: absolute;
+    right: 63px;
+    top: 10px;
+    z-index: 1;
+
+    @include respond-min($lg) {
+        display: none !important;
+    }
+}

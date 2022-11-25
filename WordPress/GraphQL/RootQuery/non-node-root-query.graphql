@@ -1,0 +1,116 @@
+query NON_NODE_QUERY {
+  acfOptions404 {
+    pageSlug
+    pageTitle
+  }
+
+  acfOptionsAnalytics {
+    pageSlug
+    pageTitle
+  }
+
+  acfOptionsFooter {
+    footerOptions {
+      copyrightMessage
+      facebook
+      fieldGroupName
+
+      footerLogo {
+        __typename
+        id
+      }
+
+      instagram
+      tagline
+      tiktok
+    }
+
+    pageSlug
+    pageTitle
+  }
+
+  acfOptionsHeader {
+    pageSlug
+    pageTitle
+  }
+
+  acfOptionsInsurer {
+    pageSlug
+    pageTitle
+  }
+
+  acfOptionsSettings {
+    pageSlug
+    pageTitle
+  }
+
+  allSettings {
+    discussionSettingsDefaultCommentStatus
+    discussionSettingsDefaultPingStatus
+    generalSettingsDateFormat
+    generalSettingsDescription
+    generalSettingsEmail
+    generalSettingsLanguage
+    generalSettingsStartOfWeek
+    generalSettingsTimeFormat
+    generalSettingsTimezone
+    generalSettingsTitle
+    generalSettingsUrl
+    readingSettingsPageForPosts
+    readingSettingsPageOnFront
+    readingSettingsPostsPerPage
+    readingSettingsShowOnFront
+    writingSettingsDefaultCategory
+    writingSettingsDefaultPostFormat
+    writingSettingsUseSmilies
+  }
+
+  discussionSettings {
+    defaultCommentStatus
+    defaultPingStatus
+  }
+
+  generalSettings {
+    dateFormat
+    description
+    email
+    language
+    startOfWeek
+    timeFormat
+    timezone
+    title
+    url
+  }
+
+  readingSettings {
+    pageForPosts
+    pageOnFront
+    postsPerPage
+    showOnFront
+  }
+
+  themeGeneralSettings {
+    pageSlug
+    pageTitle
+
+    ratingsWidget {
+      fieldGroupName
+      ratingLink
+      ratingName
+      ratingNumber
+      ratingStars
+      ratingValue
+    }
+  }
+
+  wpGatsby {
+    arePrettyPermalinksEnabled
+    isPreviewFrontendOnline
+  }
+
+  writingSettings {
+    defaultCategory
+    defaultPostFormat
+    useSmilies
+  }
+}

@@ -1,0 +1,220 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+
+.pageHeader {
+    background: rgb(116,82,255);
+    background: linear-gradient(148deg, rgba(116,82,255,1) 0%, rgba(69,128,216,1) 100%);
+    padding: 120px 0 40px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    margin-top: -60px;
+
+    @include respond-min($lg) {
+        padding: 120px 0;
+        margin-top: -86px;
+    }
+
+    .pageChild &,
+    .single & {
+        padding: 90px 0 60px 0px;
+
+        @include respond-min($lg) {
+            padding: 40px 0 60px 0px;
+        }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/header-texture.png');
+        height: 1069px;
+        width: 1058px;
+        left: 40%;
+        bottom: -100px;
+        pointer-events: none;
+    }
+
+    &:after {
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/wave-mobile.png');
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        content: "";
+        width: 100%;
+        position: absolute;
+        bottom: -10px;
+        height: 0;
+        padding-bottom: 13%;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+
+        @include respond-min($md) {
+            background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/wave.png');
+            height: 71px;
+            left: 0;
+            bottom: -1px;
+            transform: none;
+        }
+    }
+
+    h2 {
+        @include resp-max($sm) {
+            font-size: 14px;
+        }
+    }
+
+    &Title {
+        margin: 0 0 10px;
+        padding-right: 20%;
+
+        @media(min-width: $md) {
+            padding: 0;
+        }
+
+        @media(min-width: $lg) {
+            margin: $sp-unit*3 0 $sp-unit;
+        }
+    }
+
+    ul {
+        margin: 0 0 $sp-unit;
+        list-style-type: none;
+
+        @include respond-min($md) {
+            margin: 0 0 $sp-unit*2;
+        }
+
+        li {
+            padding-left: 20px;
+            position: relative;
+            margin: 3px 0;
+
+            @include respond-min($md) {
+                padding-left: 36px;
+                font-size: 18px;
+                margin: 5px 0;
+            }
+
+            &:before {
+                width: 12px;
+                height: 12px;
+                content: "";
+                background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/icon-tick.svg');
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: center;
+                position: absolute;
+                left: 0;
+                top: 6px;
+
+                @include respond-min($md) {
+                    width: 18px;
+                    height: 18px;
+                    top: 7px;
+                }
+            }
+        }
+    }
+
+    a.btn {
+        position: relative;
+        z-index: 10;
+    }
+
+    &Alt {
+        &:after {
+            background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/wave-mobile-alt.png');
+
+            @include respond-min($md) {
+                background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/wave-alt.png');
+            }
+        }
+    }
+}
+
+.nhhHeader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+
+    &Left {
+        width: 100%;
+        margin-bottom: 30px;
+
+        @include respond-min($md) {
+            width: calc(50% - 30px);
+            margin-bottom: 0px;
+        }
+    }
+
+    &Right {
+        width: 100%;
+
+        @include respond-min($md) {
+            width: calc(50% - 30px);
+        }
+    }
+
+
+    &Down {
+        .pageHeaderTitle {
+            @include respond-min($md) {
+                margin: 55px 0 55px;
+                font-size: 50px;
+            }
+
+            @include respond-min($lg) {
+                margin: 55px 0 35px;
+            }
+        }
+
+        .nhhHeaderRight {
+            padding-bottom: 100px;
+            position: relative;
+
+            @include respond-min($md) {
+                margin: 53.5px 0 24.5px;
+                padding-bottom: 0;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                @include respond-min(450px) {
+                    position: relative;
+                }
+
+                @include respond-min($lg) {
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+.pageHeaderDown {
+    margin-bottom: 50px;
+
+    @include respond-min(350px) {
+        margin-bottom: 100px;
+    }
+
+    @include respond-min(450px) {
+        margin-bottom: 0px;
+    }
+
+    @include respond-min($lg) {
+        margin-bottom: 20px;
+    }
+
+    .container {
+        justify-content: center;
+    }
+}

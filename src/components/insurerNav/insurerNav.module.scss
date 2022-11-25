@@ -1,0 +1,41 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+
+.footerInsurerNav {
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+
+    @include respond-min($lg) {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: $sp-unit*2;
+    }
+
+    li {
+        margin-left: 0;
+
+        @include respond-min($lg) {
+            width: 25%;
+        }
+
+        @include respond-min(1200px) {
+            width: 20%;
+        }
+    }
+
+    a {
+        font-size: 12px;
+        color: $base-color;
+        font-weight: 300;
+        display: block;
+        margin-bottom: 8px;
+        text-decoration: none;
+        
+        &:hover, &:focus {
+            text-decoration: underline;
+            color: $base-color;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.navSec {
+    margin-top: $sp-unit;
+    margin-bottom: 0;
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+
+    @include respond-min($lg) {
+        margin-top: 0;
+        text-align: left;
+        column-count: 2;
+        max-width: 250px;
+    }
+
+    > li {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+
+        @include respond-min($md) {
+            width: auto;
+        }
+
+        @include respond-min($lg) {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            border: none;
+        }
+    }
+
+    li ul {
+        list-style-type: none;
+        margin: 0;
+    }
+
+    li {
+        margin-left: 0;
+        font-family: $base-font-family;
+        width: auto;
+    }
+
+    a {
+        font-size: 12px;
+        color: $base-color;
+        font-weight: 300;
+        display: block;
+        margin-bottom: 8px;
+        text-decoration: none;
+        font-family: $base-font-family;
+        width: auto;
+        margin-bottom: 0;
+        
+        &:hover, &:focus {
+            text-decoration: underline;
+            color: $base-color;
+        }
+    }
+}

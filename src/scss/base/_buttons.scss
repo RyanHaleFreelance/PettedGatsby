@@ -1,0 +1,135 @@
+.btn {
+    padding: 5px 36px;
+    display: inline-block;
+    color: $btn-text;
+    background: $btn-bg;
+    border: 2px solid $btn-bg;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 20px;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out, border-color .3s ease-in-out;
+
+    @include respond-min($md) {
+        font-size: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: ​40px;
+        border-radius: 30px;
+        padding-right: ​40px;
+    }
+
+    &:hover,
+    &:focus {
+        color: $btn-bg;
+        text-decoration: none;
+        background-color: transparent;
+    }
+
+    &--slim {
+        @include respond-min($md) {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+
+    &--alt {
+        background: $btn-bg-alt;
+        border-color: $btn-bg-alt;
+        color: #202020;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            background-color: $btn-bg;
+            border-color: $btn-bg;
+
+            .page-header & {
+                color: #fff;
+                background-color: transparent;
+                border-color: $btn-bg-alt;  
+            }
+        }
+    }
+
+    &--trans {
+        background: transparent;
+        border: 2px solid $btn-bg;
+        border-radius: 30px;
+        color: $btn-bg;
+
+        &:hover,
+        &:focus {
+            color: $color-white;
+            background-color: $btn-bg;
+        }
+    }
+
+    &--large {
+        font-size: 16px;
+        padding-right: 20px;
+        padding-left: 20px;
+
+        @include respond-min($md) {
+            font-size: 20px;
+            padding: 8px ​40px;
+            border-radius: 30px;
+        }
+    }
+
+    &--small {
+        font-size: 12px;
+        padding: 5px 15px;
+
+        @include respond-min($md) {
+            font-size: 14px;
+            padding: 7px 20px;
+            border-radius: 30px;
+        }
+    }
+
+    &--disabled {
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+}
+
+.btn + .btn {
+    margin-top: $sp-unit;
+    @include respond-min($sm) {
+        margin-top: 0;
+        margin-left: $sp-unit;
+    }
+}
+
+.link--more {
+    font-size: 13px;
+    color: $base-color;
+    border-bottom: 1px dotted $base-color;
+    padding-bottom: 3px;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:after {
+        content: "";
+        width: 4px;
+        height: 7px;
+        display: inline-block;
+        margin-left: 12px;
+        background: url(/static/images/icon--chevron.svg) no-repeat center / 100% auto;
+    }
+
+    &:hover {
+        text-decoration: none;
+        color: $base-color;
+        border: none;
+    }
+}
+
+.cli-btn,
+.cli-plugin-button {
+    border-radius: 20px !important;
+}

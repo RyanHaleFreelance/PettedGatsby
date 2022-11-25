@@ -1,0 +1,81 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.threeCol {
+
+    &Wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @media(min-width: $lg) {
+            justify-content: space-between;
+        }
+    }
+
+    &Title {
+        text-align: center;
+        margin-bottom: 60px;
+
+        h2 {
+            @include font-size(25);
+            margin-bottom: 0px;
+            color: $base-color;
+
+            @media(min-width: $md) {
+                @include font-size(30);
+            }
+
+            @media(min-width: $lg) {
+                @include font-size(30);
+            }
+        }
+    }
+
+    &Column {
+        width: 100%;
+        margin-bottom: 60px;
+
+        @media(min-width: $md) {
+            width: calc(50% - 40px);
+            margin: 0 20px 40px;
+        }
+
+        @media(min-width: $lg) {
+            width: calc(33.3333% - 40px);
+            margin: 0;
+        }
+
+        &Image {
+            width: 100%;
+            max-width: 150px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        &Title {
+            text-align: center;
+
+            h3 {
+                @include font-size(20);
+                margin-bottom: 15px;
+
+                @media(min-width: $md) {
+                    @include font-size(20);
+                }
+
+                @media(min-width: $lg) {
+                    @include font-size(20);
+                }
+            }
+        }
+
+        &Text {
+            text-align: center;
+
+            h1,h2,h3,h4,h5,h6,p,span {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

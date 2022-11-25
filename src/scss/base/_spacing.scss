@@ -1,0 +1,41 @@
+.wrapper {
+    overflow: hidden;
+}
+
+html {
+    background: #262428;
+    scroll-behavior: smooth;
+
+    &.menu-open {
+        overflow: hidden;
+    }
+}
+
+body {
+    position: relative;
+    background: white;
+    z-index: 1;
+}
+
+.container {
+    @extend %container;
+    &--narrow {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+.section {
+    @extend %section;
+    position: relative;
+    width: 100%;
+}
+
+.section-container>.section:first-child {
+    border-top: 0;
+    padding-top: 0px;
+}
+
+main {
+    // overflow: hidden;
+}

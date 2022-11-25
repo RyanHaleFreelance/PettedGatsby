@@ -1,0 +1,79 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+
+.pageHeader {
+    &Title {
+        margin: 0 0 10px;
+        padding-right: 20%;
+
+        @media(min-width: $md) {
+            padding: 0;
+        }
+
+        @media(min-width: $lg) {
+            margin: $sp-unit*3 0 $sp-unit;
+        }
+    }
+}
+
+.featuredHero {
+    h1, p {
+        margin-left: auto;
+        margin-right: auto;
+
+        @include respond-min($lg) {
+            margin-top: $sp-unit;
+        }
+    }
+
+    h1 {
+        padding-right: 0;
+        max-width: 600px;
+
+        @include respond-min($lg) {
+            @include font-size(48);
+            max-width: 800px;
+        }
+    }
+
+    p:not(.breadcrumbs) {
+        max-width: 480px;
+
+        @include respond-min($lg) {
+            @include font-size(20);
+            max-width: 680px;
+            margin-bottom: $sp-unit*2;
+        }
+    }
+
+    &WithImage {
+        padding-bottom: 100px;
+
+        @include respond-min($lg) {
+            padding-bottom: 250px;
+        }
+    }
+
+    &Image {
+        margin-top: -130px;
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        padding: 0 15px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include respond-min($lg) {
+             margin-top: -350px;
+             max-width: 1000px;
+        }
+
+        .content-video {
+            max-width: 1000px;
+            width: 80%;
+            margin: 0 auto;
+            padding-bottom: 46.25%; 
+        }
+    }
+}

@@ -1,0 +1,4497 @@
+query NODE_LIST_QUERY($first: Int!, $after: String) {
+  reusableBlocks(first: $first, after: $after) {
+    nodes {
+      blocks {
+        innerBlocks {
+          innerBlocks {
+            innerBlocks {
+              innerBlocks {
+                ...BlockFragment
+
+                __typename
+              }
+
+              ...BlockFragment
+
+              __typename
+            }
+
+            ...BlockFragment
+
+            __typename
+          }
+
+          ...BlockFragment
+
+          __typename
+        }
+
+        ...BlockFragment
+
+        __typename
+      }
+
+      blocksJSON
+      content
+
+      contentType {
+        node {
+          id
+        }
+      }
+
+      contentTypeName
+      databaseId
+      date
+      dateGmt
+      desiredSlug
+      enclosure
+      guid
+      id
+      isContentNode
+      isRevision
+      isTermNode
+
+      lastEditedBy {
+        node {
+          id
+        }
+      }
+
+      link
+      modified
+      modifiedGmt
+
+      previewBlocks {
+        innerBlocks {
+          innerBlocks {
+            innerBlocks {
+              innerBlocks {
+                ...BlockFragment
+
+                __typename
+              }
+
+              ...BlockFragment
+
+              __typename
+            }
+
+            ...BlockFragment
+
+            __typename
+          }
+
+          ...BlockFragment
+
+          __typename
+        }
+
+        ...BlockFragment
+
+        __typename
+      }
+
+      previewBlocksJSON
+      slug
+      status
+
+      template {
+        templateName
+
+        __typename
+      }
+
+      title
+      uri
+      __typename
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+fragment BlockFragment on Block {
+  attributesJSON
+  dynamicContent
+  isDynamic
+  name
+  order
+  originalContent
+
+  parentNode {
+    id
+
+    __typename
+
+    ... on MediaItem {
+      id
+    }
+
+    ... on ContentType {
+      id
+    }
+
+    ... on Taxonomy {
+      id
+    }
+
+    ... on User {
+      id
+    }
+
+    ... on BlockEditorPreview {
+      id
+    }
+
+    ... on Comment {
+      id
+    }
+
+    ... on Page {
+      id
+    }
+
+    ... on Tag {
+      id
+    }
+
+    ... on Post {
+      id
+    }
+
+    ... on Category {
+      id
+    }
+
+    ... on PostFormat {
+      id
+    }
+
+    ... on ReusableBlock {
+      id
+    }
+
+    ... on UserRole {
+      id
+    }
+
+    ... on Menu {
+      id
+    }
+
+    ... on MenuItem {
+      id
+    }
+
+    ... on CommentAuthor {
+      avatar {
+        default
+        extraAttr
+        forceDefault
+        foundAvatar
+        height
+        rating
+        scheme
+        size
+        url
+        width
+      }
+
+      databaseId
+      email
+      name
+      url
+    }
+  }
+
+  parentNodeDatabaseId
+  saveContent
+
+  __typename
+
+  ... on SiteReviewsFilterBlock {
+    attributes__typename_SiteReviewsFilterBlockAttributes: attributes {
+      className
+      hide
+      id
+      lock
+      reviewsId
+    }
+  }
+
+  ... on SiteReviewsFormBlock {
+    attributes__typename_SiteReviewsFormBlockAttributes: attributes {
+      assignTo
+      assignedPosts
+      assignedTerms
+      assignedUsers
+      category
+      className
+      form
+      hide
+      id
+      lock
+      user
+    }
+  }
+
+  ... on SiteReviewsReviewsBlock {
+    attributes__typename_SiteReviewsReviewsBlockAttributes: attributes {
+      assignedPosts
+      assignedTerms
+      assignedTo
+      assignedUsers
+      category
+      className
+      display
+      filters
+      form
+      hide
+      id
+      lock
+      pagination
+      postId
+      rating
+      schema
+      terms
+      type
+      user
+    }
+  }
+
+  ... on SiteReviewsSummaryBlock {
+    attributes__typename_SiteReviewsSummaryBlockAttributes: attributes {
+      assignedPosts
+      assignedTerms
+      assignedTo
+      assignedUsers
+      category
+      className
+      filters
+      hide
+      lock
+      postId
+      rating
+      reviewsId
+      schema
+      terms
+      type
+      user
+    }
+  }
+
+  ... on YoastSeoBreadcrumbsBlock {
+    attributes__typename_YoastSeoBreadcrumbsBlockAttributes: attributes {
+      className
+      lock
+    }
+  }
+
+  ... on GravityformsFormBlock {
+    attributes__typename_GravityformsFormBlockAttributes: attributes {
+      ajax
+      description
+      fieldValues
+      formId
+      formPreview
+      imgPreview
+      lock
+      tabindex
+      title
+    }
+  }
+
+  ... on YoastHowToBlock {
+    attributes__typename_YoastHowToBlockAttributesUnion: attributes {
+      __typename
+
+      ... on YoastHowToBlockAttributes {
+        additionalListCssClasses
+        className
+        days
+        defaultDurationText
+        description
+        durationText
+        hasDuration
+        hours
+        jsonDescription
+        lock
+        minutes
+        steps
+        unorderedList
+      }
+
+      ... on YoastHowToBlockDeprecatedV1Attributes {
+        additionalListCssClasses
+        className
+        days
+        defaultDurationText
+        description
+        durationText
+        hasDuration
+        hours
+        jsonDescription
+        lock
+        minutes
+        steps
+        unorderedList
+      }
+
+      ... on YoastHowToBlockDeprecatedV2Attributes {
+        additionalListCssClasses
+        className
+        days
+        defaultDurationText
+        description
+        durationText
+        hasDuration
+        hours
+        jsonDescription
+        lock
+        minutes
+        steps
+        unorderedList
+      }
+    }
+  }
+
+  ... on YoastFaqBlock {
+    attributes__typename_YoastFaqBlockAttributesUnion: attributes {
+      __typename
+
+      ... on YoastFaqBlockAttributes {
+        additionalListCssClasses
+        className
+        lock
+        questions
+      }
+
+      ... on YoastFaqBlockDeprecatedV1Attributes {
+        additionalListCssClasses
+        className
+        lock
+        questions
+      }
+    }
+  }
+
+  ... on AcfStepsBlock {
+    attributes__typename_AcfStepsBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfPartnersBlock {
+    attributes__typename_AcfPartnersBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfTestimonialsBlock {
+    attributes__typename_AcfTestimonialsBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfPlanBlock {
+    attributes__typename_AcfPlanBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfTextAccordionBlock {
+    attributes__typename_AcfTextAccordionBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfInsurersSliderBlock {
+    attributes__typename_AcfInsurersSliderBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfReviewsSignpostBlock {
+    attributes__typename_AcfReviewsSignpostBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfFormBlock {
+    attributes__typename_AcfFormBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfTextImageBlock {
+    attributes__typename_AcfTextImageBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfMapBlock {
+    attributes__typename_AcfMapBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfBannerBlock {
+    attributes__typename_AcfBannerBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfBlockquoteBlock {
+    attributes__typename_AcfBlockquoteBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfSingleColumnTextBlock {
+    attributes__typename_AcfSingleColumnTextBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfCompareWidgetBlock {
+    attributes__typename_AcfCompareWidgetBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfTwoColumnContentBlock {
+    attributes__typename_AcfTwoColumnContentBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfCtaBlock {
+    attributes__typename_AcfCtaBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfAccordionsBlock {
+    attributes__typename_AcfAccordionsBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfGenericTextBlock {
+    attributes__typename_AcfGenericTextBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfTableBlock {
+    attributes__typename_AcfTableBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on AcfTwoColumnBlock {
+    attributes__typename_AcfTwoColumnBlockAttributes: attributes {
+      align
+      className
+      data
+      id
+      lock
+      mode
+      name
+    }
+  }
+
+  ... on CoreParagraphBlock {
+    attributes__typename_CoreParagraphBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreParagraphBlockAttributes {
+        align
+        anchor
+        backgroundColor
+        className
+        content
+        direction
+        dropCap
+        fontFamily
+        fontSize
+        gradient
+        lock
+        placeholder
+        style
+        textColor
+      }
+
+      ... on CoreParagraphBlockDeprecatedV1Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        content
+        direction
+        dropCap
+        fontFamily
+        fontSize
+        gradient
+        lock
+        placeholder
+        style
+        textColor
+      }
+
+      ... on CoreParagraphBlockDeprecatedV2Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        content
+        direction
+        dropCap
+        fontFamily
+        fontSize
+        gradient
+        lock
+        placeholder
+        style
+        textColor
+      }
+
+      ... on CoreParagraphBlockDeprecatedV3Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        content
+        direction
+        dropCap
+        fontFamily
+        fontSize
+        gradient
+        lock
+        placeholder
+        style
+        textColor
+      }
+
+      ... on CoreParagraphBlockDeprecatedV4Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        content
+        direction
+        dropCap
+        fontFamily
+        fontSize
+        gradient
+        lock
+        placeholder
+        style
+        textColor
+      }
+
+      ... on CoreParagraphBlockDeprecatedV5Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        content
+        direction
+        dropCap
+        fontFamily
+        fontSize
+        gradient
+        lock
+        placeholder
+        style
+        textColor
+      }
+    }
+  }
+
+  ... on CoreImageBlock {
+    attributes__typename_CoreImageBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreImageBlockAttributes {
+        align
+        alt
+        anchor
+        borderColor
+        caption
+        className
+        height
+        href
+        id
+        linkClass
+        linkDestination
+        linkTarget
+        lock
+        rel
+        sizeSlug
+        style
+        title
+        url
+        width
+      }
+
+      ... on CoreImageBlockDeprecatedV1Attributes {
+        align
+        alt
+        anchor
+        borderColor
+        caption
+        className
+        height
+        href
+        id
+        linkClass
+        linkDestination
+        linkTarget
+        lock
+        rel
+        sizeSlug
+        style
+        title
+        url
+        width
+      }
+
+      ... on CoreImageBlockDeprecatedV2Attributes {
+        align
+        alt
+        anchor
+        borderColor
+        caption
+        className
+        height
+        href
+        id
+        linkClass
+        linkDestination
+        linkTarget
+        lock
+        rel
+        sizeSlug
+        style
+        title
+        url
+        width
+      }
+
+      ... on CoreImageBlockDeprecatedV3Attributes {
+        align
+        alt
+        anchor
+        borderColor
+        caption
+        className
+        height
+        href
+        id
+        linkClass
+        linkDestination
+        linkTarget
+        lock
+        rel
+        sizeSlug
+        style
+        title
+        url
+        width
+      }
+
+      ... on CoreImageBlockDeprecatedV4Attributes {
+        align
+        alt
+        anchor
+        borderColor
+        caption
+        className
+        height
+        href
+        id
+        linkClass
+        linkDestination
+        linkTarget
+        lock
+        rel
+        sizeSlug
+        style
+        title
+        url
+        width
+      }
+
+      ... on CoreImageBlockDeprecatedV5Attributes {
+        align
+        alt
+        anchor
+        borderColor
+        caption
+        className
+        height
+        href
+        id
+        linkClass
+        linkDestination
+        linkTarget
+        lock
+        rel
+        sizeSlug
+        style
+        title
+        url
+        width
+      }
+    }
+
+    mediaItem {
+      node {
+        __typename
+        id
+      }
+    }
+  }
+
+  ... on CoreHeadingBlock {
+    attributes__typename_CoreHeadingBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreHeadingBlockAttributes {
+        align
+        anchor
+        backgroundColor
+        className
+        content
+        fontFamily
+        fontSize
+        gradient
+        level
+        lock
+        placeholder
+        style
+        textAlign
+        textColor
+      }
+
+      ... on CoreHeadingBlockDeprecatedV1Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        content
+        fontFamily
+        fontSize
+        gradient
+        level
+        lock
+        placeholder
+        style
+        textAlign
+        textColor
+      }
+
+      ... on CoreHeadingBlockDeprecatedV2Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        content
+        fontFamily
+        fontSize
+        gradient
+        level
+        lock
+        placeholder
+        style
+        textAlign
+        textColor
+      }
+
+      ... on CoreHeadingBlockDeprecatedV3Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        content
+        fontFamily
+        fontSize
+        gradient
+        level
+        lock
+        placeholder
+        style
+        textAlign
+        textColor
+      }
+
+      ... on CoreHeadingBlockDeprecatedV4Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        content
+        fontFamily
+        fontSize
+        gradient
+        level
+        lock
+        placeholder
+        style
+        textAlign
+        textColor
+      }
+    }
+  }
+
+  ... on CoreGalleryBlock {
+    attributes__typename_CoreGalleryBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreGalleryBlockAttributes {
+        align
+        allowResize
+        anchor
+        backgroundColor
+        caption
+        className
+        columns
+        fixedHeight
+        gradient
+        ids
+        imageCrop
+
+        images__typename_CoreGalleryBlockAttributesImages: images {
+          alt
+          caption
+          fullUrl
+          id
+          link
+          url
+        }
+
+        layout
+        linkTarget
+        linkTo
+        lock
+        shortCodeTransforms
+        sizeSlug
+        style
+        textColor
+      }
+
+      ... on CoreGalleryBlockDeprecatedV1Attributes {
+        align
+        allowResize
+        anchor
+        backgroundColor
+        caption
+        className
+        columns
+        fixedHeight
+        gradient
+        ids
+        imageCrop
+
+        images__typename_CoreGalleryBlockDeprecatedV1AttributesImages: images {
+          alt
+          caption
+          fullUrl
+          id
+          link
+          url
+        }
+
+        layout
+        linkTarget
+        linkTo
+        lock
+        shortCodeTransforms
+        sizeSlug
+        style
+        textColor
+      }
+
+      ... on CoreGalleryBlockDeprecatedV2Attributes {
+        align
+        allowResize
+        anchor
+        backgroundColor
+        caption
+        className
+        columns
+        fixedHeight
+        gradient
+        ids
+        imageCrop
+
+        images__typename_CoreGalleryBlockDeprecatedV2AttributesImages: images {
+          alt
+          caption
+          fullUrl
+          id
+          link
+          url
+        }
+
+        layout
+        linkTarget
+        linkTo
+        lock
+        shortCodeTransforms
+        sizeSlug
+        style
+        textColor
+      }
+
+      ... on CoreGalleryBlockDeprecatedV3Attributes {
+        align
+        allowResize
+        anchor
+        backgroundColor
+        caption
+        className
+        columns
+        fixedHeight
+        gradient
+        ids
+        imageCrop
+
+        images__typename_CoreGalleryBlockDeprecatedV3AttributesImages: images {
+          alt
+          caption
+          fullUrl
+          id
+          link
+          url
+        }
+
+        layout
+        linkTarget
+        linkTo
+        lock
+        shortCodeTransforms
+        sizeSlug
+        style
+        textColor
+      }
+
+      ... on CoreGalleryBlockDeprecatedV4Attributes {
+        align
+        allowResize
+        anchor
+        backgroundColor
+        caption
+        className
+        columns
+        fixedHeight
+        gradient
+        ids
+        imageCrop
+
+        images__typename_CoreGalleryBlockDeprecatedV4AttributesImages: images {
+          alt
+          caption
+          fullUrl
+          id
+          link
+          url
+        }
+
+        layout
+        linkTarget
+        linkTo
+        lock
+        shortCodeTransforms
+        sizeSlug
+        style
+        textColor
+      }
+
+      ... on CoreGalleryBlockDeprecatedV5Attributes {
+        align
+        allowResize
+        anchor
+        backgroundColor
+        caption
+        className
+        columns
+        fixedHeight
+        gradient
+        ids
+        imageCrop
+
+        images__typename_CoreGalleryBlockDeprecatedV5AttributesImages: images {
+          alt
+          caption
+          fullUrl
+          id
+          link
+          url
+        }
+
+        layout
+        linkTarget
+        linkTo
+        lock
+        shortCodeTransforms
+        sizeSlug
+        style
+        textColor
+      }
+
+      ... on CoreGalleryBlockDeprecatedV6Attributes {
+        align
+        allowResize
+        anchor
+        backgroundColor
+        caption
+        className
+        columns
+        fixedHeight
+        gradient
+        ids
+        imageCrop
+
+        images__typename_CoreGalleryBlockDeprecatedV6AttributesImages: images {
+          alt
+          caption
+          fullUrl
+          id
+          link
+          url
+        }
+
+        layout
+        linkTarget
+        linkTo
+        lock
+        shortCodeTransforms
+        sizeSlug
+        style
+        textColor
+      }
+
+      ... on CoreGalleryBlockDeprecatedV7Attributes {
+        align
+        allowResize
+        anchor
+        backgroundColor
+        caption
+        className
+        columns
+        fixedHeight
+        gradient
+        ids
+        imageCrop
+
+        images {
+          alt
+          caption
+          fullUrl
+          id
+          link
+          url
+        }
+
+        layout
+        linkTarget
+        linkTo
+        lock
+        shortCodeTransforms
+        sizeSlug
+        style
+        textColor
+      }
+    }
+  }
+
+  ... on CoreListBlock {
+    attributes__typename_CoreListBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreListBlockAttributes {
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        ordered
+        placeholder
+        reversed
+        start
+        style
+        textColor
+        type
+        values
+      }
+
+      ... on CoreListBlockDeprecatedV1Attributes {
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        ordered
+        placeholder
+        reversed
+        start
+        style
+        textColor
+        type
+        values
+      }
+
+      ... on CoreListBlockDeprecatedV2Attributes {
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        ordered
+        placeholder
+        reversed
+        start
+        style
+        textColor
+        type
+        values
+      }
+    }
+  }
+
+  ... on CoreListItemBlock {
+    attributes__typename_CoreListItemBlockAttributes: attributes {
+      className
+      content
+      lock
+      placeholder
+    }
+  }
+
+  ... on CoreQuoteBlock {
+    attributes__typename_CoreQuoteBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreQuoteBlockAttributes {
+        align
+        anchor
+        backgroundColor
+        citation
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textColor
+        value
+      }
+
+      ... on CoreQuoteBlockDeprecatedV1Attributes {
+        align
+        anchor
+        backgroundColor
+        citation
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textColor
+        value
+      }
+
+      ... on CoreQuoteBlockDeprecatedV2Attributes {
+        align
+        anchor
+        backgroundColor
+        citation
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textColor
+        value
+      }
+
+      ... on CoreQuoteBlockDeprecatedV3Attributes {
+        align
+        anchor
+        backgroundColor
+        citation
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textColor
+        value
+      }
+
+      ... on CoreQuoteBlockDeprecatedV4Attributes {
+        align
+        anchor
+        backgroundColor
+        citation
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textColor
+        value
+      }
+    }
+  }
+
+  ... on CoreArchivesBlock {
+    attributes__typename_CoreArchivesBlockAttributes: attributes {
+      align
+      className
+      displayAsDropdown
+      fontFamily
+      fontSize
+      lock
+      showLabel
+      showPostCounts
+      style
+      type
+    }
+  }
+
+  ... on CoreAudioBlock {
+    attributes__typename_CoreAudioBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreAudioBlockAttributes {
+        align
+        anchor
+        autoplay
+        caption
+        className
+        id
+        lock
+        loop
+        preload
+        src
+        style
+      }
+
+      ... on CoreAudioBlockDeprecatedV1Attributes {
+        align
+        anchor
+        autoplay
+        caption
+        className
+        id
+        lock
+        loop
+        preload
+        src
+        style
+      }
+    }
+  }
+
+  ... on CoreButtonBlock {
+    attributes__typename_CoreButtonBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreButtonBlockAttributes {
+        align
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        linkTarget
+        lock
+        placeholder
+        rel
+        style
+        text
+        textColor
+        title
+        url
+        width
+      }
+
+      ... on CoreButtonBlockDeprecatedV1Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        linkTarget
+        lock
+        placeholder
+        rel
+        style
+        text
+        textColor
+        title
+        url
+        width
+      }
+
+      ... on CoreButtonBlockDeprecatedV2Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        linkTarget
+        lock
+        placeholder
+        rel
+        style
+        text
+        textColor
+        title
+        url
+        width
+      }
+
+      ... on CoreButtonBlockDeprecatedV3Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        linkTarget
+        lock
+        placeholder
+        rel
+        style
+        text
+        textColor
+        title
+        url
+        width
+      }
+
+      ... on CoreButtonBlockDeprecatedV4Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        linkTarget
+        lock
+        placeholder
+        rel
+        style
+        text
+        textColor
+        title
+        url
+        width
+      }
+
+      ... on CoreButtonBlockDeprecatedV5Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        linkTarget
+        lock
+        placeholder
+        rel
+        style
+        text
+        textColor
+        title
+        url
+        width
+      }
+
+      ... on CoreButtonBlockDeprecatedV6Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        linkTarget
+        lock
+        placeholder
+        rel
+        style
+        text
+        textColor
+        title
+        url
+        width
+      }
+
+      ... on CoreButtonBlockDeprecatedV7Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        linkTarget
+        lock
+        placeholder
+        rel
+        style
+        text
+        textColor
+        title
+        url
+        width
+      }
+
+      ... on CoreButtonBlockDeprecatedV8Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        linkTarget
+        lock
+        placeholder
+        rel
+        style
+        text
+        textColor
+        title
+        url
+        width
+      }
+
+      ... on CoreButtonBlockDeprecatedV9Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        linkTarget
+        lock
+        placeholder
+        rel
+        style
+        text
+        textColor
+        title
+        url
+        width
+      }
+
+      ... on CoreButtonBlockDeprecatedV10Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        linkTarget
+        lock
+        placeholder
+        rel
+        style
+        text
+        textColor
+        title
+        url
+        width
+      }
+
+      ... on CoreButtonBlockDeprecatedV11Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        linkTarget
+        lock
+        placeholder
+        rel
+        style
+        text
+        textColor
+        title
+        url
+        width
+      }
+    }
+  }
+
+  ... on CoreButtonsBlock {
+    attributes__typename_CoreButtonsBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreButtonsBlockAttributes {
+        align
+        anchor
+        className
+        fontFamily
+        fontSize
+        layout
+        lock
+        style
+      }
+
+      ... on CoreButtonsBlockDeprecatedV1Attributes {
+        align
+        anchor
+        className
+        fontFamily
+        fontSize
+        layout
+        lock
+        style
+      }
+
+      ... on CoreButtonsBlockDeprecatedV2Attributes {
+        align
+        anchor
+        className
+        fontFamily
+        fontSize
+        layout
+        lock
+        style
+      }
+    }
+  }
+
+  ... on CoreCalendarBlock {
+    attributes__typename_CoreCalendarBlockAttributes: attributes {
+      align
+      className
+      fontFamily
+      fontSize
+      lock
+      month
+      style
+      year
+    }
+  }
+
+  ... on CoreCategoriesBlock {
+    attributes__typename_CoreCategoriesBlockAttributes: attributes {
+      align
+      className
+      displayAsDropdown
+      fontFamily
+      fontSize
+      lock
+      showEmpty
+      showHierarchy
+      showOnlyTopLevel
+      showPostCounts
+      style
+    }
+  }
+
+  ... on CoreFreeformBlock {
+    attributes__typename_CoreFreeformBlockAttributes: attributes {
+      content
+      lock
+    }
+  }
+
+  ... on CoreCodeBlock {
+    attributes__typename_CoreCodeBlockAttributes: attributes {
+      anchor
+      backgroundColor
+      borderColor
+      className
+      content
+      fontFamily
+      fontSize
+      gradient
+      lock
+      style
+      textColor
+    }
+  }
+
+  ... on CoreColumnBlock {
+    attributes__typename_CoreColumnBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreColumnBlockAttributes {
+        allowedBlocks
+        anchor
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        layout
+        lock
+        style
+        textColor
+        verticalAlignment
+        width
+      }
+
+      ... on CoreColumnBlockDeprecatedV1Attributes {
+        allowedBlocks
+        anchor
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        layout
+        lock
+        style
+        textColor
+        verticalAlignment
+        width
+      }
+    }
+  }
+
+  ... on CoreColumnsBlock {
+    attributes__typename_CoreColumnsBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreColumnsBlockAttributes {
+        align
+        anchor
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        isStackedOnMobile
+        layout
+        lock
+        style
+        textColor
+        verticalAlignment
+      }
+
+      ... on CoreColumnsBlockDeprecatedV1Attributes {
+        align
+        anchor
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        isStackedOnMobile
+        layout
+        lock
+        style
+        textColor
+        verticalAlignment
+      }
+
+      ... on CoreColumnsBlockDeprecatedV2Attributes {
+        align
+        anchor
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        isStackedOnMobile
+        layout
+        lock
+        style
+        textColor
+        verticalAlignment
+      }
+
+      ... on CoreColumnsBlockDeprecatedV3Attributes {
+        align
+        anchor
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        isStackedOnMobile
+        layout
+        lock
+        style
+        textColor
+        verticalAlignment
+      }
+    }
+  }
+
+  ... on CoreCoverBlock {
+    attributes__typename_CoreCoverBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreCoverBlockAttributes {
+        align
+        allowedBlocks
+        alt
+        anchor
+        backgroundType
+        className
+        contentPosition
+        customGradient
+        customOverlayColor
+        dimRatio
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        hasParallax
+        id
+        isDark
+        isRepeated
+        lock
+        minHeight
+        minHeightUnit
+        overlayColor
+        style
+        url
+        useFeaturedImage
+      }
+
+      ... on CoreCoverBlockDeprecatedV1Attributes {
+        align
+        allowedBlocks
+        alt
+        anchor
+        backgroundType
+        className
+        contentPosition
+        customGradient
+        customOverlayColor
+        dimRatio
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        hasParallax
+        id
+        isDark
+        isRepeated
+        lock
+        minHeight
+        minHeightUnit
+        overlayColor
+        style
+        url
+        useFeaturedImage
+      }
+
+      ... on CoreCoverBlockDeprecatedV2Attributes {
+        align
+        allowedBlocks
+        alt
+        anchor
+        backgroundType
+        className
+        contentPosition
+        customGradient
+        customOverlayColor
+        dimRatio
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        hasParallax
+        id
+        isDark
+        isRepeated
+        lock
+        minHeight
+        minHeightUnit
+        overlayColor
+        style
+        url
+        useFeaturedImage
+      }
+
+      ... on CoreCoverBlockDeprecatedV3Attributes {
+        align
+        allowedBlocks
+        alt
+        anchor
+        backgroundType
+        className
+        contentPosition
+        customGradient
+        customOverlayColor
+        dimRatio
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        hasParallax
+        id
+        isDark
+        isRepeated
+        lock
+        minHeight
+        minHeightUnit
+        overlayColor
+        style
+        url
+        useFeaturedImage
+      }
+
+      ... on CoreCoverBlockDeprecatedV4Attributes {
+        align
+        allowedBlocks
+        alt
+        anchor
+        backgroundType
+        className
+        contentPosition
+        customGradient
+        customOverlayColor
+        dimRatio
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        hasParallax
+        id
+        isDark
+        isRepeated
+        lock
+        minHeight
+        minHeightUnit
+        overlayColor
+        style
+        url
+        useFeaturedImage
+      }
+
+      ... on CoreCoverBlockDeprecatedV5Attributes {
+        align
+        allowedBlocks
+        alt
+        anchor
+        backgroundType
+        className
+        contentPosition
+        customGradient
+        customOverlayColor
+        dimRatio
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        hasParallax
+        id
+        isDark
+        isRepeated
+        lock
+        minHeight
+        minHeightUnit
+        overlayColor
+        style
+        url
+        useFeaturedImage
+      }
+
+      ... on CoreCoverBlockDeprecatedV6Attributes {
+        align
+        allowedBlocks
+        alt
+        anchor
+        backgroundType
+        className
+        contentPosition
+        customGradient
+        customOverlayColor
+        dimRatio
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        hasParallax
+        id
+        isDark
+        isRepeated
+        lock
+        minHeight
+        minHeightUnit
+        overlayColor
+        style
+        url
+        useFeaturedImage
+      }
+
+      ... on CoreCoverBlockDeprecatedV7Attributes {
+        align
+        allowedBlocks
+        alt
+        anchor
+        backgroundType
+        className
+        contentPosition
+        customGradient
+        customOverlayColor
+        dimRatio
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        hasParallax
+        id
+        isDark
+        isRepeated
+        lock
+        minHeight
+        minHeightUnit
+        overlayColor
+        style
+        url
+        useFeaturedImage
+      }
+
+      ... on CoreCoverBlockDeprecatedV8Attributes {
+        align
+        allowedBlocks
+        alt
+        anchor
+        backgroundType
+        className
+        contentPosition
+        customGradient
+        customOverlayColor
+        dimRatio
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        hasParallax
+        id
+        isDark
+        isRepeated
+        lock
+        minHeight
+        minHeightUnit
+        overlayColor
+        style
+        url
+        useFeaturedImage
+      }
+
+      ... on CoreCoverBlockDeprecatedV9Attributes {
+        align
+        allowedBlocks
+        alt
+        anchor
+        backgroundType
+        className
+        contentPosition
+        customGradient
+        customOverlayColor
+        dimRatio
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        hasParallax
+        id
+        isDark
+        isRepeated
+        lock
+        minHeight
+        minHeightUnit
+        overlayColor
+        style
+        url
+        useFeaturedImage
+      }
+
+      ... on CoreCoverBlockDeprecatedV10Attributes {
+        align
+        allowedBlocks
+        alt
+        anchor
+        backgroundType
+        className
+        contentPosition
+        customGradient
+        customOverlayColor
+        dimRatio
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        hasParallax
+        id
+        isDark
+        isRepeated
+        lock
+        minHeight
+        minHeightUnit
+        overlayColor
+        style
+        url
+        useFeaturedImage
+      }
+    }
+  }
+
+  ... on CoreEmbedBlock {
+    attributes__typename_CoreEmbedBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreEmbedBlockAttributes {
+        align
+        allowResponsive
+        caption
+        className
+        lock
+        previewable
+        providerNameSlug
+        responsive
+        type
+        url
+      }
+
+      ... on CoreEmbedBlockDeprecatedV1Attributes {
+        align
+        allowResponsive
+        caption
+        className
+        lock
+        previewable
+        providerNameSlug
+        responsive
+        type
+        url
+      }
+
+      ... on CoreEmbedBlockDeprecatedV2Attributes {
+        align
+        allowResponsive
+        caption
+        className
+        lock
+        previewable
+        providerNameSlug
+        responsive
+        type
+        url
+      }
+    }
+  }
+
+  ... on CoreFileBlock {
+    attributes__typename_CoreFileBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreFileBlockAttributes {
+        align
+        anchor
+        className
+        displayPreview
+        downloadButtonText
+        fileId
+        fileName
+        href
+        id
+        lock
+        previewHeight
+        showDownloadButton
+        textLinkHref
+        textLinkTarget
+      }
+
+      ... on CoreFileBlockDeprecatedV1Attributes {
+        align
+        anchor
+        className
+        displayPreview
+        downloadButtonText
+        fileId
+        fileName
+        href
+        id
+        lock
+        previewHeight
+        showDownloadButton
+        textLinkHref
+        textLinkTarget
+      }
+
+      ... on CoreFileBlockDeprecatedV2Attributes {
+        align
+        anchor
+        className
+        displayPreview
+        downloadButtonText
+        fileId
+        fileName
+        href
+        id
+        lock
+        previewHeight
+        showDownloadButton
+        textLinkHref
+        textLinkTarget
+      }
+
+      ... on CoreFileBlockDeprecatedV3Attributes {
+        align
+        anchor
+        className
+        displayPreview
+        downloadButtonText
+        fileId
+        fileName
+        href
+        id
+        lock
+        previewHeight
+        showDownloadButton
+        textLinkHref
+        textLinkTarget
+      }
+    }
+  }
+
+  ... on CoreGroupBlock {
+    attributes__typename_CoreGroupBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreGroupBlockAttributes {
+        align
+        anchor
+        ariaLabel
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        layout
+        lock
+        settings
+        style
+        tagName
+        textColor
+      }
+
+      ... on CoreGroupBlockDeprecatedV1Attributes {
+        align
+        anchor
+        ariaLabel
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        layout
+        lock
+        settings
+        style
+        tagName
+        textColor
+      }
+
+      ... on CoreGroupBlockDeprecatedV2Attributes {
+        align
+        anchor
+        ariaLabel
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        layout
+        lock
+        settings
+        style
+        tagName
+        textColor
+      }
+
+      ... on CoreGroupBlockDeprecatedV3Attributes {
+        align
+        anchor
+        ariaLabel
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        layout
+        lock
+        settings
+        style
+        tagName
+        textColor
+      }
+
+      ... on CoreGroupBlockDeprecatedV4Attributes {
+        align
+        anchor
+        ariaLabel
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        layout
+        lock
+        settings
+        style
+        tagName
+        textColor
+      }
+
+      ... on CoreGroupBlockDeprecatedV5Attributes {
+        align
+        anchor
+        ariaLabel
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        layout
+        lock
+        settings
+        style
+        tagName
+        textColor
+      }
+    }
+  }
+
+  ... on CoreHtmlBlock {
+    attributes__typename_CoreHtmlBlockAttributes: attributes {
+      content
+      lock
+    }
+  }
+
+  ... on CoreLatestCommentsBlock {
+    attributes__typename_CoreLatestCommentsBlockAttributes: attributes {
+      align
+      className
+      commentsToShow
+      displayAvatar
+      displayDate
+      displayExcerpt
+      lock
+    }
+  }
+
+  ... on CoreLatestPostsBlock {
+    attributes__typename_CoreLatestPostsBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreLatestPostsBlockAttributes {
+        addLinkToFeaturedImage
+        align
+        categories
+        className
+        columns
+        displayAuthor
+        displayFeaturedImage
+        displayPostContent
+        displayPostContentRadio
+        displayPostDate
+        excerptLength
+        featuredImageAlign
+        featuredImageSizeHeight
+        featuredImageSizeSlug
+        featuredImageSizeWidth
+        fontFamily
+        fontSize
+        lock
+        order
+        orderBy
+        postLayout
+        postsToShow
+        selectedAuthor
+        style
+      }
+
+      ... on CoreLatestPostsBlockDeprecatedV1Attributes {
+        addLinkToFeaturedImage
+        align
+        categories
+        className
+        columns
+        displayAuthor
+        displayFeaturedImage
+        displayPostContent
+        displayPostContentRadio
+        displayPostDate
+        excerptLength
+        featuredImageAlign
+        featuredImageSizeHeight
+        featuredImageSizeSlug
+        featuredImageSizeWidth
+        fontFamily
+        fontSize
+        lock
+        order
+        orderBy
+        postLayout
+        postsToShow
+        selectedAuthor
+        style
+      }
+    }
+  }
+
+  ... on CoreMediaTextBlock {
+    attributes__typename_CoreMediaTextBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreMediaTextBlockAttributes {
+        align
+        anchor
+        backgroundColor
+        className
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        href
+        imageFill
+        isStackedOnMobile
+        linkClass
+        linkDestination
+        linkTarget
+        lock
+        mediaAlt
+        mediaId
+        mediaLink
+        mediaPosition
+        mediaSizeSlug
+        mediaType
+        mediaUrl
+        mediaWidth
+        rel
+        style
+        textColor
+        verticalAlignment
+      }
+
+      ... on CoreMediaTextBlockDeprecatedV1Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        href
+        imageFill
+        isStackedOnMobile
+        linkClass
+        linkDestination
+        linkTarget
+        lock
+        mediaAlt
+        mediaId
+        mediaLink
+        mediaPosition
+        mediaSizeSlug
+        mediaType
+        mediaUrl
+        mediaWidth
+        rel
+        style
+        textColor
+        verticalAlignment
+      }
+
+      ... on CoreMediaTextBlockDeprecatedV2Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        href
+        imageFill
+        isStackedOnMobile
+        linkClass
+        linkDestination
+        linkTarget
+        lock
+        mediaAlt
+        mediaId
+        mediaLink
+        mediaPosition
+        mediaSizeSlug
+        mediaType
+        mediaUrl
+        mediaWidth
+        rel
+        style
+        textColor
+        verticalAlignment
+      }
+
+      ... on CoreMediaTextBlockDeprecatedV3Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        href
+        imageFill
+        isStackedOnMobile
+        linkClass
+        linkDestination
+        linkTarget
+        lock
+        mediaAlt
+        mediaId
+        mediaLink
+        mediaPosition
+        mediaSizeSlug
+        mediaType
+        mediaUrl
+        mediaWidth
+        rel
+        style
+        textColor
+        verticalAlignment
+      }
+
+      ... on CoreMediaTextBlockDeprecatedV4Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        href
+        imageFill
+        isStackedOnMobile
+        linkClass
+        linkDestination
+        linkTarget
+        lock
+        mediaAlt
+        mediaId
+        mediaLink
+        mediaPosition
+        mediaSizeSlug
+        mediaType
+        mediaUrl
+        mediaWidth
+        rel
+        style
+        textColor
+        verticalAlignment
+      }
+
+      ... on CoreMediaTextBlockDeprecatedV5Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        focalPoint
+        fontFamily
+        fontSize
+        gradient
+        href
+        imageFill
+        isStackedOnMobile
+        linkClass
+        linkDestination
+        linkTarget
+        lock
+        mediaAlt
+        mediaId
+        mediaLink
+        mediaPosition
+        mediaSizeSlug
+        mediaType
+        mediaUrl
+        mediaWidth
+        rel
+        style
+        textColor
+        verticalAlignment
+      }
+    }
+  }
+
+  ... on CoreMissingBlock {
+    attributes__typename_CoreMissingBlockAttributes: attributes {
+      lock
+      originalContent
+      originalName
+      originalUndelimitedContent
+    }
+  }
+
+  ... on CoreMoreBlock {
+    attributes__typename_CoreMoreBlockAttributes: attributes {
+      customText
+      lock
+      noTeaser
+    }
+  }
+
+  ... on CoreNextpageBlock {
+    attributes__typename_CoreNextpageBlockAttributes: attributes {
+      lock
+    }
+  }
+
+  ... on CorePageListBlock {
+    attributes__typename_CorePageListBlockAttributes: attributes {
+      className
+      lock
+    }
+  }
+
+  ... on CorePatternBlock {
+    attributes__typename_CorePatternBlockAttributes: attributes {
+      className
+      lock
+      slug
+    }
+  }
+
+  ... on CorePreformattedBlock {
+    attributes__typename_CorePreformattedBlockAttributes: attributes {
+      anchor
+      backgroundColor
+      className
+      content
+      fontFamily
+      fontSize
+      gradient
+      lock
+      style
+      textColor
+    }
+  }
+
+  ... on CorePullquoteBlock {
+    attributes__typename_CorePullquoteBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CorePullquoteBlockAttributes {
+        align
+        anchor
+        backgroundColor
+        borderColor
+        citation
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textAlign
+        textColor
+        value
+      }
+
+      ... on CorePullquoteBlockDeprecatedV1Attributes {
+        align
+        anchor
+        backgroundColor
+        borderColor
+        citation
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textAlign
+        textColor
+        value
+      }
+
+      ... on CorePullquoteBlockDeprecatedV2Attributes {
+        align
+        anchor
+        backgroundColor
+        borderColor
+        citation
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textAlign
+        textColor
+        value
+      }
+
+      ... on CorePullquoteBlockDeprecatedV3Attributes {
+        align
+        anchor
+        backgroundColor
+        borderColor
+        citation
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textAlign
+        textColor
+        value
+      }
+
+      ... on CorePullquoteBlockDeprecatedV4Attributes {
+        align
+        anchor
+        backgroundColor
+        borderColor
+        citation
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textAlign
+        textColor
+        value
+      }
+
+      ... on CorePullquoteBlockDeprecatedV5Attributes {
+        align
+        anchor
+        backgroundColor
+        borderColor
+        citation
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textAlign
+        textColor
+        value
+      }
+
+      ... on CorePullquoteBlockDeprecatedV6Attributes {
+        align
+        anchor
+        backgroundColor
+        borderColor
+        citation
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textAlign
+        textColor
+        value
+      }
+    }
+  }
+
+  ... on CoreBlock {
+    attributes__typename_CoreBlockAttributes: attributes {
+      lock
+      ref
+    }
+
+    reusableBlock {
+      id
+
+      __typename
+
+      ... on MediaItem {
+        id
+      }
+
+      ... on ContentType {
+        id
+      }
+
+      ... on Taxonomy {
+        id
+      }
+
+      ... on User {
+        id
+      }
+
+      ... on BlockEditorPreview {
+        id
+      }
+
+      ... on Comment {
+        id
+      }
+
+      ... on Page {
+        id
+      }
+
+      ... on Tag {
+        id
+      }
+
+      ... on Post {
+        id
+      }
+
+      ... on Category {
+        id
+      }
+
+      ... on PostFormat {
+        id
+      }
+
+      ... on ReusableBlock {
+        id
+      }
+
+      ... on UserRole {
+        id
+      }
+
+      ... on Menu {
+        id
+      }
+
+      ... on MenuItem {
+        id
+      }
+
+      ... on CommentAuthor {
+        avatar {
+          default
+          extraAttr
+          forceDefault
+          foundAvatar
+          height
+          rating
+          scheme
+          size
+          url
+          width
+        }
+
+        databaseId
+        email
+        name
+        url
+      }
+    }
+  }
+
+  ... on CoreRssBlock {
+    attributes__typename_CoreRssBlockAttributes: attributes {
+      align
+      blockLayout
+      className
+      columns
+      displayAuthor
+      displayDate
+      displayExcerpt
+      excerptLength
+      feedURL
+      itemsToShow
+      lock
+    }
+  }
+
+  ... on CoreSearchBlock {
+    attributes__typename_CoreSearchBlockAttributes: attributes {
+      align
+      backgroundColor
+      borderColor
+      buttonPosition
+      buttonText
+      buttonUseIcon
+      className
+      fontFamily
+      fontSize
+      gradient
+      label
+      lock
+      placeholder
+      query
+      showLabel
+      style
+      textColor
+      width
+      widthUnit
+    }
+  }
+
+  ... on CoreSeparatorBlock {
+    attributes__typename_CoreSeparatorBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreSeparatorBlockAttributes {
+        align
+        anchor
+        backgroundColor
+        className
+        gradient
+        lock
+        opacity
+        style
+        textColor
+      }
+
+      ... on CoreSeparatorBlockDeprecatedV1Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        gradient
+        lock
+        opacity
+        style
+        textColor
+      }
+    }
+  }
+
+  ... on CoreShortcodeBlock {
+    attributes__typename_CoreShortcodeBlockAttributes: attributes {
+      lock
+      text
+    }
+  }
+
+  ... on CoreSocialLinkBlock {
+    attributes__typename_CoreSocialLinkBlockAttributes: attributes {
+      className
+      label
+      lock
+      service
+      url
+    }
+  }
+
+  ... on CoreSocialLinksBlock {
+    attributes__typename_CoreSocialLinksBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreSocialLinksBlockAttributes {
+        align
+        anchor
+        backgroundColor
+        className
+        customIconBackgroundColor
+        customIconColor
+        gradient
+        iconBackgroundColor
+        iconBackgroundColorValue
+        iconColor
+        iconColorValue
+        layout
+        lock
+        openInNewTab
+        showLabels
+        size
+        style
+        textColor
+      }
+
+      ... on CoreSocialLinksBlockDeprecatedV1Attributes {
+        align
+        anchor
+        backgroundColor
+        className
+        customIconBackgroundColor
+        customIconColor
+        gradient
+        iconBackgroundColor
+        iconBackgroundColorValue
+        iconColor
+        iconColorValue
+        layout
+        lock
+        openInNewTab
+        showLabels
+        size
+        style
+        textColor
+      }
+    }
+  }
+
+  ... on CoreSpacerBlock {
+    attributes__typename_CoreSpacerBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreSpacerBlockAttributes {
+        anchor
+        className
+        height
+        lock
+        style
+        width
+      }
+
+      ... on CoreSpacerBlockDeprecatedV1Attributes {
+        anchor
+        className
+        height
+        lock
+        style
+        width
+      }
+    }
+  }
+
+  ... on CoreTableBlock {
+    attributes__typename_CoreTableBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreTableBlockAttributes {
+        align
+        anchor
+        backgroundColor
+
+        body__typename_CoreTableBlockAttributesBody: body {
+          cells {
+            align
+            content
+            scope
+            tag
+          }
+        }
+
+        borderColor
+        caption
+        className
+        fontFamily
+        fontSize
+
+        foot__typename_CoreTableBlockAttributesFoot: foot {
+          cells {
+            align
+            content
+            scope
+            tag
+          }
+        }
+
+        gradient
+        hasFixedLayout
+
+        head__typename_CoreTableBlockAttributesHead: head {
+          cells {
+            align
+            content
+            scope
+            tag
+          }
+        }
+
+        lock
+        style
+        textColor
+      }
+
+      ... on CoreTableBlockDeprecatedV1Attributes {
+        align
+        anchor
+        backgroundColor
+
+        body__typename_CoreTableBlockDeprecatedV1AttributesBody: body {
+          cells {
+            align
+            content
+            scope
+            tag
+          }
+        }
+
+        borderColor
+        caption
+        className
+        fontFamily
+        fontSize
+
+        foot__typename_CoreTableBlockDeprecatedV1AttributesFoot: foot {
+          cells {
+            align
+            content
+            scope
+            tag
+          }
+        }
+
+        gradient
+        hasFixedLayout
+
+        head__typename_CoreTableBlockDeprecatedV1AttributesHead: head {
+          cells {
+            align
+            content
+            scope
+            tag
+          }
+        }
+
+        lock
+        style
+        textColor
+      }
+
+      ... on CoreTableBlockDeprecatedV2Attributes {
+        align
+        anchor
+        backgroundColor
+
+        body__typename_CoreTableBlockDeprecatedV2AttributesBody: body {
+          cells {
+            align
+            content
+            scope
+            tag
+          }
+        }
+
+        borderColor
+        caption
+        className
+        fontFamily
+        fontSize
+
+        foot__typename_CoreTableBlockDeprecatedV2AttributesFoot: foot {
+          cells {
+            align
+            content
+            scope
+            tag
+          }
+        }
+
+        gradient
+        hasFixedLayout
+
+        head__typename_CoreTableBlockDeprecatedV2AttributesHead: head {
+          cells {
+            align
+            content
+            scope
+            tag
+          }
+        }
+
+        lock
+        style
+        textColor
+      }
+
+      ... on CoreTableBlockDeprecatedV3Attributes {
+        align
+        anchor
+        backgroundColor
+
+        body {
+          cells {
+            align
+            content
+            scope
+            tag
+          }
+        }
+
+        borderColor
+        caption
+        className
+        fontFamily
+        fontSize
+
+        foot {
+          cells {
+            align
+            content
+            scope
+            tag
+          }
+        }
+
+        gradient
+        hasFixedLayout
+
+        head {
+          cells {
+            align
+            content
+            scope
+            tag
+          }
+        }
+
+        lock
+        style
+        textColor
+      }
+    }
+  }
+
+  ... on CoreTagCloudBlock {
+    attributes__typename_CoreTagCloudBlockAttributes: attributes {
+      align
+      className
+      largestFontSize
+      lock
+      numberOfTags
+      showTagCounts
+      smallestFontSize
+      style
+      taxonomy
+    }
+  }
+
+  ... on CoreTextColumnsBlock {
+    attributes__typename_CoreTextColumnsBlockAttributes: attributes {
+      className
+      columns
+
+      content {
+        wpChildren: children
+      }
+
+      lock
+      width
+    }
+  }
+
+  ... on CoreVerseBlock {
+    attributes__typename_CoreVerseBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreVerseBlockAttributes {
+        anchor
+        backgroundColor
+        className
+        content
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textAlign
+        textColor
+      }
+
+      ... on CoreVerseBlockDeprecatedV1Attributes {
+        anchor
+        backgroundColor
+        className
+        content
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textAlign
+        textColor
+      }
+
+      ... on CoreVerseBlockDeprecatedV2Attributes {
+        anchor
+        backgroundColor
+        className
+        content
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textAlign
+        textColor
+      }
+    }
+  }
+
+  ... on CoreVideoBlock {
+    attributes__typename_CoreVideoBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreVideoBlockAttributes {
+        align
+        anchor
+        autoplay
+        caption
+        className
+        controls
+        id
+        lock
+        loop
+        muted
+        playsInline
+        poster
+        preload
+        src
+        style
+        tracks
+      }
+
+      ... on CoreVideoBlockDeprecatedV1Attributes {
+        align
+        anchor
+        autoplay
+        caption
+        className
+        controls
+        id
+        lock
+        loop
+        muted
+        playsInline
+        poster
+        preload
+        src
+        style
+        tracks
+      }
+    }
+  }
+
+  ... on CoreNavigationBlock {
+    attributes__typename_CoreNavigationBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreNavigationBlockAttributes {
+        align
+        backgroundColor
+        className
+        customBackgroundColor
+        customOverlayBackgroundColor
+        customOverlayTextColor
+        customTextColor
+        fontFamily
+        fontSize
+        hasIcon
+        icon
+        layout
+        lock
+        maxNestingLevel
+        openSubmenusOnClick
+        overlayBackgroundColor
+        overlayMenu
+        overlayTextColor
+        ref
+        rgbBackgroundColor
+        rgbTextColor
+        showSubmenuIcon
+        style
+        textColor
+        unstableLocation
+      }
+
+      ... on CoreNavigationBlockDeprecatedV1Attributes {
+        align
+        backgroundColor
+        className
+        customBackgroundColor
+        customOverlayBackgroundColor
+        customOverlayTextColor
+        customTextColor
+        fontFamily
+        fontSize
+        hasIcon
+        icon
+        layout
+        lock
+        maxNestingLevel
+        openSubmenusOnClick
+        overlayBackgroundColor
+        overlayMenu
+        overlayTextColor
+        ref
+        rgbBackgroundColor
+        rgbTextColor
+        showSubmenuIcon
+        style
+        textColor
+        unstableLocation
+      }
+
+      ... on CoreNavigationBlockDeprecatedV2Attributes {
+        align
+        backgroundColor
+        className
+        customBackgroundColor
+        customOverlayBackgroundColor
+        customOverlayTextColor
+        customTextColor
+        fontFamily
+        fontSize
+        hasIcon
+        icon
+        layout
+        lock
+        maxNestingLevel
+        openSubmenusOnClick
+        overlayBackgroundColor
+        overlayMenu
+        overlayTextColor
+        ref
+        rgbBackgroundColor
+        rgbTextColor
+        showSubmenuIcon
+        style
+        textColor
+        unstableLocation
+      }
+
+      ... on CoreNavigationBlockDeprecatedV3Attributes {
+        align
+        backgroundColor
+        className
+        customBackgroundColor
+        customOverlayBackgroundColor
+        customOverlayTextColor
+        customTextColor
+        fontFamily
+        fontSize
+        hasIcon
+        icon
+        layout
+        lock
+        maxNestingLevel
+        openSubmenusOnClick
+        overlayBackgroundColor
+        overlayMenu
+        overlayTextColor
+        ref
+        rgbBackgroundColor
+        rgbTextColor
+        showSubmenuIcon
+        style
+        textColor
+        unstableLocation
+      }
+
+      ... on CoreNavigationBlockDeprecatedV4Attributes {
+        align
+        backgroundColor
+        className
+        customBackgroundColor
+        customOverlayBackgroundColor
+        customOverlayTextColor
+        customTextColor
+        fontFamily
+        fontSize
+        hasIcon
+        icon
+        layout
+        lock
+        maxNestingLevel
+        openSubmenusOnClick
+        overlayBackgroundColor
+        overlayMenu
+        overlayTextColor
+        ref
+        rgbBackgroundColor
+        rgbTextColor
+        showSubmenuIcon
+        style
+        textColor
+        unstableLocation
+      }
+
+      ... on CoreNavigationBlockDeprecatedV5Attributes {
+        align
+        backgroundColor
+        className
+        customBackgroundColor
+        customOverlayBackgroundColor
+        customOverlayTextColor
+        customTextColor
+        fontFamily
+        fontSize
+        hasIcon
+        icon
+        layout
+        lock
+        maxNestingLevel
+        openSubmenusOnClick
+        overlayBackgroundColor
+        overlayMenu
+        overlayTextColor
+        ref
+        rgbBackgroundColor
+        rgbTextColor
+        showSubmenuIcon
+        style
+        textColor
+        unstableLocation
+      }
+
+      ... on CoreNavigationBlockDeprecatedV6Attributes {
+        align
+        backgroundColor
+        className
+        customBackgroundColor
+        customOverlayBackgroundColor
+        customOverlayTextColor
+        customTextColor
+        fontFamily
+        fontSize
+        hasIcon
+        icon
+        layout
+        lock
+        maxNestingLevel
+        openSubmenusOnClick
+        overlayBackgroundColor
+        overlayMenu
+        overlayTextColor
+        ref
+        rgbBackgroundColor
+        rgbTextColor
+        showSubmenuIcon
+        style
+        textColor
+        unstableLocation
+      }
+    }
+  }
+
+  ... on CoreNavigationLinkBlock {
+    attributes__typename_CoreNavigationLinkBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreNavigationLinkBlockAttributes {
+        className
+        description
+        fontFamily
+        fontSize
+        id
+        isTopLevelLink
+        kind
+        label
+        lock
+        opensInNewTab
+        rel
+        style
+        title
+        type
+        url
+      }
+
+      ... on CoreNavigationLinkBlockDeprecatedV1Attributes {
+        className
+        description
+        fontFamily
+        fontSize
+        id
+        isTopLevelLink
+        kind
+        label
+        lock
+        opensInNewTab
+        rel
+        style
+        title
+        type
+        url
+      }
+    }
+  }
+
+  ... on CoreNavigationSubmenuBlock {
+    attributes__typename_CoreNavigationSubmenuBlockAttributes: attributes {
+      className
+      description
+      id
+      isTopLevelItem
+      kind
+      label
+      lock
+      opensInNewTab
+      rel
+      title
+      type
+      url
+    }
+  }
+
+  ... on CoreSiteLogoBlock {
+    attributes__typename_CoreSiteLogoBlockAttributes: attributes {
+      align
+      className
+      isLink
+      linkTarget
+      lock
+      shouldSyncIcon
+      style
+      width
+    }
+  }
+
+  ... on CoreSiteTitleBlock {
+    attributes__typename_CoreSiteTitleBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreSiteTitleBlockAttributes {
+        align
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        isLink
+        level
+        linkTarget
+        lock
+        style
+        textAlign
+        textColor
+      }
+
+      ... on CoreSiteTitleBlockDeprecatedV1Attributes {
+        align
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        isLink
+        level
+        linkTarget
+        lock
+        style
+        textAlign
+        textColor
+      }
+    }
+  }
+
+  ... on CoreSiteTaglineBlock {
+    attributes__typename_CoreSiteTaglineBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreSiteTaglineBlockAttributes {
+        align
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textAlign
+        textColor
+      }
+
+      ... on CoreSiteTaglineBlockDeprecatedV1Attributes {
+        align
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        lock
+        style
+        textAlign
+        textColor
+      }
+    }
+  }
+
+  ... on CoreQueryBlock {
+    attributes__typename_CoreQueryBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreQueryBlockAttributes {
+        align
+        backgroundColor
+        className
+        displayLayout
+        gradient
+        layout
+        lock
+        namespace
+        query
+        queryId
+        style
+        tagName
+        textColor
+      }
+
+      ... on CoreQueryBlockDeprecatedV1Attributes {
+        align
+        backgroundColor
+        className
+        displayLayout
+        gradient
+        layout
+        lock
+        namespace
+        query
+        queryId
+        style
+        tagName
+        textColor
+      }
+
+      ... on CoreQueryBlockDeprecatedV2Attributes {
+        align
+        backgroundColor
+        className
+        displayLayout
+        gradient
+        layout
+        lock
+        namespace
+        query
+        queryId
+        style
+        tagName
+        textColor
+      }
+    }
+  }
+
+  ... on CoreTemplatePartBlock {
+    attributes__typename_CoreTemplatePartBlockAttributes: attributes {
+      align
+      area
+      className
+      lock
+      slug
+      tagName
+      theme
+    }
+  }
+
+  ... on CoreAvatarBlock {
+    attributes__typename_CoreAvatarBlockAttributes: attributes {
+      align
+      borderColor
+      className
+      isLink
+      linkTarget
+      lock
+      size
+      style
+      userId
+    }
+  }
+
+  ... on CorePostTitleBlock {
+    attributes__typename_CorePostTitleBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CorePostTitleBlockAttributes {
+        align
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        isLink
+        level
+        linkTarget
+        lock
+        rel
+        style
+        textAlign
+        textColor
+      }
+
+      ... on CorePostTitleBlockDeprecatedV1Attributes {
+        align
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        isLink
+        level
+        linkTarget
+        lock
+        rel
+        style
+        textAlign
+        textColor
+      }
+    }
+  }
+
+  ... on CorePostExcerptBlock {
+    attributes__typename_CorePostExcerptBlockAttributes: attributes {
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      lock
+      moreText
+      showMoreOnNewLine
+      style
+      textAlign
+      textColor
+    }
+  }
+
+  ... on CorePostFeaturedImageBlock {
+    attributes__typename_CorePostFeaturedImageBlockAttributes: attributes {
+      align
+      borderColor
+      className
+      customGradient
+      customOverlayColor
+      dimRatio
+      gradient
+      height
+      isLink
+      linkTarget
+      lock
+      overlayColor
+      rel
+      scale
+      sizeSlug
+      style
+      width
+    }
+  }
+
+  ... on CorePostContentBlock {
+    attributes__typename_CorePostContentBlockAttributes: attributes {
+      align
+      className
+      fontFamily
+      fontSize
+      layout
+      lock
+      style
+    }
+  }
+
+  ... on CorePostAuthorBlock {
+    attributes__typename_CorePostAuthorBlockAttributes: attributes {
+      avatarSize
+      backgroundColor
+      byline
+      className
+      fontFamily
+      fontSize
+      gradient
+      lock
+      showAvatar
+      showBio
+      style
+      textAlign
+      textColor
+    }
+  }
+
+  ... on CorePostDateBlock {
+    attributes__typename_CorePostDateBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CorePostDateBlockAttributes {
+        backgroundColor
+        className
+        displayType
+        fontFamily
+        fontSize
+        format
+        gradient
+        isLink
+        lock
+        style
+        textAlign
+        textColor
+      }
+
+      ... on CorePostDateBlockDeprecatedV1Attributes {
+        backgroundColor
+        className
+        displayType
+        fontFamily
+        fontSize
+        format
+        gradient
+        isLink
+        lock
+        style
+        textAlign
+        textColor
+      }
+    }
+  }
+
+  ... on CorePostTermsBlock {
+    attributes__typename_CorePostTermsBlockAttributes: attributes {
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      lock
+      prefix
+      separator
+      style
+      suffix
+      term
+      textAlign
+      textColor
+    }
+  }
+
+  ... on CorePostNavigationLinkBlock {
+    attributes__typename_CorePostNavigationLinkBlockAttributes: attributes {
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      label
+      linkLabel
+      lock
+      showTitle
+      style
+      textAlign
+      textColor
+      type
+    }
+  }
+
+  ... on CorePostTemplateBlock {
+    attributes__typename_CorePostTemplateBlockAttributes: attributes {
+      align
+      className
+      fontFamily
+      fontSize
+      layout
+      lock
+      style
+    }
+  }
+
+  ... on CoreQueryPaginationBlock {
+    attributes__typename_CoreQueryPaginationBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreQueryPaginationBlockAttributes {
+        align
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        layout
+        lock
+        paginationArrow
+        style
+        textColor
+      }
+
+      ... on CoreQueryPaginationBlockDeprecatedV1Attributes {
+        align
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        layout
+        lock
+        paginationArrow
+        style
+        textColor
+      }
+    }
+  }
+
+  ... on CoreQueryPaginationNextBlock {
+    attributes__typename_CoreQueryPaginationNextBlockAttributes: attributes {
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      label
+      lock
+      style
+      textColor
+    }
+  }
+
+  ... on CoreQueryPaginationNumbersBlock {
+    attributes__typename_CoreQueryPaginationNumbersBlockAttributes: attributes {
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      lock
+      style
+      textColor
+    }
+  }
+
+  ... on CoreQueryPaginationPreviousBlock {
+    attributes__typename_CoreQueryPaginationPreviousBlockAttributes: attributes {
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      label
+      lock
+      style
+      textColor
+    }
+  }
+
+  ... on CoreQueryNoResultsBlock {
+    attributes__typename_CoreQueryNoResultsBlockAttributes: attributes {
+      align
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      lock
+      style
+      textColor
+    }
+  }
+
+  ... on CoreReadMoreBlock {
+    attributes__typename_CoreReadMoreBlockAttributes: attributes {
+      backgroundColor
+      borderColor
+      className
+      content
+      fontFamily
+      fontSize
+      gradient
+      linkTarget
+      lock
+      style
+      textColor
+    }
+  }
+
+  ... on CoreCommentsBlock {
+    attributes__typename_CoreCommentsBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreCommentsBlockAttributes {
+        align
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        legacy
+        lock
+        style
+        tagName
+        textColor
+      }
+
+      ... on CoreCommentsBlockDeprecatedV1Attributes {
+        align
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        legacy
+        lock
+        style
+        tagName
+        textColor
+      }
+    }
+  }
+
+  ... on CoreCommentAuthorNameBlock {
+    attributes__typename_CoreCommentAuthorNameBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreCommentAuthorNameBlockAttributes {
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        isLink
+        linkTarget
+        lock
+        style
+        textAlign
+        textColor
+      }
+
+      ... on CoreCommentAuthorNameBlockDeprecatedV1Attributes {
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        isLink
+        linkTarget
+        lock
+        style
+        textAlign
+        textColor
+      }
+    }
+  }
+
+  ... on CoreCommentContentBlock {
+    attributes__typename_CoreCommentContentBlockAttributes: attributes {
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      lock
+      style
+      textAlign
+      textColor
+    }
+  }
+
+  ... on CoreCommentDateBlock {
+    attributes__typename_CoreCommentDateBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreCommentDateBlockAttributes {
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        format
+        gradient
+        isLink
+        lock
+        style
+        textColor
+      }
+
+      ... on CoreCommentDateBlockDeprecatedV1Attributes {
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        format
+        gradient
+        isLink
+        lock
+        style
+        textColor
+      }
+    }
+  }
+
+  ... on CoreCommentEditLinkBlock {
+    attributes__typename_CoreCommentEditLinkBlockAttributes: attributes {
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      linkTarget
+      lock
+      style
+      textAlign
+      textColor
+    }
+  }
+
+  ... on CoreCommentReplyLinkBlock {
+    attributes__typename_CoreCommentReplyLinkBlockAttributes: attributes {
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      lock
+      style
+      textAlign
+      textColor
+    }
+  }
+
+  ... on CoreCommentTemplateBlock {
+    attributes__typename_CoreCommentTemplateBlockAttributes: attributes {
+      align
+      className
+      fontFamily
+      fontSize
+      lock
+      style
+    }
+  }
+
+  ... on CoreCommentsTitleBlock {
+    attributes__typename_CoreCommentsTitleBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreCommentsTitleBlockAttributes {
+        align
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        level
+        lock
+        showCommentsCount
+        showPostTitle
+        style
+        textAlign
+        textColor
+      }
+
+      ... on CoreCommentsTitleBlockDeprecatedV1Attributes {
+        align
+        backgroundColor
+        borderColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        level
+        lock
+        showCommentsCount
+        showPostTitle
+        style
+        textAlign
+        textColor
+      }
+    }
+  }
+
+  ... on CoreCommentsPaginationBlock {
+    attributes__typename_CoreCommentsPaginationBlockAttributes: attributes {
+      align
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      layout
+      lock
+      paginationArrow
+      style
+      textColor
+    }
+  }
+
+  ... on CoreCommentsPaginationNextBlock {
+    attributes__typename_CoreCommentsPaginationNextBlockAttributes: attributes {
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      label
+      lock
+      style
+      textColor
+    }
+  }
+
+  ... on CoreCommentsPaginationNumbersBlock {
+    attributes__typename_CoreCommentsPaginationNumbersBlockAttributes: attributes {
+      className
+      fontFamily
+      fontSize
+      lock
+      style
+    }
+  }
+
+  ... on CoreCommentsPaginationPreviousBlock {
+    attributes__typename_CoreCommentsPaginationPreviousBlockAttributes: attributes {
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      label
+      lock
+      style
+      textColor
+    }
+  }
+
+  ... on CorePostCommentsFormBlock {
+    attributes__typename_CorePostCommentsFormBlockAttributes: attributes {
+      backgroundColor
+      className
+      fontSize
+      gradient
+      lock
+      style
+      textAlign
+      textColor
+    }
+  }
+
+  ... on CoreHomeLinkBlock {
+    attributes__typename_CoreHomeLinkBlockAttributes: attributes {
+      className
+      fontFamily
+      fontSize
+      label
+      lock
+      style
+    }
+  }
+
+  ... on CoreLoginoutBlock {
+    attributes__typename_CoreLoginoutBlockAttributes: attributes {
+      className
+      displayLoginAsForm
+      lock
+      redirectToCurrent
+    }
+  }
+
+  ... on CoreTermDescriptionBlock {
+    attributes__typename_CoreTermDescriptionBlockAttributes: attributes {
+      align
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      lock
+      style
+      textAlign
+      textColor
+    }
+  }
+
+  ... on CoreQueryTitleBlock {
+    attributes__typename_CoreQueryTitleBlockAttributesUnion: attributes {
+      __typename
+
+      ... on CoreQueryTitleBlockAttributes {
+        align
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        level
+        lock
+        showPrefix
+        showSearchTerm
+        style
+        textAlign
+        textColor
+        type
+      }
+
+      ... on CoreQueryTitleBlockDeprecatedV1Attributes {
+        align
+        backgroundColor
+        className
+        fontFamily
+        fontSize
+        gradient
+        level
+        lock
+        showPrefix
+        showSearchTerm
+        style
+        textAlign
+        textColor
+        type
+      }
+    }
+  }
+
+  ... on CorePostAuthorBiographyBlock {
+    attributes {
+      backgroundColor
+      className
+      fontFamily
+      fontSize
+      gradient
+      lock
+      style
+      textAlign
+      textColor
+    }
+  }
+}

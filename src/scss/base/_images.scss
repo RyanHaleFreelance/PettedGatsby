@@ -1,0 +1,52 @@
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+.image-mask {
+    -webkit-mask-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/blob.svg');
+    mask-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/blob.svg');
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: center;
+    mask-size: 100% 100%;
+    mask-position: center;
+    display: inline-block; 
+}
+
+.partner-logo {
+    padding: 0 8px;    
+    width: 33%;
+    text-align: center;
+    opacity: 1;
+    transition: opacity .3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+    @include respond-min($md) {
+        padding: 15px;    
+        height: 70px;
+        transition: opacity .5s ease; 
+    }
+
+    a, img {
+        display: inline-block;
+        max-height: 30px;
+        max-width: 100px;
+
+        @include respond-min($md) {
+            max-height: 35px;
+            max-width: 122px;
+        }
+    }
+
+    &.hide {
+        display: none;
+    }
+
+    &.fade-out {
+        opacity: 0;
+    }
+}
