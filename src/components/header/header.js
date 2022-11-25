@@ -11,17 +11,19 @@ const Layout = ({ data }) => {
 	const [expanded, setExpanded] = useState(false);
 
 	const toggleExpand = (elem) => {
-		let nav = document.querySelector('.nav-module--nav--b7415');
-		let html = document.querySelector('html');
+		if (typeof window !== 'undefined') {
+			let nav = document.querySelector('.nav-module--nav--b7415');
+			let html = document.querySelector('html');
 
-		if(nav.classList.contains('navActive')) {
-			nav.classList.remove('navActive');
-			html.classList.remove('menuOpen');
-			setExpanded(false);
-		} else {
-			nav.classList.add('navActive');
-			html.classList.add('menuOpen');
-			setExpanded(true);
+			if(nav.classList.contains('navActive')) {
+				nav.classList.remove('navActive');
+				html.classList.remove('menuOpen');
+				setExpanded(false);
+			} else {
+				nav.classList.add('navActive');
+				html.classList.add('menuOpen');
+				setExpanded(true);
+			}
 		}
 	}
 

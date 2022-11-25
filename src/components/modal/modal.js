@@ -6,13 +6,14 @@ import { useState } from "react"
 const Layout = ({ data, video }) => {
 	let id = data;
 	const closeModal = (elem) => {
-		let eles = document.querySelectorAll(".modalActive");
-		document.querySelector('body').classList.remove('hasModal');
-		eles.forEach(ele => {
-			ele.classList.remove('modalActive');
-			ele.querySelector('.embedIframe').src = '';
-		});
-
+		if (typeof window !== 'undefined') {
+			let eles = document.querySelectorAll(".modalActive");
+			document.querySelector('body').classList.remove('hasModal');
+			eles.forEach(ele => {
+				ele.classList.remove('modalActive');
+				ele.querySelector('.embedIframe').src = '';
+			});
+		}
 	}
 
 	return (

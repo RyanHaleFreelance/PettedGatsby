@@ -34,6 +34,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Define the template to use
   const pageTemplate = require.resolve(`./src/templates/WpPage.js`)
   const blogHome = require.resolve(`./src/templates/blogHome.js`)
+  const versus = require.resolve(`./src/templates/versus.js`)
   const postTemplate = require.resolve(`./src/templates/WpPost.js`)
   
   if (allWpPage.nodes.length) {
@@ -45,6 +46,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           component: blogHome,
           context: page,
         })
+	}
+	else if(page.template.templateName == 'Insurer Vs. Insurer') {
+	actions.createPage({
+		path: page.uri,
+		component: versus,
+		context: page,
+	})
       } else {
         actions.createPage({
           path: page.uri,

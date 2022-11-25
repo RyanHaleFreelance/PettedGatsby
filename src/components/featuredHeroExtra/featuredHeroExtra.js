@@ -25,11 +25,13 @@ const Layout = ({ section, title }) => {
 	}
 
 	const openModal = (elem) => {
-		let video = document.getElementById(modalId).querySelector('.embedIframe').dataset.src;
-		document.getElementById(modalId).querySelector('.embedIframe').src = video;
-		document.getElementById(modalId).classList.add('modalActive');
-		document.getElementById(modalId).parentElement.classList.add('modalActive');
-		document.querySelector('body').classList.add('hasModal');
+		if (typeof window !== 'undefined') {
+			let video = document.getElementById(modalId).querySelector('.embedIframe').dataset.src;
+			document.getElementById(modalId).querySelector('.embedIframe').src = video;
+			document.getElementById(modalId).classList.add('modalActive');
+			document.getElementById(modalId).parentElement.classList.add('modalActive');
+			document.querySelector('body').classList.add('hasModal');
+		}
 	}
 
 	return (

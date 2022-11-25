@@ -430,20 +430,6 @@ fragment BlockFragment on Block {
     }
   }
 
-  ... on GravityformsFormBlock {
-    attributes__typename_GravityformsFormBlockAttributes: attributes {
-      ajax
-      description
-      fieldValues
-      formId
-      formPreview
-      imgPreview
-      lock
-      tabindex
-      title
-    }
-  }
-
   ... on YoastHowToBlock {
     attributes__typename_YoastHowToBlockAttributesUnion: attributes {
       __typename
@@ -755,6 +741,20 @@ fragment BlockFragment on Block {
       lock
       mode
       name
+    }
+  }
+
+  ... on GravityformsFormBlock {
+    attributes__typename_GravityformsFormBlockAttributes: attributes {
+      ajax
+      description
+      fieldValues
+      formId
+      formPreview
+      imgPreview
+      lock
+      tabindex
+      title
     }
   }
 

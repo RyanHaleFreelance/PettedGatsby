@@ -13,20 +13,22 @@ const Layout = ({ data, key }) => {
 			elem.target.parentElement.parentElement.querySelector('.accordionContent').classList.remove('accordion-module--accordionContentActive--6696e');
 			setExpanded(false);
 		} else {
-			var elements = document.getElementsByClassName('accordion-module--open--657d7');
-			var elements2 = document.getElementsByClassName('accordion-module--accordionContentActive--6696e');
-			
-			while(elements.length > 0){
-				elements[0].classList.remove('accordion-module--open--657d7');
-			}
-	
-			while(elements2.length > 0){
-				elements2[0].classList.remove('accordion-module--accordionContentActive--6696e');
-			}
+			if (typeof window !== 'undefined') {
+				var elements = document.getElementsByClassName('accordion-module--open--657d7');
+				var elements2 = document.getElementsByClassName('accordion-module--accordionContentActive--6696e');
+				
+				while(elements.length > 0){
+					elements[0].classList.remove('accordion-module--open--657d7');
+				}
+		
+				while(elements2.length > 0){
+					elements2[0].classList.remove('accordion-module--accordionContentActive--6696e');
+				}
 
-			setExpanded(true);
-			elem.target.parentElement.parentElement.classList.add("accordion-module--open--657d7");
-			elem.target.parentElement.parentElement.querySelector('.accordionContent').classList.add('accordion-module--accordionContentActive--6696e');
+				setExpanded(true);
+				elem.target.parentElement.parentElement.classList.add("accordion-module--open--657d7");
+				elem.target.parentElement.parentElement.querySelector('.accordionContent').classList.add('accordion-module--accordionContentActive--6696e');
+			}
 		}
 	}
 
