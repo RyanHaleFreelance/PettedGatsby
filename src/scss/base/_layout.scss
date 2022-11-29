@@ -1272,3 +1272,18 @@ li.headerBtn a:hover {
 .hasModal {
     overflow: hidden;
 }
+
+.alignTextCenter.textBlockInner {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+
+.textBlockTitle {
+    span {
+        font-weight: 300;
+        font-size: 16px;
+        display: block;
+        margin-top: 10px;
+    }
+}

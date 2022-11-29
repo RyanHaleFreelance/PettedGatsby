@@ -30,8 +30,8 @@ const Layout = ({ data }) => {
 	return (
 		<Headroom>
 			<div className={c(Styles.header)} id="main-header" role="banner">
-				<div class="container containerAlignCenter">
-					<div class="col col-xs-1-1 col-md-1-6">
+				<div className="container containerAlignCenter">
+					<div className="col col-xs-1-1 col-md-1-6">
 						<div className={Styles.brand}>
 							<a href="/" className={Styles.brandLogo}>
 								<img src="https://www.petted.com/wp-content/uploads/2021/12/petted-logo.svg" alt="Petted logo" className={'logo'} />

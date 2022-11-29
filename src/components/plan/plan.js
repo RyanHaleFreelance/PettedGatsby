@@ -26,12 +26,12 @@ const Layout = ({ section, images }) => {
 				<div className="col col-md-2-5 align-text-center">
 					{
 						(planTitle) ?
-							<h2 className="text-block__title title--padded" dangerouslySetInnerHTML={{__html: planTitle}}></h2>
+							<h2 className="textBlockTitle title--padded" dangerouslySetInnerHTML={{__html: planTitle}}></h2>
 						: ''
 					}
 					{
 						(planContent) ? 
-							<div className="text-block__inner">
+							<div className="textBlockInner">
 								<div dangerouslySetInnerHTML={{__html: planContent}}></div>
 							</div>
 						: ''

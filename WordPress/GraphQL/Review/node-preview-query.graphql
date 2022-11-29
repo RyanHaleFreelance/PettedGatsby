@@ -1,0 +1,53 @@
+query PREVIEW_QUERY($id: ID!) {
+  review(id: $id, idType: ID, asPreview: true) {
+    author {
+      node {
+        id
+      }
+    }
+
+    authorDatabaseId
+    authorId
+    content
+
+    contentType {
+      node {
+        id
+      }
+    }
+
+    contentTypeName
+    databaseId
+    date
+    dateGmt
+    desiredSlug
+    enclosure
+    guid
+    id
+    isContentNode
+    isRevision
+    isTermNode
+
+    lastEditedBy {
+      node {
+        id
+      }
+    }
+
+    link
+    modified
+    modifiedGmt
+    slug
+    status
+
+    template {
+      templateName
+
+      __typename
+    }
+
+    title
+    uri
+    __typename
+  }
+}

@@ -4,10 +4,6 @@ import c from 'classnames'
 import Modal from '../modal/modal'
 
 const Layout = ({ section, title }) => {
-	setTimeout(() => {
-		console.log(section);
-	}, 2000);
-
 	let imgAlt = (section.heroImage) ? section.heroImage.altText : 'Petted image';
 	let mobImage = (section.heroImageMobile) ? section.heroImageMobile.sourceUrl : false;
 	let heroVideoId = (section.heroVideoId) ? section.heroVideoId : false;
@@ -26,7 +22,6 @@ const Layout = ({ section, title }) => {
 
 	const openModal = (elem) => {
 		if (typeof window !== 'undefined') {
-			console.log(modalId);
 			let video = document.getElementById(modalId).querySelector('.embedIframe').dataset.src;
 			document.getElementById(modalId).querySelector('.embedIframe').src = video;
 			document.getElementById(modalId).classList.add('modalActive');

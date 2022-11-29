@@ -290,6 +290,10 @@ fragment BlockFragment on Block {
       id
     }
 
+    ... on Insurer {
+      id
+    }
+
     ... on Page {
       id
     }
@@ -307,6 +311,10 @@ fragment BlockFragment on Block {
     }
 
     ... on PostFormat {
+      id
+    }
+
+    ... on Review {
       id
     }
 
@@ -427,6 +435,20 @@ fragment BlockFragment on Block {
     attributes__typename_YoastSeoBreadcrumbsBlockAttributes: attributes {
       className
       lock
+    }
+  }
+
+  ... on GravityformsFormBlock {
+    attributes__typename_GravityformsFormBlockAttributes: attributes {
+      ajax
+      description
+      fieldValues
+      formId
+      formPreview
+      imgPreview
+      lock
+      tabindex
+      title
     }
   }
 
@@ -741,20 +763,6 @@ fragment BlockFragment on Block {
       lock
       mode
       name
-    }
-  }
-
-  ... on GravityformsFormBlock {
-    attributes__typename_GravityformsFormBlockAttributes: attributes {
-      ajax
-      description
-      fieldValues
-      formId
-      formPreview
-      imgPreview
-      lock
-      tabindex
-      title
     }
   }
 
@@ -3039,6 +3047,10 @@ fragment BlockFragment on Block {
         id
       }
 
+      ... on Insurer {
+        id
+      }
+
       ... on Page {
         id
       }
@@ -3056,6 +3068,10 @@ fragment BlockFragment on Block {
       }
 
       ... on PostFormat {
+        id
+      }
+
+      ... on Review {
         id
       }
 

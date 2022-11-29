@@ -1,0 +1,138 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.sliderWrapInsurers {
+    padding: 0;
+}
+
+.slideInsurer .slideInner {
+    background: #fff;
+    border: 1px solid #EBEBEB;
+    border-radius: 10px;
+    padding: $sp-unit;
+    position: relative;
+    overflow: visible;
+    margin-top: 30px;
+
+    &LogoWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 28px;
+        margin-bottom: 30px;
+    }
+
+    &Logo {
+        max-width: 80%;
+        max-height: 100%;
+    }
+
+    .recommended {
+        background-color: $brand-color;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 500;
+        border-radius: 5px 5px 0 0;
+        width: 90%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        line-height: 1;
+        padding: 7px 5px;
+        transform: translate(-50%, -100%);
+
+        &Best {
+            background-color: $brand-green;
+            color: $color-text;
+        }
+    }
+
+    .review-summary--compact {
+        flex-wrap: wrap !important;
+        justify-content: center;
+        padding: 0;
+        margin-bottom: 15px;
+
+        > * {
+            display: block;
+            width: 100%;
+        }
+
+        .glsr-summary-rating {
+            font-weight: 600;
+        }
+
+        .glsr-star-rating {
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .glsr-summary-text {
+            font-weight: 400;
+
+            @include resp-max($md) {
+                width: 100% !important;
+            }
+        }
+    }
+}
+
+.insurerRating {
+    font-weight: 700;
+    font-size: 25px;
+    display: block;
+}
+
+.reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    span {
+        margin-right: 5px;
+    }
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        max-width: 1.5rem;
+    }
+}
+
+.ldsDualRing {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+.ldsDualRing:after {
+    content: " ";
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 6px;
+    border-radius: 50%;
+    border: 2px solid #F6F5FF;
+    border-color: #F6F5FF transparent #F6F5FF transparent;
+    animation: anim 1.2s linear infinite;
+}
+
+@keyframes anim {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+  
+  

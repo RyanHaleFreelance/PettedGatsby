@@ -1,0 +1,36 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.twoColContent + .twoColContent {
+    padding-top: 0;
+}
+
+.twoColContent {
+    img {
+        margin-bottom: $sp-unit;
+        border-radius: 15px;
+        display: block;
+    }
+}
+
+.colOffset {
+    @include respond-min($lg) {
+        margin-top: $sp-unit*4;
+    }
+
+    img, blockquote {
+        @include respond-min($lg) {
+            float: right;
+            width: calc(100% - #{$sp-unit}*3);
+        }
+    }
+}
+
+.leftCol {
+    img, blockquote {
+        @include respond-min($lg) {
+            float: left;
+            width: calc(100% - #{$sp-unit}*3);
+        }
+    }
+}

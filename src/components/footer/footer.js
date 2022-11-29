@@ -9,9 +9,6 @@ import FooterNav from '../footerNav/footerNav'
 import { useState } from "react"
 
 const Layout = ({ data }) => {
-	setTimeout(() => {
-		console.log(data);
-	}, 2000);
 	let facebook = data.facebook;
 	let instagram = data.instagram;
 	let tiktok = data.tiktok;

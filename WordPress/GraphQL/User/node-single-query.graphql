@@ -34,6 +34,13 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     extraCapabilities
     firstName
     id
+
+    insurers(first: 100) {
+      nodes {
+        id
+      }
+    }
+
     isContentNode
     isTermNode
     lastName
@@ -55,6 +62,12 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     }
 
     registeredDate
+
+    reviews(first: 100) {
+      nodes {
+        id
+      }
+    }
 
     roles(first: 100) {
       nodes {

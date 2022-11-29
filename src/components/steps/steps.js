@@ -55,7 +55,7 @@ const Layout = ({ section, images }) => {
 										<li>
 											<img src={section.image} alt={section.title + ' icon'} className="step__icon" loading="lazy" />
 											<h3 className="step__title">{section.title}</h3>
-											<p>{section.text}</p>
+											<p dangerouslySetInnerHTML={{__html:section.text}}></p>
 										</li>
 									))
 								}

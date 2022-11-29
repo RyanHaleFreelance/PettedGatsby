@@ -13,18 +13,18 @@ const Layout = ({ section, title, ratings }) => {
 
 	return (
 		<header className={c(Styles.pageHeader, Styles.home)} id="page-header">
-			<div class="container">
-				<div class="col col-lg-1-2">
+			<div className="container">
+				<div className="col col-lg-1-2">
 					<h2 className={Styles.pageHeaderTitle}>{title}</h2>
 					<div dangerouslySetInnerHTML={{__html: hero_content}}></div>
-					<a href={button_link} class="btn btn--alt btn--large">{button_text}</a>
+					<a href={button_link} className="btn btn--alt btn--large">{button_text}</a>
 					<Ratings info={ratings}></Ratings>
 				</div>
-				<div class="col col-lg-1-2">
+				<div className="col col-lg-1-2">
 					<picture className={Styles.heroImage}>
 						<source media="(max-width: 1023px)" srcset={hero_image_mobile} />
 						<source media="(min-width: 1023px)" srcset={hero_image} />
-						<img src={hero_image} alt={hero_image_alt} class="skip-lazy" />
+						<img src={hero_image} alt={hero_image_alt} className="skip-lazy" />
 					</picture>
 				</div>
 			</div>

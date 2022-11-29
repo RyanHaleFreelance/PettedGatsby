@@ -143,3 +143,116 @@ button[data-action=start] {
         }
     }
 }
+
+.insurerSliderContainer {
+    .tns-outer {
+        width: 100%;
+
+        @include respond-min($lg) {
+            overflow: hidden;
+        }
+    }
+
+    .tns-controls {
+        right: auto;  
+        width: 100vw;
+        /* background: rgba(0,0,0,0.5); */
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        z-index: 2;
+        height: 100%;
+        transform: translate(-50%,-50%);
+        pointer-events: none;
+
+        @include respond-min($lg) {
+            width: 100%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        button[data-controls=next],
+        button[data-controls=prev] {
+            position: absolute;
+            right: -1px;
+            height: 100%;
+            width: 20%;
+            background: rgb(246,245,255);
+            background: linear-gradient(90deg, rgba(246,245,255,0) 0%, rgba(246,245,255,1) 92%);
+            opacity: 1;
+            pointer-events: auto;
+            transform: none;
+
+            @include respond-min($lg) {
+                width: 10%;
+            }
+
+            &:before {
+                background-size: 14px 29px;
+                background-repeat: no-repeat; 
+                background-position: 70% center;
+                width: 100%;
+                height: 100%;
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/icon-arrow-right.svg');
+                transform: none;
+
+                @include respond-min($lg) {
+                    background-size: 34px 68px;
+                    background-position: 99% center;
+                }
+            }
+        }
+
+        button[data-controls=prev] { 
+            right: auto;
+            left: 0;
+            width: 20%;
+            background: rgb(246,245,255);
+            background: linear-gradient(90deg, rgba(246,245,255,1) 0%, rgba(246,245,255,0) 100%);
+
+            @include respond-min($lg) {
+                width: 10%;
+                // background: rgb(246,245,255);
+                // background: linear-gradient(90deg, rgba(246,245,255,1) 0%, rgba(246,245,255,0.3) 100%);
+            }
+
+            &:before {
+                background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/icon-arrow-left.svg');
+                background-position: 30% center;
+
+                @include respond-min($lg) {
+                    background-position: 0% center;
+                }
+            }
+
+            &:disabled {
+                opacity: 0 !important;
+                pointer-events: none;
+            }
+        }
+    }
+    
+    .tns-ovh {
+        width: 70%;
+        overflow: visible;
+
+        @include respond-min($sm) {
+            width: 80%;
+            left: 10%;
+            position: relative;
+        }
+
+        @include resp-max($md) {
+            overflow: visible;
+            left: 50%;
+            position: relative;
+            transform: translateX(-50%);
+            margin-left: 10px;
+        }
+    }
+}

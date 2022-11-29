@@ -5,7 +5,6 @@ import { useState } from "react"
 
 const Layout = ({ data, video }) => {
 	let id = data;
-	console.log(id);
 	const closeModal = (elem) => {
 		if (typeof window !== 'undefined') {
 			let eles = document.querySelectorAll(".modalActive");
@@ -19,7 +18,6 @@ const Layout = ({ data, video }) => {
 
 	return (
 		<div className={Styles.modalOverlay} onClick={closeModal}>
-			{console.log(id)}
 			<div
 			role="dialog"
 			id={id}

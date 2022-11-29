@@ -35,6 +35,25 @@ query NON_NODE_QUERY {
   }
 
   acfOptionsInsurer {
+    insurerRatings {
+      fieldGroupName
+
+      insurerRatings {
+        fieldGroupName
+
+        insurer {
+          __typename
+
+          ... on Insurer {
+            id
+          }
+        }
+
+        pettedRecommended
+        rating
+      }
+    }
+
     pageSlug
     pageTitle
   }

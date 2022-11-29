@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from '../components/header/header'
-import Test from '../components/test/test'
 import Steps from '../components/steps/steps'
 import Partners from '../components/partnersBlock/partnersBlock'
 import Testimonials from '../components/testimonials/testimonials'
@@ -14,15 +13,9 @@ import Footer from '../components/footer/footer'
 const WpPost = ({data}) => {
     const pageData = JSON.parse(data.wpPage.blocksJSON);
     const images = data.allWpMediaItem.edges;
-    setTimeout(() => {
-        console.log(data);
-    }, 2000);
 
     const LoadSection = ({ val, imageArray }) => {
-		console.log(val.attributes.name);
 		switch (val.attributes.name) {
-			case "acf/three-column-block" :
-				return <Test section={val} images={imageArray} />;
 			case "acf/steps" :
 				return <Steps section={val} images={imageArray} />;
 			case "acf/partners" :

@@ -6,7 +6,6 @@ import Accordion from '../accordion/accordion'
 
 const Layout = ({ section, images }) => {
 	const pagedata = section.attributes.data;
-	console.log(pagedata);
 	let dataArray = [];
 	let title = pagedata.ta_text;
 	let content = pagedata.ta_content;
@@ -30,12 +29,12 @@ const Layout = ({ section, images }) => {
 				<div className={c('col', 'col-md-1-2', {'align-text-center': just == 1})}>
 					{
 						(title) ?
-							<h2 className="text-block__title" dangerouslySetInnerHTML={{__html: title}}></h2>
+							<h2 className="textBlockTitle" dangerouslySetInnerHTML={{__html: title}}></h2>
 						: ''
 					}
 					{
 						(content) ? 
-							<div className="text-block__inner">
+							<div className="textBlockInner">
 								<p dangerouslySetInnerHTML={{__html: content}}></p>
 							</div>
 						: ''

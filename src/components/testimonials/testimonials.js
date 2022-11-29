@@ -90,10 +90,10 @@ const Layout = ({ section, images, ratings }) => {
 				<div className="col col-md-2-5 align-text-center">
 					{
 						(title) ?
-							<h2 className="text-block__title title--padded" dangerouslySetInnerHTML={{__html: title}}></h2>
+							<h2 className="textBlockTitle title--padded" dangerouslySetInnerHTML={{__html: title}}></h2>
 						: ''
 					}
-					<div className="text-block__inner">
+					<div className="textBlockInner">
 						<Ratings info={ratings}></Ratings>
 					</div>
 				</div>

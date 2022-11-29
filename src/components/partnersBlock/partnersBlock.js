@@ -49,8 +49,7 @@ const Layout = ({ section, images }) => {
 				for (let index = 0; index < 50; index++) {
 					setTimeout(function(){
 						let partner_logo = partner_logos[logo_index];
-		
-						// console.log(logo_index);
+
 						// find image within random
 						let image = partner_logo.getElementsByTagName('img')[0];
 						let image_src = image.src;
@@ -105,7 +104,7 @@ const Layout = ({ section, images }) => {
 							<h2 className={Styles.textBlockTitle}>{title}</h2> 
 						: ''
 					}
-					<div class="text-block__inner">
+					<div className="textBlockInner">
 						{
 							(content) ? 
 								<div dangerouslySetInnerHTML={{__html: content}}></div>
@@ -113,7 +112,7 @@ const Layout = ({ section, images }) => {
 						}
 						{
 							(dataArray.length > 0) ? 
-								<ul class="flex list--unstyled flexwrap justify-center items-center no-bm">
+								<ul className="flex list--unstyled flexwrap justify-center items-center no-bm">
 									{
 										dataArray.map((section, i) => (
 											<li  className={c("partner-logo", {'hide': i > 8})}>
@@ -141,8 +140,8 @@ const Layout = ({ section, images }) => {
 						: ''
 					}
 				</div>
-				<div class="col col-md-1-2 align-text-center med-up">
-					<div class="image-mask">
+				<div className="col col-md-1-2 align-text-center med-up">
+					<div className="image-mask">
 						<img src={image} alt="Dog image" />
 					</div>
 				</div>

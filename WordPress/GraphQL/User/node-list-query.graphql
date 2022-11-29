@@ -35,6 +35,13 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       extraCapabilities
       firstName
       id
+
+      insurers(first: 100) {
+        nodes {
+          id
+        }
+      }
+
       isContentNode
       isTermNode
       lastName
@@ -56,6 +63,12 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       }
 
       registeredDate
+
+      reviews(first: 100) {
+        nodes {
+          id
+        }
+      }
 
       roles(first: 100) {
         nodes {

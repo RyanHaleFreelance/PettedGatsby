@@ -3,9 +3,6 @@ import * as Styles from './featuredHero.module.scss'
 import c from 'classnames'
 
 const Layout = ({ section, title }) => {
-	setTimeout(() => {
-		console.log(section);
-	}, 2000);
 	let introduction = (section.introduction) ? section.introduction : false;
 	let pageTitle = (section.pageTitle) ? section.pageTitle : section.title;
 	let showBreadcrumbs = (section.showBreadcrumbs) ? section.showBreadcrumbs : false;
