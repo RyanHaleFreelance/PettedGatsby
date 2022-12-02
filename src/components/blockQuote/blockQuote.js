@@ -6,10 +6,10 @@ const Layout = ({ section, images }) => {
 	const pagedata = section.attributes.data;
 	
 	return (
-		<div class="section bg-alt align-text-center">
-			<div class="cta container"> 
-				<div class="col col-1-1 aligncenter">
-					<figure class="quote">
+		<div className="section bg-alt align-text-center">
+			<div className="cta container"> 
+				<div className="col col-1-1 aligncenter">
+					<figure className="quote">
 						{ 
 							(pagedata.quote) ?
 								<blockquote dangerouslySetInnerHTML={{__html:pagedata.quote}}></blockquote>

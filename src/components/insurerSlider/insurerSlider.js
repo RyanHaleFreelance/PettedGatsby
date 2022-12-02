@@ -234,6 +234,8 @@ const Insurer = ({ section, images }) => {
 					}
 
 					{total}
+
+					<p>Needs work to prevent duplicates</p>
 					
 					{/* <?php $count_posts = wp_count_posts( 'site-review' )->publish; ?>
 					<?php if ($count_posts > 999) : ?>

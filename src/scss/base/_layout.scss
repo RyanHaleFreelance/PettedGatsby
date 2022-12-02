@@ -1287,3 +1287,54 @@ li.headerBtn a:hover {
         margin-top: 10px;
     }
 }
+
+.main-content {
+    >*:first-child {
+        margin-top: 0;
+    }
+
+    p, ul, ol, h1, h2, h3, h4, h5, h6 {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    ol {
+        list-style-position: inside;
+    }
+}
+
+.peUsHeader.headerpuppy {
+    background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/05/puppy-mobile.jpg') !important;
+}
+
+.peUsHeader.headerdog {
+    background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/05/dog-mobile.jpg') !important;
+}
+
+.peUsHeader.headerkitten {
+    background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/05/kitten-mobile.jpg') !important;
+}
+
+.peUsHeader.headercat {
+    background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/05/cat-mobile.jpg') !important;
+}
+
+@media only screen and (min-width: 850px) {
+    .peUsHeader.headerpuppy {
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/04/dog.jpg') !important;
+    }
+
+    .peUsHeader.headerdog {
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/05/dog-desktop.jpg') !important;
+    }
+
+    .peUsHeader.headerkitten {
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/05/kitten-desktop.jpg') !important;
+    }
+
+    .peUsHeader.headercat {
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/05/cat-desktop.jpg') !important;
+    }
+}

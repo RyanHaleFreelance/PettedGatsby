@@ -180,6 +180,18 @@ fragment BlockFragment on Block {
       id
     }
 
+    ... on GfDraftEntry {
+      id
+    }
+
+    ... on GfForm {
+      id
+    }
+
+    ... on GfSubmittedEntry {
+      id
+    }
+
     ... on Menu {
       id
     }
@@ -2934,6 +2946,18 @@ fragment BlockFragment on Block {
       }
 
       ... on UserRole {
+        id
+      }
+
+      ... on GfDraftEntry {
+        id
+      }
+
+      ... on GfForm {
+        id
+      }
+
+      ... on GfSubmittedEntry {
         id
       }
 

@@ -35,33 +35,50 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const pageTemplate = require.resolve(`./src/templates/WpPage.js`)
   const blogHome = require.resolve(`./src/templates/blogHome.js`)
   const versus = require.resolve(`./src/templates/versus.js`)
+  const usNews = require.resolve(`./src/templates/usNews.js`)
+  const review = require.resolve(`./src/templates/insurerReview.js`)
   const postTemplate = require.resolve(`./src/templates/WpPost.js`)
   
   if (allWpPage.nodes.length) {
-    allWpPage.nodes.map(page => {
-      console.log(page.uri + page.template.templateName);
-      if(page.template.templateName == 'Blog Home') {
-        actions.createPage({
-          path: page.uri,
-          component: blogHome,
-          context: page,
-        })
-	}
-	else if(page.template.templateName == 'Insurer Vs. Insurer') {
-	actions.createPage({
-		path: page.uri,
-		component: versus,
-		context: page,
-	})
-      } else {
-        actions.createPage({
-          path: page.uri,
-          component: pageTemplate,
-          context: page,
-        })
-      }
-    })
-  }
+    	allWpPage.nodes.map(page => {
+      		console.log(page.uri + page.template.templateName);
+			if(page.template.templateName == 'Blog Home') {
+				actions.createPage({
+				path: page.uri,
+				component: blogHome,
+				context: page,
+				})
+			}
+			else if(page.template.templateName == 'Insurer Vs. Insurer') {
+				actions.createPage({
+					path: page.uri,
+					component: versus,
+					context: page,
+				})
+      		} 
+			else if(page.template.templateName == 'US NEws') {
+				actions.createPage({
+					path: page.uri,
+					component: usNews,
+					context: page,
+				})
+      		} 
+			else if(page.template.templateName == 'Insurer Review') {
+				actions.createPage({
+					path: page.uri,
+					component: review,
+					context: page,
+				})
+			}
+			else {
+				actions.createPage({
+				path: page.uri,
+				component: pageTemplate,
+				context: page,
+				})
+      		}
+   		})
+  	}
 
   if (allWpPost.nodes.length) {
     allWpPost.nodes.map(post => {

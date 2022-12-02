@@ -1,2 +1,8 @@
 @import "../../../src/scss/utils/variables";
 @import "../../../src/scss/utils/mixins";
+
+.textImageBlock {
+    @include resp-max($md) {
+        text-align: center;
+    }
+}

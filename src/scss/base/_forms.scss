@@ -161,15 +161,26 @@ label {
 .gform_fields {
     display: flex;
     flex-wrap: wrap;
+    margin: 0;
+    list-style-type: none;
 }
 
 .gfield {
     width: 100%;
 
-    @include respond-min($lg) {
-        padding: 0 10px;
-        width: 50%;
+    &.gatsbyHalf {
+        @include respond-min($lg) {
+            padding: 0 10px;
+            width: 50%;
+        }
     }
+
+    &.gatsbyFull {
+        @include respond-min($lg) {
+            padding: 0 10px;
+        }
+    }
+
 }
 
 .gfield--width-full {

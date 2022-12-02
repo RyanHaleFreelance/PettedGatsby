@@ -101,6 +101,29 @@ query NON_NODE_QUERY {
     url
   }
 
+  gfSettings {
+    currency
+    hasBackgroundUpdates
+    hasDefaultCss
+    hasToolbar
+    isHtml5Enabled
+    isNoConflictModeEnabled
+
+    logging {
+      isLoggingEnabled
+
+      loggers {
+        isEnabled
+        name
+      }
+    }
+
+    recaptcha {
+      publicKey
+      type
+    }
+  }
+
   readingSettings {
     pageForPosts
     pageOnFront

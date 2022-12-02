@@ -6,7 +6,7 @@ const Layout = ({ section, images }) => {
 
 	return (
 		<div className="section">
-			<div class="container align-text-center items-center"> 
+			<div className="container align-text-center items-center"> 
 				<div className="single-column" dangerouslySetInnerHTML={{__html:pagedata.sct_text}}></div>
 			</div>
 		</div>

@@ -1,0 +1,66 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+$accordion-border-width: 1px !default;
+$accordion-border-color: $color-text !default;
+$accordion-bg: #fff !default;
+$accordion-text-color: $color-text !default;
+
+$accordion-trigger-bg: #fff !default;
+$accordion-trigger-bg--focus: $bg-alt !default;
+$accordion-trigger-bg--highlight: $bg-alt !default;
+$accordion-trigger-text-size: 1.25rem !default;
+
+$accordion-handle-width: 3rem !default;
+$accordion-handle-bg: #fff !default;
+$accordion-handle-bg--focus: $bg-alt !default;
+$accordion-handle-bg--highlight: $bg-alt !default;
+
+$accordion-arrow-scale: 0.3 !default;
+$accordion-arrow-stroke: 3px !default;
+$accordion-arrow-color: #fff !default;
+$accordion-arrow-color--focus: $accordion-arrow-color !default;
+$accordion-arrow-color--highlight: $accordion-arrow-color !default;
+$accordion-arrow-transition--timing: 0.3s !default;
+
+$accordion-content-vpad: 1rem !default;
+$accordion-content-hpad: 1.5rem !default;
+
+// Size of the gap between each accordion item
+$accordion-gap: 1em;
+
+.accordionWrapper {
+    max-width: 765px;
+    margin-top: ($accordion-gap * 3);
+    margin-bottom: 0;
+    
+    @include respond-min($md) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: ($accordion-gap * 3);
+        margin-bottom: ($accordion-gap * 2);
+        max-width: 80%;
+    }
+}
+
+.accordion {
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+    margin-left: -10px;
+    margin-right: -10px;
+    width: calc(100% + 20px);
+
+    @include respond-min($md) {
+        margin-left: -$accordion-content-hpad;
+        margin-right: -$accordion-content-hpad;
+        width: calc(100% + 3rem);
+    }
+}
+
+/* purgecss start ignore */
+
+/* purgecss end ignore */

@@ -1,0 +1,37 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.cta p, p.intro {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta {
+    blockquote {
+        color: #000;
+        font-weight: 700;
+        @include font-size(22);
+        line-height: 1.4;
+        padding-top: 0;
+
+        @include respond-min($lg) {
+            @include font-size(36);
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+
+    figcaption {
+        color: rgba(40,40,40,0.2);
+        font-weight: 600;
+        @include font-size(12);
+        margin-top: -10px;
+
+        @include respond-min($lg) {
+            @include font-size(14);
+        }
+    }
+}
