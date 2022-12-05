@@ -5,6 +5,21 @@ import axios from 'axios';
 import {Helmet} from "react-helmet";
 
 const IndexPage = () => {
+
+	axios.get('http://ip-api.com/json/24.48.0.1')
+	.then(function (response) {
+		// handle success
+		console.log(response);
+	})
+	.catch(function (error) {
+		// handle error
+		console.log(error);
+	})
+	.finally(function () {
+		// always executed
+	});
+
+
 	const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	const today = new Date();
 	const yesterday = new Date(today);
@@ -81,6 +96,7 @@ const IndexPage = () => {
 		}
 	}
 	
+	
 		// fetch("https://api.ip2location.com/v2/?key=6EJ8CZ3EBW&package=WS3")
 		//   .then((response) => response.json())
 		//   .then(function(data) {
@@ -88,7 +104,7 @@ const IndexPage = () => {
 		// }).catch(error => console.log('error', error));
 
 return(
-	<html>
+	<div>
 		<Helmet>
 			<meta charset="<?php bloginfo('charset'); ?>" />
 			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -96,8 +112,26 @@ return(
 	
 			<script>{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KCGF6MF');`}</script>
 
+			<script id="petted-quote-engine" src="https://quote.petted.com/Scripts/lib/widgets/petted/quote-form/widget.js" type="text/javascript"></script>
+			
 			<script>{`
-				(function (doc, tag, id) { var js = doc.getElementsByTagName(tag)[0]; if (doc.getElementById(id)) { return; } js = doc.createElement(tag); js.id = id; js.src = "https://quote.petted.com/Scripts/lib/widgets/petted/quote-form/widget.js"; js.type = "text/javascript"; doc.body.appendChild(js); }(document, 'script', 'petted-quote-engine')); setTimeout(() => {document.addEventListener("load", function (event) { QuoteEnginePetted.setOptions({ targetId: "petted-quote-form", redirectUrl: "https://quote.petinsurer.com/quote", baseUrl: "https://quote.petinsurer.com/", urlParam: { source:'BestOfWidget', utm_source: '', utm_medium: '', utm_campaign: '', utm_content: '', utm_term: '', referer:window.location.href, }, refCode: 'co', }); QuoteEnginePetted.init(); }, false); console.log('yello');}, 3000);console.log(document.querySelector('#petted-quote-form'));
+				setTimeout(() => {QuoteEnginePetted.setOptions({
+					targetId: "petted-quote-form",
+					redirectUrl: "https://quote.petinsurer.com/quote",
+					baseUrl: "https://quote.petinsurer.com/",
+					urlParam: { source: "BestOfWidget", utm_source: "", utm_medium: "", utm_campaign: "", utm_content: "", utm_term: "", referer: window.location.href },
+					refCode: "co",
+				});
+				QuoteEnginePetted.init();}, 300);
+
+				setTimeout(() => {QuoteEnginePetted.setOptions({
+					targetId: "petted-quote-form-mobile",
+					redirectUrl: "https://quote.petinsurer.com/quote",
+					baseUrl: "https://quote.petinsurer.com/",
+					urlParam: { source: "BestOfWidget", utm_source: "", utm_medium: "", utm_campaign: "", utm_content: "", utm_term: "", referer: window.location.href },
+					refCode: "co",
+				});
+				QuoteEnginePetted.init();}, 300);
 			`}</script>
 
 			<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -111,13 +145,12 @@ return(
 			<link rel="preconnect" href="https://fonts.googleapis.com" />
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 			<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-		</Helmet>
-		<body>
 			<meta name="viewport" content="width=device-width, initial-scale=1"/>
 			<link rel="preconnect" href="https://fonts.googleapis.com"/>
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 			<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		</Helmet>
 		<main className={c(Styles.main, Styles.peUsWrapper)} role="main" id="main-content">
 			<div className={Styles.peUsPreNav}>
 				<img src="https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/01/usn-logo.svg" alt="US News Logo" />
@@ -1062,7 +1095,9 @@ return(
 						</div>
 						<div className={Styles.peUsWrapperSecCol}>
 							<div className={Styles.peUsWrapperQuoteWrap}>
-								<div id="petted-quote-form"></div>
+								<div id="petted-quote-form">
+									
+								</div>
 							</div>
 						</div>
 					</div>
@@ -1079,8 +1114,7 @@ return(
 				</div>
 			</footer>
 		</main>
-		</body>
-	</html>
+	</div>
 )}
 
 export default IndexPage
