@@ -5,11 +5,9 @@ import c from 'classnames'
 
 const Layout = ({ section, images }) => {
 	const pagedata = section.attributes.data;
-	console.log(pagedata);
 	let title = pagedata.accord_title;
 	let content = pagedata.accord_content;
 	let accordions = pagedata.accord_accordions;
-	console.log(accordions);
 	let accordArray = [];
 
 	for (var i=0; i < accordions; i++) {
@@ -23,7 +21,6 @@ const Layout = ({ section, images }) => {
 			title: pagedata[title],
 			faqs: faqs
 		})
-		console.log(accordArray);
 	}
 
 	function loadFaqs(i, amount) {

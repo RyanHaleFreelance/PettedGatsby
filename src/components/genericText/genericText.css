@@ -1,0 +1,611 @@
+.pe-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #282828;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+.pe-btn:hover {
+    background-color: #7452ff;
+    color: #fff;
+    text-decoration: none;
+}
+.pe-btn--back {
+    padding-left: 40px;
+    position: relative;
+}
+.pe-btn--back:before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    left: 10px;
+    height: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('https://www.petted.com/wp-content/uploads/2022/01/back.svg');
+    background-size: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+}
+.pe-btn--back:hover:before {
+    left: 5px;
+}
+.pe-btn--forward {
+    padding-right: 40px;
+    position: relative;
+}
+.pe-btn--forward:before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    right: 10px;
+    height: 25px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    background-image: url('https://www.petted.com/wp-content/uploads/2022/01/back.svg');
+    background-size: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+}
+.pe-btn--forward:hover:before {
+    right: 5px;
+}
+.pe-btn--speech {
+    padding-left: 40px;
+    position: relative;
+    pointer-events: none;
+}
+.pe-btn--speech:before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    left: 5px;
+    height: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('https://www.petted.com/wp-content/uploads/2022/01/speech-purple.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@media only screen and (min-width: 767px) {
+    .pe-btn--speech:before {
+        background-image: url('https://www.petted.com/wp-content/uploads/2022/01/speech-purple.svg');
+   }
+}
+.pe-btn--ghost {
+    color: #282828;
+    border: 1px solid #282828;
+}
+.pe-btn--purple {
+    background-color: #7452ff;
+    color: #fff;
+    border-radius: 25px;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: 2px solid #7452ff;
+}
+@media only screen and (min-width: 767px) {
+    .pe-btn--purple {
+        font-size: 16px;
+        padding: 10px 30px;
+   }
+}
+.pe-btn--purple:hover {
+    background-color: #fff;
+    color: #7452ff;
+}
+.pe-container {
+    width: 100%;
+    max-width: 1040px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.pe-container--800 {
+    max-width: 840px;
+}
+.pe-text {
+    padding-top: 25px;
+    text-align: center;
+}
+@media only screen and (min-width: 767px) {
+    .pe-text {
+        padding-top: 50px;
+   }
+}
+.pe-text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+@media only screen and (min-width: 767px) {
+    .pe-text h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+   }
+}
+.pe-text p {
+    font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    color: #282828;
+}
+.pe-seperator {
+    text-align: center;
+}
+.pe-seperator img {
+    width: 100%;
+    max-width: 100px;
+    margin: 0 auto;
+}
+.section {
+    padding: 35px 0px;
+}
+@media only screen and (max-width: 767px) {
+    .section {
+        max-width: calc(100% + 20px);
+   }
+}
+@media only screen and (min-width: 767px) {
+    .section {
+        padding: 60px 0px;
+   }
+}
+@media only screen and (min-width: 767px) {
+    .section--grey {
+        background-color: #f6f5ff;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 20px;
+   }
+}
+.section--grey:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('https://www.petted.com/wp-content/uploads/2022/01/alt-top.svg');
+    background-size: auto 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-100%);
+    display: none;
+}
+@media only screen and (min-width: 767px) {
+    .section--grey:before {
+        display: block;
+   }
+}
+@media only screen and (min-width: 1400px) {
+    .section--grey:before {
+        background-size: 100%;
+   }
+}
+.section--grey:after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('https://www.petted.com/wp-content/uploads/2022/01/alt-bot.svg');
+    background-size: auto 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(100%);
+    display: none;
+}
+@media only screen and (min-width: 767px) {
+    .section--grey:after {
+        display: block;
+   }
+}
+@media only screen and (min-width: 1400px) {
+    .section--grey:after {
+        background-size: 100%;
+   }
+}
+@media only screen and (min-width: 767px) {
+    .section--grey .pe-btn {
+        background-color: #f6f5ff;
+   }
+}
+@media only screen and (min-width: 767px) {
+    .section--grey .pe-btn:hover {
+        background-color: #7452ff;
+   }
+}
+.section--grey .pe-btn--purple {
+    background-color: #7452ff;
+}
+.section--grey .pe-btn--purple:hover {
+    background-color: #fff;
+    color: #7452ff;
+}
+.section--narrow {
+    padding: 40px 0;
+}
+.section--narrow.section--grey {
+    background-color: #f6f5ff;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.section--narrow.section--grey:before {
+    display: block;
+}
+.section--narrow.section--grey:after {
+    display: block;
+}
+.pe-table__headers, .pe-table__row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.pe-table__headers {
+    align-items: flex-end;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e7e7e7;
+}
+.pe-table__row {
+    border-bottom: 1px solid #e7e7e7;
+    align-items: center;
+}
+.pe-table__row--last {
+    border-bottom: none;
+}
+.pe-table__50 {
+    width: 50%;
+}
+.pe-table__25 {
+    width: 25%;
+}
+.pe-table__header h3, .pe-table__header p {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    display: none;
+}
+@media only screen and (min-width: 767px) {
+    .pe-table__header h3, .pe-table__header p {
+        display: block;
+   }
+}
+.pe-table__header--mobile {
+    text-align: center;
+    margin-bottom: 40px;
+}
+@media only screen and (min-width: 767px) {
+    .pe-table__header--mobile {
+        display: none;
+   }
+}
+.pe-table__header--mobile h3 {
+    display: block;
+}
+@media only screen and (min-width: 767px) {
+    .pe-table__header--mobile h3 {
+        display: none;
+   }
+}
+.pe-table__header-btn {
+    text-align: center;
+}
+.pe-table__header-btn a {
+    display: none;
+}
+@media only screen and (min-width: 767px) {
+    .pe-table__header-btn a {
+        display: inline-block;
+   }
+}
+.pe-table__header-btn p {
+    font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    margin: 0px;
+}
+@media only screen and (min-width: 400px) {
+    .pe-table__header-btn p {
+        font-size: 14px;
+   }
+}
+@media only screen and (min-width: 767px) {
+    .pe-table__header-btn p {
+        margin-bottom: 5px;
+   }
+}
+.pe-table__result {
+    text-align: center;
+}
+.pe-table__result img {
+    width: 100%;
+    max-width: 20px;
+    margin: 0 auto;
+    display: block;
+}
+.pe-table__result p {
+    color: #282828;
+    font-size: 14px;
+    font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0px;
+}
+.pe-table__link a {
+    color: #282828;
+    text-decoration: none;
+    font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0px;
+    position: relative;
+    padding-left: 30px;
+    display: block;
+    font-weight: 300;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.pe-table__link a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-image: url('https://www.petted.com/wp-content/uploads/2022/01/open.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+.pe-summary {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    text-align: center;
+}
+@media only screen and (min-width: 767px) {
+    .pe-summary {
+        text-align: left;
+   }
+}
+.pe-summary__btn {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+@media only screen and (min-width: 767px) {
+    .pe-summary__btn {
+        margin: 0;
+   }
+}
+.pe-summary__text {
+    width: 100%;
+    margin-top: 25px;
+}
+@media only screen and (min-width: 767px) {
+    .pe-summary__text {
+        width: calc(100% - 200px);
+        margin-top: 0px;
+   }
+}
+.pe-summary__text p {
+    color: #282828;
+    margin: 0;
+    font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.pe-recommendation {
+    text-align: center;
+}
+.pe-recommendation__title {
+    margin-bottom: 20px;
+}
+.pe-recommendation__title h4 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 700;
+}
+@media only screen and (min-width: 767px) {
+    .pe-recommendation__title h4 {
+        font-size: 35px;
+   }
+}
+.pe-recommendation__text p {
+    font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+.pe-recommendation .pe-seperator {
+    margin-top: 50px;
+}
+.pe-recommendation__stars {
+    width: 100%;
+    max-width: 100px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+.lower-quote {
+    padding: 50px 0px;
+}
+@media only screen and (min-width: 767px) {
+    .lower-quote--mobile {
+        display: none;
+   }
+}
+.lower-quote .pe-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.lower-quote__title {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.lower-quote__title p {
+    margin: 0;
+    font-size: 24px;
+    font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    color: #282828;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+@media only screen and (min-width: 767px) {
+    .lower-quote__title p {
+        margin-bottom: 0;
+   }
+}
+.lower-quote__text {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.lower-quote__text p {
+    margin: 0;
+    font-size: 16px;
+    font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #282828;
+    margin-bottom: 10px;
+}
+@media only screen and (min-width: 767px) {
+    .lower-quote__text p {
+        margin-bottom: 0;
+   }
+}
+.lower-quote__mobile-text {
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+}
+@media only screen and (min-width: 767px) {
+    .lower-quote__mobile-text {
+        display: none;
+   }
+}
+.lower-quote__mobile-text p {
+    font-size: 12px;
+    font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+    line-height: 1.4;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+}
+.lower-quote__btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.lower-quote__btn {
+    text-align: center;
+}
+.lower-quote__btn--mr {
+    margin-right: 40px;
+}
+.lower-quote__btn p {
+    color: #282828;
+    margin: 0;
+    font-size: 14px;
+    font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+.pe-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease, z-index 0s ease 0.3s;
+    pointer-events: none;
+}
+.pe-modal.is-open {
+    z-index: 10001 !important;
+    opacity: 1 !important;
+    transition: opacity 0.3s ease, z-index 0s ease;
+    pointer-events: all;
+}
+.pe-modal__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #282828;
+    opacity: 0.5;
+}
+.pe-modal__inner {
+    position: relative;
+    padding: 15px;
+}
+.pe-modal__close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 15px;
+    top: 15px;
+    z-index: 100;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle/%3E%3Cg%3E%3Ctitle%3Ebackground%3C/title%3E%3Crect fill='none' id='canvas_background' height='402' width='582' y='-1' x='-1'/%3E%3C/g%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Cline stroke-width='2px' stroke-linejoin='round' stroke-linecap='round' stroke='%23999999' fill='none' id='svg_1' y2='25' y1='7' x2='25.055172' x1='7.055172' class='cls-1'/%3E%3Cline stroke-width='2px' stroke-linejoin='round' stroke-linecap='round' stroke='%23999999' fill='none' id='svg_2' y2='7' y1='25' x2='25' x1='7' class='cls-1'/%3E%3C/g%3E%3C/svg%3E");
+    background-position: center;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    transition: background-color 0.3s ease;
+}
+.pe-modal__close:hover {
+    cursor: pointer;
+}
+.pe-modal__title {
+    margin-bottom: 20px;
+    padding-right: 20px;
+}
+.pe-modal__title p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #282828;
+    margin: 0;
+    font-weight: 600;
+}
+.pe-modal__text p {
+    font-size: 14px;
+    color: #282828;
+    margin: 0;
+}
+.pe-modal__wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 40px);
+    max-width: 450px;
+    z-index: 10;
+    background-color: #fff;
+    max-height: 80vh;
+    overflow: auto;
+    border-radius: 5px;
+}
+.hidden-mob {
+    display: none;
+}
+@media only screen and (min-width: 767px) {
+    .hidden-mob {
+        display: block;
+   }
+}

@@ -78,6 +78,17 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     slug
     uri
     url
+
+    userOptions {
+      customProfilePhoto {
+        __typename
+        id
+      }
+
+      fieldGroupName
+      jobTitle
+    }
+
     username
     __typename
   }

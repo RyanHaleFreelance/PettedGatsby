@@ -1,7 +1,6 @@
 import * as React from 'react'
 import * as Styles from './textAccordion.module.scss'
 import c from 'classnames'
-import { useState } from "react"
 import Accordion from '../accordion/accordion'
 
 const Layout = ({ section, images }) => {

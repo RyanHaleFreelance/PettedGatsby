@@ -1,0 +1,31 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.tcb {
+    &Wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &Left,
+    &Right {
+        width: 100%;
+
+        @include resp-min($md) {
+            width: calc(50% - 20px);
+        }
+
+        @include resp-min($lg) {
+            width: calc(50% - 30px);
+        }
+    }
+
+    &Left {
+        margin-bottom: 30px;
+
+        @include resp-min($md) {
+            margin-bottom: 0;
+        }
+    }
+}

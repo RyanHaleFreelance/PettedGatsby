@@ -3,22 +3,25 @@ import * as Styles from "../components/usNews.module.scss"
 import c from 'classnames'
 import axios from 'axios';
 import {Helmet} from "react-helmet";
+import { useEffect, useState } from "react"
 
 const IndexPage = () => {
 
-	axios.get('http://ip-api.com/json/24.48.0.1')
-	.then(function (response) {
-		// handle success
-		console.log(response);
-	})
-	.catch(function (error) {
-		// handle error
-		console.log(error);
-	})
-	.finally(function () {
-		// always executed
-	});
+	const [location, setlocation] = useState(null);
 
+	useEffect(() => {
+		axios.get('http://ip-api.com/json/?fields=61439')
+		.then(function (response) {
+			var string = 'in ' + response.data.city + ', ' + response.data.regionName;
+			setlocation(string);
+		})
+		.catch(function (error) {
+
+		})
+		.finally(function () {
+
+		});
+	}, [])
 
 	const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	const today = new Date();
@@ -95,13 +98,6 @@ const IndexPage = () => {
 			}
 		}
 	}
-	
-	
-		// fetch("https://api.ip2location.com/v2/?key=6EJ8CZ3EBW&package=WS3")
-		//   .then((response) => response.json())
-		//   .then(function(data) {
-		// 	console.log(data);
-		// }).catch(error => console.log('error', error));
 
 return(
 	<div>
@@ -122,7 +118,7 @@ return(
 					urlParam: { source: "BestOfWidget", utm_source: "", utm_medium: "", utm_campaign: "", utm_content: "", utm_term: "", referer: window.location.href },
 					refCode: "co",
 				});
-				QuoteEnginePetted.init();}, 300);
+				QuoteEnginePetted.init();}, 500);
 
 				setTimeout(() => {QuoteEnginePetted.setOptions({
 					targetId: "petted-quote-form-mobile",
@@ -131,7 +127,7 @@ return(
 					urlParam: { source: "BestOfWidget", utm_source: "", utm_medium: "", utm_campaign: "", utm_content: "", utm_term: "", referer: window.location.href },
 					refCode: "co",
 				});
-				QuoteEnginePetted.init();}, 300);
+				QuoteEnginePetted.init();}, 500);
 			`}</script>
 
 			<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -218,7 +214,7 @@ return(
 											$return = 'in ' . $cityFinal . ', ' . $regionFinal;
 										}
 										?> */}
-									<h2>Top Pet Insurance <span>FIX THIS & IP</span></h2>
+									<h2>Top Pet Insurance <span>{location}</span></h2>
 								</div>
 								<div className={Styles.peUsItem}>
 									<div className={Styles.peUsItemWrapper}>

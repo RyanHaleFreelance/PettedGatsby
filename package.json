@@ -23,6 +23,7 @@
     "react-dom": "^18.1.0",
     "react-headroom": "^3.2.1",
     "react-helmet": "^6.1.0",
+    "react-string-replace": "^1.1.0",
     "sass": "^1.55.0",
     "tiny-slider": "^2.9.4"
   },

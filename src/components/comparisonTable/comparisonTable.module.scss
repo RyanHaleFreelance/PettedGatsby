@@ -1,0 +1,187 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+
+td.typedog,
+td.typecat,
+.iviItemDetails.typedog .breed,
+.iviItemDetails.typecat .breed {
+    &:before {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        content: "";
+        vertical-align: middle;
+        margin-right: 5px;
+        background: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/icon-dog.png') no-repeat center  / 100% auto;
+
+        @include respond-min($sm) {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+    }
+}
+
+td.typecat{
+    &:before {
+        background: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/icon-cat.png') no-repeat center  / 100% auto;
+    }
+}
+
+
+// Insurer vs Insurer
+.insurerVinsurerTable {
+    display: none;
+
+    @include respond-min($sm) {
+        display: table;
+        margin-bottom: 10px !important;
+    }
+
+    tbody { 
+        th, td {
+            max-width: none !important;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f6f5ff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fff;
+        }
+
+        td:first-child {
+            max-width: none;
+            padding-left: 80px;
+            text-align: left;
+            position: relative;
+            font-size: 10px;
+            
+            p {
+                font-weight: 300;
+                margin-bottom: 0;
+            }
+
+            .breed {
+                font-size: 16px;
+                line-height: 1.2;
+                margin-bottom: 5px;
+            }
+
+            &:before {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 30px;
+            }
+        }
+
+        td:not(:first-child) {
+            font-size: 18px;
+            font-weight: 300;
+
+            span {
+                display: block;
+                font-size: 12px;
+            }
+        }
+
+        tr:first-child {
+            color: $color-text !important;
+        }
+    }
+}
+
+.insurerVinsurerMobile {
+    display: block;
+
+    @include respond-min($sm) {
+        display: none;
+    }
+}
+
+.iviHead {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+
+    > div {
+        width: 50%;
+        padding: 10px;
+    }
+
+    img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.iviItem {
+    background-color: $bg-alt;
+    border-radius: 12px;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    &Cost {
+        width: 50%;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.2;
+        padding: 10px 10px 15px;
+
+        &:first-child {
+            font-weight: 600;
+        }
+
+        span {
+            display: block;
+            font-size: 12px;
+            font-weight: 300;
+        }
+    }
+
+    &Details {
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 10px;
+        width: 100%;
+        font-size: 10px;
+
+        &.typecat {
+            &:before {
+                background: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/icon-cat.png') no-repeat center  / 100% auto;
+            }
+        }
+
+        &:before {
+            display: inline-block;
+        }
+    }
+
+    .breed {
+        font-size: 16px;
+        line-height: 1.2;
+        margin-bottom: 5px;
+        font-weight: 600;
+
+        &:before {
+            display: none;
+        }
+    }
+    
+    p {
+        font-weight: 300;
+        max-width: 180px;
+        margin: 0 auto;
+    }
+}
+
+.disclaimer {
+    margin-bottom: 40px !important;
+}

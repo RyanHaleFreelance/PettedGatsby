@@ -2,7 +2,6 @@ import * as React from 'react'
 
 const Layout = ({ section, images }) => {
 	const pagedata = section.attributes.data;
-	console.log(pagedata);
 	let title = pagedata.map_title;
 	let map = getImageUrl(pagedata.map_image);
 	let content = pagedata.map_content;

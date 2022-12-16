@@ -1,0 +1,78 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.bannerBlock {
+
+    &Wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 30px;
+        border-radius: 10px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            background: linear-gradient(350.3deg, #4580D8 -3.22%, #7452FF 90.73%);
+        }
+
+        &Btn {
+            .bannerBlockText {
+                margin-bottom: 20px;
+
+                @include resp-min($md) {
+                    width: calc(100% - 230px);
+                    margin-bottom: 0;
+                }
+            }
+
+            .bannerBlockButton {
+                width: 100%;
+                position: relative;
+                z-index: 10;
+
+                a {
+                    font-size: 14px;
+
+                    &:hover {
+                        border-color: $brand-green;
+                        background-color: transparent;
+                        color: $color-white;
+                    }
+                }
+
+                @include resp-min($md) {
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    &Text {
+        width: 100%;
+        position: relative;
+        z-index: 10;
+
+        h1,h2,h3,h4,h5,h6,p,li,ol,ul,span,div {
+            color: $color-white;
+            margin: 0;
+        }
+
+        p {
+            @include resp-min($lg) {
+                font-size: 20px;
+            }
+        }
+    }
+}

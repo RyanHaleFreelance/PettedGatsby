@@ -156,15 +156,12 @@ const Insurer = ({ section, images }) => {
 			}
 		})
 		.then(function (response) {
-			// handle success
 			settotal(response.data.reviews);
 		})
 		.catch(function (error) {
-			// handle error
 			console.log(error);
 		})
 		.finally(function () {
-			// always executed
 		});
 	}, [])
 

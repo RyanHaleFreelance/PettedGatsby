@@ -134,6 +134,80 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     }
 
     id
+
+    insurerReview {
+      excerpt
+      fieldGroupName
+
+      insurer {
+        __typename
+
+        ... on Insurer {
+          id
+        }
+      }
+
+      overview
+
+      prosCons {
+        cons {
+          fieldGroupName
+          item
+        }
+
+        fieldGroupName
+
+        pros {
+          fieldGroupName
+          item
+        }
+      }
+
+      rating {
+        claimsProcedure
+        customerService
+        easyToUnderstand
+        fieldGroupName
+        overallRating
+        speedOfClaims
+        valueForMoney
+      }
+    }
+
+    insurerVsInsurer {
+      comparisonTable {
+        fieldGroupName
+        insurer1Cost
+        insurer2Cost
+
+        quoteDetails {
+          breed
+          fieldGroupName
+          quoteDescription
+          type
+        }
+      }
+
+      disclaimer
+      fieldGroupName
+
+      insurer1 {
+        __typename
+
+        ... on Insurer {
+          id
+        }
+      }
+
+      insurer2 {
+        __typename
+
+        ... on Insurer {
+          id
+        }
+      }
+    }
+
     isContentNode
     isFrontPage
     isPostsPage
@@ -176,6 +250,7 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     pageSettings {
       altHeaderWave
       fieldGroupName
+      noContainerOnMain
     }
 
     wpParent: parent {
@@ -232,6 +307,83 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
       templateName
 
       __typename
+
+      ... on Template_InsurerReview {
+        insurerReview {
+          excerpt
+          fieldGroupName
+
+          insurer {
+            __typename
+
+            ... on Insurer {
+              id
+            }
+          }
+
+          overview
+
+          prosCons {
+            cons {
+              fieldGroupName
+              item
+            }
+
+            fieldGroupName
+
+            pros {
+              fieldGroupName
+              item
+            }
+          }
+
+          rating {
+            claimsProcedure
+            customerService
+            easyToUnderstand
+            fieldGroupName
+            overallRating
+            speedOfClaims
+            valueForMoney
+          }
+        }
+      }
+
+      ... on Template_InsurerVsInsurer {
+        insurerVsInsurer {
+          comparisonTable {
+            fieldGroupName
+            insurer1Cost
+            insurer2Cost
+
+            quoteDetails {
+              breed
+              fieldGroupName
+              quoteDescription
+              type
+            }
+          }
+
+          disclaimer
+          fieldGroupName
+
+          insurer1 {
+            __typename
+
+            ... on Insurer {
+              id
+            }
+          }
+
+          insurer2 {
+            __typename
+
+            ... on Insurer {
+              id
+            }
+          }
+        }
+      }
     }
 
     terms(first: 100) {

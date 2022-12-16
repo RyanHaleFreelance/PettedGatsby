@@ -13,13 +13,18 @@ import InsurerSlider from '../components/insurerSlider/insurerSlider'
 import FtExtra from '../components/featuredHeroExtra/featuredHeroExtra'
 import SingleText from '../components/singleText/singleText'
 import TwoCol from '../components/twoColumn/twoColumn'
+import TwoColBlock from '../components/twoColumnBlock/twoColumnBlock'
 import Blockquote from '../components/blockQuote/blockQuote'
 import Classic from '../components/classic/classic'
 import FormBlock from '../components/formBlock/formBlock'
 import TextImage from '../components/textImage/textImage'
 import MapBlock from '../components/mapBlock/mapBlock'
 import CtaBlock from '../components/ctaBlock/ctaBlock'
+import GenericText from '../components/genericText/genericText'
+import Banner from '../components/bannerBlock/bannerBlock'
+import InsuranceTable from '../components/insuranceTable/insuranceTable'
 import AccordionBlock from '../components/accordionBlock/accordionBlock'
+import c from 'classnames'
 
 const WpPost = ({data}) => {
 	const pageData = JSON.parse(data.wpPage.blocksJSON);
@@ -30,7 +35,6 @@ const WpPost = ({data}) => {
 
 	const LoadSection = ({ val, imageArray }) => {
 		let name = (val.attributes.name) ? val.attributes.name : (val.name) ? val.name : undefined
-		console.log(name);
 		switch (name) {
 			case "acf/steps" :
 			return <Steps section={val} images={imageArray} />;
@@ -62,30 +66,42 @@ const WpPost = ({data}) => {
 			return <AccordionBlock section={val} images={imageArray} />;
 			case "acf/cta-block" :
 			return <CtaBlock section={val} images={imageArray} />;
+			case "acf/generic-text-block" :
+			return <GenericText section={val} images={imageArray} />;
+			case "acf/table-block" :
+			return <InsuranceTable section={val} images={imageArray} />;
+			case "acf/two-column-block" :
+			return <TwoColBlock section={val} images={imageArray} />;
+			case "acf/banner-block" :
+			return <Banner section={val} images={imageArray} />;
 			default:
 			return "Block (" + name + ") not found. ";
 		}
 	};
 
+	let pageurl = data.wpPage.uri;
+
+	let noContainer = data.wpPage.pageSettings.noContainerOnMain;
+
   return (
     <div>
         <Layout></Layout>
 		{
-			(data.wpPage.uri == '/') ?
+			(pageurl == '/') ?
 				<Hero section={data.wpPage.hero} title={data.wpPage.title} ratings={data.wp.themeGeneralSettings.ratingsWidget}></Hero>
 			: 
 				<RegHero section={data.wpPage}></RegHero>
 		}
-        <main className="main container container--full">
+        <main className={c('main', {'container': noContainer != true}, {'container--full': noContainer != true})}>
 			{
 				(data.wpPage.featuredHero.enableFeaturedHero) ?
 					<FtExtra section={data.wpPage.featuredHero}></FtExtra>
 				: ''
 			}
 			{
-			pageData.map((section, i) => (
-				<LoadSection val={section} key={i} imageArray={images} />
-			))
+				pageData.map((section, i) => (
+					<LoadSection val={section} key={i} imageArray={images} />
+				))
 			}
         </main>
         <Footer data={data.wp.acfOptionsFooter.footerOptions}></Footer>
@@ -144,6 +160,7 @@ export const query = graphql`
 		}
 		pageSettings {
 			altHeaderWave
+			noContainerOnMain
 		}
 	}
   

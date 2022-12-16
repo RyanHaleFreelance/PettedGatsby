@@ -28,6 +28,12 @@
     &__inner {
         max-width: 100%;
         overflow-x: scroll;
+
+        .insurer-vs & {
+            @include respond-min(360px) {
+                overflow: hidden;
+            }
+        }
     }
 
     &.overflow-active .table-wrapper__inner {
@@ -68,7 +74,7 @@
         position: relative;
         z-index: 3;
         padding-right: 55px;
-        // background: url(../../../static/images/dotted-arrow.svg) no-repeat 100% 7px / 50px auto;
+        background: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/dotted-arrow.svg') no-repeat 100% 7px / 50px auto;
 
         @include respond-min($md) {
             font-size: 14px;
@@ -84,11 +90,11 @@ table.content-table {
     width: 100%;
     border-collapse: collapse;
     overflow-x: auto;
-    font-size: 0.7em;
+    font-size: 0.6em;
     margin: $sp-unit 0;
-    @media screen and (min-width: $md) {
+
+    @media screen and (min-width: $sm) {
         font-size: 0.8em;
-        width: 100%;
     }
 
     caption {
@@ -126,21 +132,31 @@ table.content-table {
     margin-top: 3em;
     border-collapse: collapse;
 
-    th, td {
+    .insurer-vs & {
+        margin-top: 0;
+    }
+
+    th, 
+    td {
         text-align: center;
         border: none;
         vertical-align: middle;
-        max-width: 100px;
-        min-width: 100px;
         font-weight: 500;
 
         img {
             margin: 1.5em auto 0.5em;
+            max-width: 90%;
 
             @include respond-min($md) {
                 max-width: 70%;
             }
         }
+    }
+
+    &:not(.insurer-compare) th, 
+    &:not(.insurer-compare) td {
+        max-width: 100px;
+        min-width: 100px;
     }
 
     .transparent th,
@@ -180,7 +196,7 @@ table.content-table {
     }
 }
 
-.content-table:not(.content-table--cols) {
+.content-table:not(.content-table--cols):not(.insurer-compare) {
     overflow: hidden;
 
     tbody tr {
@@ -240,32 +256,55 @@ table.content-table {
         background-color: #ffffff;
         z-index: 3;
     }
+
+    .insurer-vs & {
+        margin-bottom: 10px;
+
+        tbody tr,
+        tbody td:nth-child(even) {
+            background-color: transparent;
+        }
+
+        tbody td:nth-child(odd),
+        tbody th:nth-child(odd) {
+            background-color: $bg-alt;
+        }
+
+        tbody th {
+            text-align: left;
+        }
+    }
 }
 
 .table__checkbox {
-    width: 22px;
-    height: 22px;
+    width: 16px;
+    height: 16px;
     display: inline-block;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
 
+    @include respond-min($md) {
+        width: 22px;
+        height: 22px;
+    }
+
     &.checked-- {
-        // background-image: url('../../../static/images/icon--cross-light.svg');
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/icon-cross-light.svg');
     }
 
     &.checked--1 {
-        // background-image: url('../../../static/images/icon--tick-purple.svg');
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/icon-tick-purple.svg');
     }
 
     .highlighted &,
     .active & {
         &.checked-- {
-            // background-image: url('../../../static/images/icon--cross-dark.svg');
+            background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/icon-cross-dark.svg');
         }
     
         &.checked--1 {
-            // background-image: url('../../../static/images/icon--tick-white.svg');
+            background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/icon-tick-white.svg');
         }
     }
 }
@@ -371,5 +410,37 @@ table.content-table {
 
     tbody tr:first-child {
         color: $color-text;
+    }
+}
+
+.table-wrap--wide {
+    max-width: 100%;
+
+    @include respond-min($lg) {
+        position: relative;
+        width: 153%;
+        max-width: none;
+    }
+
+    &:after {
+        @include respond-min($lg) {
+            content: "";
+            height: 166%;
+            display: block;
+            width: 370px;
+            position: absolute;
+            top: -25%;
+            right: 0;
+            z-index: 1;
+            background: rgb(255,255,255);
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7021183473389356) 7%, rgba(255,255,255,1) 14%, rgba(255,255,255,1) 86%, rgba(255,255,255,0.7021183473389356) 93%, rgba(255,255,255,0) 100%);
+        }
+    }
+
+    .content-table {
+        overflow: hidden;
+        z-index: 2;
+        position: relative;
+        max-width: 100%;
     }
 }

@@ -1,0 +1,152 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.insurerRatingOverview {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ratingValue {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.ratingNumber {
+    display: block;
+    margin-right: 10px;
+    font-weight: 600;
+    position: relative;
+    top: 3px;
+}
+
+.ratingStars {
+    img {
+        width: 19px;
+        height: 19px;
+    }
+}
+
+.ratingItem {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: $sp-unit;
+
+    @include respond-min($sm) {
+        width: 50%;
+    }
+
+    @include respond-min($xl) {
+        width: 33.333%;
+    }
+
+    h3 {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &:first-child {
+        width: 100%;
+        margin-bottom: $sp-unit;
+        margin-top: 0;
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .ratingNumber {
+            font-size: 30px;
+            margin-right: 15px;
+        }
+
+        .ratingStars {
+            img {
+                width: 26px;
+                height: 26px;
+            }
+        }
+        
+    }
+} 
+
+.ourReview {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+
+    &.halfsies {
+        padding: 20px;
+
+        @include respond-min(530px) {
+            width: 47%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+    
+
+        h3 {
+            font-size: 12px;
+            margin-bottom: 1em;
+        }
+
+
+        .ratingStars {
+            img {
+                width: 14px;
+                height: 14px;
+                margin-right: 2px;
+                position:relative;
+                top: 2px;
+            }
+        }
+
+        .ratingItem {
+            margin-top: 0;
+            @include respond-min($xs) {
+                width: 50%;   
+            }
+    
+            @include respond-min(530px) {
+                width: 100%;   
+            }
+    
+            @include respond-min($md) {
+                width: 50%;   
+            }
+    
+            @include respond-min($lg) {
+                width: 100%;   
+            }
+    
+            @include respond-min(1200px) {
+                width: 50%;   
+            }
+    
+            &:first-child {
+                width: 100% !important;
+                margin-bottom: $sp-unit/2;
+    
+                .ratingNumber {
+                    font-size: 26px;
+                }
+    
+                .ratingStars {
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    + .ourReview {
+        margin-bottom: 0;
+        
+        @include respond-min(530px) {
+            margin-left: 5%;
+        }
+    }
+}

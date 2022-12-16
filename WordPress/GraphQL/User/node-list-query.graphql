@@ -79,6 +79,17 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       slug
       uri
       url
+
+      userOptions {
+        customProfilePhoto {
+          __typename
+          id
+        }
+
+        fieldGroupName
+        jobTitle
+      }
+
       username
       __typename
     }

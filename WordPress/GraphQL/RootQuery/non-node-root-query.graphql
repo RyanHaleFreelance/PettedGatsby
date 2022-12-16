@@ -35,6 +35,38 @@ query NON_NODE_QUERY {
   }
 
   acfOptionsInsurer {
+    insurerCoverageTable {
+      disclaimerText
+      fieldGroupName
+
+      insurerCoverage {
+        annualCoverageOptions
+        appToMakeClaims
+        chargeForPayingMonthly
+        deductibleOptions
+        dentalAccidentsCovered
+        dentalIllnessesCovered
+        endOfLifeCoverage
+        fieldGroupName
+
+        insurer {
+          __typename
+
+          ... on Insurer {
+            id
+          }
+        }
+
+        maximumAgeAtSignUp
+        multiPetDiscountOffered
+        reimbursementOptions
+        vetExamFeesIncludedAtNoExtraCost
+        virtualVettelehealthService
+        wellnessPlanOffered
+        whenDoesCoverageStart
+      }
+    }
+
     insurerRatings {
       fieldGroupName
 
@@ -56,6 +88,43 @@ query NON_NODE_QUERY {
 
     pageSlug
     pageTitle
+
+    valueForMoneyComparisonTable {
+      caseStudy1 {
+        fieldGroupName
+        state
+        title
+      }
+
+      caseStudy2 {
+        fieldGroupName
+        state
+        title
+      }
+
+      caseStudy3 {
+        fieldGroupName
+        state
+        title
+      }
+
+      costing {
+        caseStudy1Cost
+        caseStudy2Cost
+        caseStudy3Cost
+        fieldGroupName
+
+        insurer {
+          __typename
+
+          ... on Insurer {
+            id
+          }
+        }
+      }
+
+      fieldGroupName
+    }
   }
 
   acfOptionsSettings {
@@ -134,6 +203,11 @@ query NON_NODE_QUERY {
   themeGeneralSettings {
     pageSlug
     pageTitle
+
+    quoteCompareWidget {
+      codeSnippet
+      fieldGroupName
+    }
 
     ratingsWidget {
       fieldGroupName

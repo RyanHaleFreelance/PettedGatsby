@@ -58,7 +58,7 @@
     @extend %clearfix;
     list-style-type: none;
     padding: 0;
-    margin: 30px 0;
+    margin: 30px 0 !important;
     li {
         margin: 0 0 12px;
         padding-left: 25px;
@@ -76,7 +76,7 @@
         }
 
         &:before {
-            // background: url('../../../static/images/icon--tick-purple.svg') no-repeat center center;
+            background: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/icon-tick-purple.svg') no-repeat center center;
             width: 16px;
             height: 16px;
             background-size: 100%;
@@ -123,7 +123,221 @@
     &.containerAlignCenter {
         align-items: center;
     }
+
+    &--1080 {
+        max-width: 1080px;
+    }
 }
+
+.post {
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__upper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        @media(min-width: $md) {
+            justify-content: space-between;
+        }
+
+        p {
+            font-size: 11px;
+
+            @media(min-width: $md) {
+                font-size: 12px;
+            }
+        }
+    }
+    
+
+    &__author {
+        display: flex;
+        align-items: center;
+    }
+
+    &__author {
+        width: 100%;
+        margin: 20px 0;
+
+        &-image {
+            width: 45px;
+            height: 45px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+
+            @media(min-width: $md) {
+                width: 55px;
+                height: 55px;
+                padding-bottom: 0;
+            }
+        }
+
+        &-name-date {
+            flex: 1;
+            text-align: left;
+            margin-left: 10px;
+
+            @include respond-min($md) {
+                margin-left: 15px;
+            }
+
+            .flex {
+                flex-wrap: wrap;
+            }
+
+            p {
+                margin: 0;
+                font-weight: 400;
+                color: $base-color;
+
+                &.name {
+                    font-weight: 600;
+                    font-size: 13px;
+                    line-height: 1.4;
+
+                    @include respond-min($md) {
+                        font-size: 16px;
+                    }
+                }
+
+                &:first-child:not(:last-child):not(.name) {
+                    margin-right: 10px;
+
+                    &:after {
+                        content: "•";
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.insurer__content {
+    padding-top: $sp-unit*2;
+    padding-bottom: $sp-unit*2;
+
+    header {
+        display: flex;
+        align-items: center;
+        padding: 0 0 $sp-unit;
+
+        .insurer__logo {
+            max-width: 170px;
+
+            @include resp-max($md) {
+                max-width: 38%;
+            }
+        }
+
+        &.post__upper {
+            padding-bottom: 20px;
+            width: 100%;
+            margin: 0 0 20px;
+            background-image: linear-gradient(to right, #E0E0E0 60%, rgba(224,224,224,0) 0%);
+            background-position: bottom;
+            background-size: 14px 1px;
+            background-repeat: repeat-x;
+
+            @include respond-min($md) {
+                padding-bottom: 30px;
+                margin: -10px 0 35px;
+            }
+        }
+    }
+
+
+}
+
+.hidetoc {
+    display: none;
+}
+
+.insurer__content .entry-content .main-content {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.about-author {
+    grid-template-columns: max-content auto;
+    grid-column-gap: 30px;
+    align-items: flex-start;
+    font-size: 12px;
+
+    @include respond-min($xs) {
+        display: grid;
+    }
+
+    @include respond-min($md) {
+        font-size: 16px;
+    }
+
+    &__image {
+        width: 90px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: $sp-unit;
+
+        @include respond-min($xs) {
+            margin-bottom: 0;
+        }
+
+        @include respond-min($md) {
+            width: 120px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-size: inherit;
+        margin: 0;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+}
+
+.force-padding {
+    .bg-alt-radius {
+        padding: 24.5px;
+
+        @include respond-min($md) {
+            padding: 49px;
+        }
+    }
+
+    h4 {
+        @include respond-min($md) {
+            font-size: 24px;
+        }
+    }
+}
+
+.position-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+}
+
+.versus {
+    padding-top: 50px;
+}
+
 .col {
     margin-left: $gutter/2;
     margin-right: $gutter/2;
@@ -505,6 +719,12 @@ body .cli-tab-footer .wt-cli-privacy-accept-btn {
     padding: 20px;
     background-color: $color-white;
 
+    &.results-shown {
+        .petted-calculator__results {
+            display: block;
+        }
+    }
+
     &__title {
         text-align: center;
         margin-bottom: 20px;
@@ -641,6 +861,7 @@ body .cli-tab-footer .wt-cli-privacy-accept-btn {
 
     &__button {
         width: 100%;
+        text-align: center;
 
         a {
             width: 100%;
@@ -1295,13 +1516,50 @@ li.headerBtn a:hover {
 
     p, ul, ol, h1, h2, h3, h4, h5, h6 {
         max-width: 700px;
+        margin: 0 auto 24.5px;
         margin-left: auto;
         margin-right: auto;
-        width: 100%;
+        width: 100%; 
     }
 
     ol {
         list-style-position: inside;
+    }
+}
+
+.entry-content {
+    .main-content {
+        p, ul, ol, h1, h2, h3, h4, h5, h6 {
+            max-width: none;
+        }
+
+        margin-bottom: $sp-unit*2;
+
+        h2, h4, h5, h6 {
+            &:not(:first-child) {
+                margin-top: 3em !important;
+            }
+        }
+    
+        h3 {
+            font-size: 16px;
+            margin-top: 2em !important;
+        }
+    }
+}
+
+.content-wrap {
+    margin-bottom: $sp-unit*2;
+
+    h2, h4, h5, h6 {
+        &:not(:first-child) {
+            margin-top: 3em !important;
+        }
+    }
+
+    h3 {
+        font-size: 16px;
+        margin-top: 2em !important;
     }
 }
 
@@ -1336,5 +1594,20 @@ li.headerBtn a:hover {
 
     .peUsHeader.headercat {
         background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/05/cat-desktop.jpg') !important;
+    }
+}
+
+
+.max-700 {
+    width: 100%;
+    max-width: 700px !important;
+    margin: 0 auto;
+}
+
+.pt {
+    padding-top: 35px;
+
+    @include respond-min($md) {
+        padding-top: 50px;
     }
 }

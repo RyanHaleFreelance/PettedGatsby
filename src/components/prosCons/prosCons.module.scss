@@ -1,0 +1,47 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.prosCons {
+    font-size: 14px;
+    justify-content: space-between;
+
+    @include respond-min($md) {
+        display: flex;
+    }
+}
+
+
+.listPros,
+.listCons {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    @include respond-min($lg) {
+        width: 50%;
+        padding-right: 15px;
+    }
+
+    li {
+        margin-bottom: 15px;
+        padding-left: 30px;
+        position: relative;
+        line-height: 1.4;
+    }
+
+    li:before {
+        background: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/icon-tick-purple.svg') no-repeat center center;
+        width: 16px;
+        height: 16px;
+        background-size: 100%;
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 1px;
+    }
+}
+
+.listCons li:before {
+    background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/icon-con.svg');
+}
