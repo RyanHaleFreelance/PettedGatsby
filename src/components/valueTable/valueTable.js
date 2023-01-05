@@ -20,6 +20,9 @@ const Layout = ({ section, title }) => {
 	//get first
 	for (let index = 0; index < shuffled.length; index++) {
 		const element = shuffled[index];
+		if(title == 'ASPCA Review') {
+			title = 'ASPCA Pet Health Insurance';
+		}
 		if(title.includes(element.insurer.title)) {
 			match = element;
 			shuffled.splice(index, 1);

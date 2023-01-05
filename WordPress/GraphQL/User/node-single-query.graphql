@@ -19,6 +19,12 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
       }
     }
 
+    breeds(first: 100) {
+      nodes {
+        id
+      }
+    }
+
     capKey
     capabilities
 
@@ -76,6 +82,13 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     }
 
     slug
+
+    states(first: 100) {
+      nodes {
+        id
+      }
+    }
+
     uri
     url
 

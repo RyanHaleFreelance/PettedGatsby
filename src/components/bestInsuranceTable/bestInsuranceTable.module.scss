@@ -1,0 +1,181 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.single {
+    &InsuranceTitle,
+    &InsuranceTable {
+        width: 100%;
+    } 
+
+    &InsuranceTitle {
+        margin-top: 80px;
+        margin-bottom: 20px;
+        text-align: center;
+
+        h3 {
+            margin: 0;
+        }
+    }
+
+    &InsuranceTable {
+        margin-bottom: 60px;
+        overflow: auto;
+
+        table {
+            border-radius: 10px;
+            border: none;
+            min-width: 767px;
+            // overflow: hidden;
+
+            th,td,tr {
+                border: none;
+                text-align: center;
+                vertical-align: middle;
+
+                p {
+                    font-weight: 500;
+                    margin: 0;
+                    font-size: 13px;
+
+                    @include respond-min($md) {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            th {
+                color: $color-white;
+                font-weight: 700;
+                font-size: 13px;
+
+                @include respond-min($md) {
+                    font-size: 15px;
+                }
+
+                &:first-of-type {
+                    border-top-left-radius: 10px;
+                }
+
+                &:last-of-type {
+                    border-top-right-radius: 10px;
+                }
+            }
+
+            tr {
+                &:first-of-type {
+                    background-color: $brand-color;
+                }
+                &:last-of-type {
+                    td {
+                        &:first-of-type {
+                            border-bottom-left-radius: 10px;
+                        }
+        
+                        &:last-of-type {
+                            border-bottom-right-radius: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        table tr td {
+            border-bottom: 1px solid #C1C1C1;
+    
+        }
+    
+        .singleInsuranceProvider {
+            border-left: 1px solid #C1C1C1;
+        }
+    
+        .singleInsuranceButton {
+            border-right: 1px solid #C1C1C1;
+        }
+    
+        table {
+            width: calc(100% - 2px);
+        }
+    }
+
+    &InsuranceButton {
+        min-width: 170px;
+    }
+
+    &InsuranceScore {
+
+        p {
+            font-size: 24px !important;
+            font-weight: 600 !important;
+        }
+    }
+
+    &InsuranceWaitingPeriod,
+    &InsuranceProvider {
+        min-width: 250px;
+        max-width: 250px;
+    }
+
+    &InsuranceProvider {
+        position: relative;
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
+
+        &Tooltip {
+            padding-top: 50px !important;
+
+            p.count {
+                transform: translateY(-50%) translateY(10px) !important;
+            }
+        }
+
+        p.tooltip {
+            position: absolute;
+            left: 0;
+            top: 8px;
+            padding: 5px 10px;
+            background-color: #282828;
+            color: white;
+            font-size: 10px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            text-align: left;
+        }
+
+        p.count {
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        img {
+            max-width: 195px;
+            max-height: 60px;
+            padding-left: 40px;
+        }
+
+        a {
+            margin-top: 10px;
+            display: block;
+            text-decoration: underline;
+            color: $base-color;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &InsuranceMoneyBack {
+        width: 150px;
+    }
+
+    &InsuranceMoneyBack,
+    &InsuranceBbb {
+        img {
+            width: 100%;
+            max-width: 30px;
+            margin: 0 auto;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+
+.accordionWrapper {
+    margin-top: 50px;
+    margin-bottom: 0;
+    width: 100%;
+    
+    @include respond-min($md) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        max-width: 100%;
+    }
+
+    ul {
+        margin: 0;
+        list-style-type: none;
+    }
+}
+

@@ -22,7 +22,52 @@ query PREVIEW_QUERY($id: ID!) {
     dateGmt
     desiredSlug
     enclosure
+
+    featuredHero {
+      enableFeaturedHero
+      fieldGroupName
+
+      heroImage {
+        __typename
+        id
+      }
+
+      heroImageMobile {
+        __typename
+        id
+      }
+
+      heroVideoId
+      introduction
+      pageTitle
+      showBreadcrumbs
+    }
+
     guid
+
+    hero {
+      fieldGroupName
+
+      heroButtonLink {
+        target
+        title
+        url
+      }
+
+      heroButtonText
+      heroContent
+
+      heroImage {
+        __typename
+        id
+      }
+
+      heroMobileImage {
+        __typename
+        id
+      }
+    }
+
     id
     isContentNode
     isRevision
@@ -37,6 +82,34 @@ query PREVIEW_QUERY($id: ID!) {
     link
     modified
     modifiedGmt
+
+    noneHomeHeader {
+      fieldGroupName
+
+      nhhBackgroundImage {
+        __typename
+        id
+      }
+
+      nhhBackgroundImageMobile {
+        __typename
+        id
+      }
+
+      nhhImage {
+        __typename
+        id
+      }
+
+      nhhMoveImageDown
+    }
+
+    pageSettings {
+      altHeaderWave
+      fieldGroupName
+      noContainerOnMain
+    }
+
     slug
     status
 
@@ -44,6 +117,39 @@ query PREVIEW_QUERY($id: ID!) {
       templateName
 
       __typename
+
+      ... on Template_BlogHome {
+        blog {
+          blogQuoteButtonText
+
+          blogQuoteImage {
+            __typename
+            id
+          }
+
+          blogQuoteLink
+          blogQuoteText
+          blogQuoteTitle
+
+          featuredPosts {
+            fieldGroupName
+
+            post {
+              __typename
+
+              ... on Post {
+                id
+              }
+
+              ... on Page {
+                id
+              }
+            }
+          }
+
+          fieldGroupName
+        }
+      }
 
       ... on Template_InsurerReview {
         insurerReview {

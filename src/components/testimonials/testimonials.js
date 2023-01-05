@@ -94,7 +94,12 @@ const Layout = ({ section, images, ratings }) => {
 						: ''
 					}
 					<div className="textBlockInner">
-						<Ratings info={ratings}></Ratings>
+						{
+							(pagedata.test_logo) ?
+								<img style={{maxWidth:'100px', margin:'0 auto', marginBottom:'10px'}} src="https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/petted-logo-dark-alt.svg" alt="Petted logo" class="menu-logo" />
+							: ''
+						}
+						<Ratings info={ratings} title={pagedata.test_rating}></Ratings>
 					</div>
 				</div>
 				<div className={c("col col-md-3-5 align-text-center testimonial-slider")}>

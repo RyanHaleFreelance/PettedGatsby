@@ -217,6 +217,52 @@ query NON_NODE_QUERY {
       ratingStars
       ratingValue
     }
+
+    stateBreedOptions {
+      breedsBackgroundImage {
+        __typename
+        id
+      }
+
+      breedsBackgroundImageMobile {
+        __typename
+        id
+      }
+
+      fieldGroupName
+
+      statesBackgroundImage {
+        __typename
+        id
+      }
+
+      statesBackgroundImageMobile {
+        __typename
+        id
+      }
+    }
+
+    tableOptions {
+      bestInsuranceTable {
+        bbbRating
+        fieldGroupName
+        maximumAge
+        minimumAge
+
+        provider {
+          __typename
+          id
+        }
+
+        score
+        tooltip
+        viewMoreLink
+        viewMoreText
+        waitingPeriod
+      }
+
+      fieldGroupName
+    }
   }
 
   wpGatsby {

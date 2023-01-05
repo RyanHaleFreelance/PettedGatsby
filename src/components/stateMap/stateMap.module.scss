@@ -1,0 +1,84 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+
+.stateMap {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 0;
+    max-width: 780px;
+    padding-bottom: 40%;
+}
+
+.usMap{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+}
+
+path, a rect {
+    fill: #E0DCF1 !important;
+    transition: fill .3s ease;
+}
+
+path:hover, circle:hover,
+a:hover rect,
+a:focus rect,
+a:focus path, a:focus circle {
+    stroke-width:1px;
+    stroke-linejoin: round;
+    fill: #7452FF !important;
+    cursor: pointer;
+}
+
+a:focus {
+    outline: none;
+}
+
+.path67 {
+    fill: none !important;
+    stroke: #A9A9A9 !important;
+    cursor: default;  
+
+    &:hover {
+        fill: none !important;
+        stroke: #A9A9A9 !important;
+    }
+}
+
+text {
+    font-family: "Poppins","Helvetica Neue",Helvetica,Arial,sans-serif;
+    pointer-events: none;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a.group:hover + a path {
+    fill: #7452FF !important;
+}
+    
+a:hover text,
+a:focus text {
+    fill: #fff !important;
+}
+
+.stateMap a:hover {
+    text-decoration: none;
+}   
+
+.infoBox,
+.infoBoxSr {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 5px 5px 3px;
+    font-family: "Poppins","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}

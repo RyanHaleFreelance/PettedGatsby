@@ -3,9 +3,9 @@ import * as Styles from './regHero.module.scss'
 import c from 'classnames'
 import FeaturedHero from '../featuredHero/featuredHero'
 
-const Layout = ({ section }) => {
+const Layout = ({ section, title }) => {
 	let enableFeatured = (section.featuredHero.enableFeaturedHero) ? section.featuredHero.enableFeaturedHero : false;
-	let pageTitle = (section.featuredHero.pageTitle) ? section.featuredHero.pageTitle : section.title;
+	let pageTitle = (section.featuredHero.pageTitle) ? section.featuredHero.pageTitle : (title) ? title : section.title;
 	let nhhBG = (section.noneHomeHeader.nhhBackgroundImage) ? section.noneHomeHeader.nhhBackgroundImage.sourceUrl : false;
 	let nhhMobBG = (section.noneHomeHeader.nhhBackgroundImageMobile) ? section.noneHomeHeader.nhhBackgroundImageMobile.sourceUrl : false;
 	let nhhImg = (section.noneHomeHeader.nhhImage) ? section.noneHomeHeader.nhhImage.sourceUrl : false;

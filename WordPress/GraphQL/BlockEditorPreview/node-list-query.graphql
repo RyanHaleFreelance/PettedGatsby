@@ -86,6 +86,39 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
 
         __typename
 
+        ... on Template_BlogHome {
+          blog {
+            blogQuoteButtonText
+
+            blogQuoteImage {
+              __typename
+              id
+            }
+
+            blogQuoteLink
+            blogQuoteText
+            blogQuoteTitle
+
+            featuredPosts {
+              fieldGroupName
+
+              post {
+                __typename
+
+                ... on Post {
+                  id
+                }
+
+                ... on Page {
+                  id
+                }
+              }
+            }
+
+            fieldGroupName
+          }
+        }
+
         ... on Template_InsurerReview {
           insurerReview {
             excerpt
@@ -208,6 +241,18 @@ fragment BlockFragment on Block {
       id
     }
 
+    ... on Breed {
+      id
+    }
+
+    ... on Post {
+      id
+    }
+
+    ... on Page {
+      id
+    }
+
     ... on Comment {
       id
     }
@@ -216,15 +261,7 @@ fragment BlockFragment on Block {
       id
     }
 
-    ... on Page {
-      id
-    }
-
     ... on Tag {
-      id
-    }
-
-    ... on Post {
       id
     }
 
@@ -233,6 +270,10 @@ fragment BlockFragment on Block {
     }
 
     ... on PostFormat {
+      id
+    }
+
+    ... on State {
       id
     }
 
@@ -2977,6 +3018,18 @@ fragment BlockFragment on Block {
         id
       }
 
+      ... on Breed {
+        id
+      }
+
+      ... on Post {
+        id
+      }
+
+      ... on Page {
+        id
+      }
+
       ... on Comment {
         id
       }
@@ -2985,15 +3038,7 @@ fragment BlockFragment on Block {
         id
       }
 
-      ... on Page {
-        id
-      }
-
       ... on Tag {
-        id
-      }
-
-      ... on Post {
         id
       }
 
@@ -3002,6 +3047,10 @@ fragment BlockFragment on Block {
       }
 
       ... on PostFormat {
+        id
+      }
+
+      ... on State {
         id
       }
 

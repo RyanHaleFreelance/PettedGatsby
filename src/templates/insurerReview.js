@@ -49,7 +49,6 @@ const WpPost = ({data}) => {
 	useEffect(() => {
 	}, [ toggle ] );
 
-
 	  
 	//get h2s and add the id for toc
 	content = reactStringReplace(pageData[0].attributes.content, /(<h2>.*<\/h2>)/gi, (match, i) => (
@@ -67,7 +66,6 @@ const WpPost = ({data}) => {
 
 	//recreate html form the reactstringreplace function
 	for (let i = 0; i < content.length; i++) {
-		console.log(content[i]);
 		if (typeof(content[i]) === 'string') {
 			html += content[i];
 		} else {
@@ -80,10 +78,6 @@ const WpPost = ({data}) => {
 		originalContent: html
 	};
 
-	setTimeout(() => {
-		console.log(data);
-		console.log(data.wpPage.blocksJSON);
-	}, 2000);
 
 	const LoadSection = ({ val, imageArray }) => {
 		let name = (val.attributes.name) ? val.attributes.name : (val.name) ? val.name : undefined

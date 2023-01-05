@@ -29,9 +29,6 @@ import c from 'classnames'
 const WpPost = ({data}) => {
 	const pageData = JSON.parse(data.wpPage.blocksJSON);
 	const images = data.allWpMediaItem.edges;
-	setTimeout(() => {
-		console.log(data);
-	}, 2000);
 
 	const LoadSection = ({ val, imageArray }) => {
 		let name = (val.attributes.name) ? val.attributes.name : (val.name) ? val.name : undefined

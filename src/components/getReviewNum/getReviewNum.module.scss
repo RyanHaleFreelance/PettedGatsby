@@ -1,0 +1,46 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    span {
+        margin-right: 5px;
+    }
+}
+
+.ldsDualRing {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+.ldsDualRing:after {
+    content: " ";
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 6px;
+    border-radius: 50%;
+    border: 2px solid #F6F5FF;
+    border-color: #F6F5FF transparent #F6F5FF transparent;
+    animation: anim 1.2s linear infinite;
+}
+
+@keyframes anim {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+  
+  

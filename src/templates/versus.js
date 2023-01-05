@@ -36,10 +36,6 @@ const WpPost = ({data}) => {
 	let title = data.wpPage.title;
 	let value = data.wp.acfOptionsInsurer.valueForMoneyComparisonTable;
 
-	setTimeout(() => {
-		console.log(data);
-	}, 2000);
-
 	const LoadSection = ({ val, imageArray }) => {
 		let name = (val.attributes.name) ? val.attributes.name : (val.name) ? val.name : undefined
 		switch (name) {
@@ -119,7 +115,6 @@ const WpPost = ({data}) => {
 					<div class="col col-lg-2-3 content-wrap entry-content">
 						{
 							pageData.map((section, i) => {
-								console.log(section);
 								return (section.name == 'core/freeform' || section.name == 'acf/generic-text-block') ? <LoadSection val={section} key={i} imageArray={images} /> : ''
 							})
 						}

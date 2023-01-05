@@ -48,6 +48,37 @@ query PREVIEW_QUERY($id: ID!) {
 
     blocksJSON
 
+    blog {
+      blogQuoteButtonText
+
+      blogQuoteImage {
+        __typename
+        id
+      }
+
+      blogQuoteLink
+      blogQuoteText
+      blogQuoteTitle
+
+      featuredPosts {
+        fieldGroupName
+
+        post {
+          __typename
+
+          ... on Post {
+            id
+          }
+
+          ... on Page {
+            id
+          }
+        }
+      }
+
+      fieldGroupName
+    }
+
     wpChildren: children(first: 100) {
       nodes {
         id
@@ -308,6 +339,39 @@ query PREVIEW_QUERY($id: ID!) {
 
       __typename
 
+      ... on Template_BlogHome {
+        blog {
+          blogQuoteButtonText
+
+          blogQuoteImage {
+            __typename
+            id
+          }
+
+          blogQuoteLink
+          blogQuoteText
+          blogQuoteTitle
+
+          featuredPosts {
+            fieldGroupName
+
+            post {
+              __typename
+
+              ... on Post {
+                id
+              }
+
+              ... on Page {
+                id
+              }
+            }
+          }
+
+          fieldGroupName
+        }
+      }
+
       ... on Template_InsurerReview {
         insurerReview {
           excerpt
@@ -395,6 +459,44 @@ query PREVIEW_QUERY($id: ID!) {
 
     title
     uri
+
+    valueForMoneyComparisonTable {
+      caseStudy1 {
+        fieldGroupName
+        state
+        title
+      }
+
+      caseStudy2 {
+        fieldGroupName
+        state
+        title
+      }
+
+      caseStudy3 {
+        fieldGroupName
+        state
+        title
+      }
+
+      costing {
+        caseStudy1Cost
+        caseStudy2Cost
+        caseStudy3Cost
+        fieldGroupName
+
+        insurer {
+          __typename
+
+          ... on Insurer {
+            id
+          }
+        }
+      }
+
+      fieldGroupName
+    }
+
     __typename
   }
 }
@@ -432,6 +534,18 @@ fragment BlockFragment on Block {
       id
     }
 
+    ... on Breed {
+      id
+    }
+
+    ... on Post {
+      id
+    }
+
+    ... on Page {
+      id
+    }
+
     ... on Comment {
       id
     }
@@ -440,15 +554,7 @@ fragment BlockFragment on Block {
       id
     }
 
-    ... on Page {
-      id
-    }
-
     ... on Tag {
-      id
-    }
-
-    ... on Post {
       id
     }
 
@@ -457,6 +563,10 @@ fragment BlockFragment on Block {
     }
 
     ... on PostFormat {
+      id
+    }
+
+    ... on State {
       id
     }
 
@@ -3201,6 +3311,18 @@ fragment BlockFragment on Block {
         id
       }
 
+      ... on Breed {
+        id
+      }
+
+      ... on Post {
+        id
+      }
+
+      ... on Page {
+        id
+      }
+
       ... on Comment {
         id
       }
@@ -3209,15 +3331,7 @@ fragment BlockFragment on Block {
         id
       }
 
-      ... on Page {
-        id
-      }
-
       ... on Tag {
-        id
-      }
-
-      ... on Post {
         id
       }
 
@@ -3226,6 +3340,10 @@ fragment BlockFragment on Block {
       }
 
       ... on PostFormat {
+        id
+      }
+
+      ... on State {
         id
       }
 

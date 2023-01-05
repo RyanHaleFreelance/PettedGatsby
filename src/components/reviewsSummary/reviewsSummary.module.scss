@@ -1,0 +1,72 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.reviewSummary {
+    display: flex;
+    align-items: center;
+
+    p {
+        color: $color-text;
+        font-weight: 600;
+        margin: 0;
+        font-size: 14px;
+        text-decoration: none !important;
+    }
+
+    div {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .insurerRating {
+        margin: 0;
+        margin-right: -22px;
+        margin-left: 20px;
+        line-height: 1;
+        font-weight: 700;
+        font-size: 25px;
+        display: block;
+    }
+
+    aside &,
+    .archiveReviews & {
+        margin-bottom: 30px;
+        align-items: flex-start;
+        
+        .insurerRating {
+            margin: 0;
+            color: $color-text;
+
+            @include resp-max($md) {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+        }
+
+        .glsr-summary-wrap {
+            margin-left: -36px;
+
+            @include resp-max($md) {
+                margin-left: -26px;
+            }
+        }
+
+        .glsr-summary-stars {
+            margin-left: 45px;
+
+            @include resp-max($md) {
+                margin-left: 35px;
+            }
+        }
+    }
+
+    .archiveReviews & {
+        align-items: center;
+        
+        .glsr-summary-text {
+            @include resp-max($md) {
+                margin-left: 10px !important;
+            }
+        }
+    }
+}

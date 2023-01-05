@@ -11,10 +11,7 @@ const Layout = ({ section, images, reviews, versus, comparison, title, value }) 
 	if(comparison) {
 		compData = comparison.insurerCoverage;
 	}
-	
-	console.log(section.originalContent);
-	
-	
+
 	function getData(incoming) {
 		for (let i = 0; i < reviews.length; i++) {
 			const element = reviews[i];
@@ -53,6 +50,10 @@ const Layout = ({ section, images, reviews, versus, comparison, title, value }) 
 		<Coverage insurer1='' insurer2='' disclaimer={comparison.disclaimerText} section={compData} title={title} />
 	));
 
+	content = reactStringReplace(content, /\[purple(?: text="(.*)")?\]/gi, (match, i) => (
+		'<span class="purple" style="font-size: 22px; color: #7452ff;">' + match + '</span>'
+	));
+
 	if(/\[coverage_table insurers="(.*)"\]/.test(content)) {
 		content = reactStringReplace(content, /\[coverage_table(?: insurers="(.*)")?\]/gi, (match, i) => (
 			<Coverage insurer1={getCompData(match.split(',')[0])} insurer2={getCompData(match.split(',')[1])} disclaimer={comparison.disclaimerText} section='' title={title} /> 
@@ -62,7 +63,6 @@ const Layout = ({ section, images, reviews, versus, comparison, title, value }) 
 	return (
 		<div className="section main-content">
 			{ content.map( (piece,i) => {
-				console.log(piece);
 				return typeof(piece)==='object' ? piece : 
 				(piece == '</p>\n<p>' || piece == '\r\n\r\n' || piece == '\n\n' || piece == '<p></p>' || piece == '<p></p><p></p>' || piece == '</p><p>' || piece == '\r\n') ? '' : <div dangerouslySetInnerHTML={{__html:piece}}></div>
 			})}

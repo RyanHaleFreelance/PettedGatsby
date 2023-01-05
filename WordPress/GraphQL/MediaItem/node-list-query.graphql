@@ -121,6 +121,39 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
 
         __typename
 
+        ... on Template_BlogHome {
+          blog {
+            blogQuoteButtonText
+
+            blogQuoteImage {
+              __typename
+              id
+            }
+
+            blogQuoteLink
+            blogQuoteText
+            blogQuoteTitle
+
+            featuredPosts {
+              fieldGroupName
+
+              post {
+                __typename
+
+                ... on Post {
+                  id
+                }
+
+                ... on Page {
+                  id
+                }
+              }
+            }
+
+            fieldGroupName
+          }
+        }
+
         ... on Template_InsurerReview {
           insurerReview {
             excerpt

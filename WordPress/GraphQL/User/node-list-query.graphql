@@ -20,6 +20,12 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
         }
       }
 
+      breeds(first: 100) {
+        nodes {
+          id
+        }
+      }
+
       capKey
       capabilities
 
@@ -77,6 +83,13 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       }
 
       slug
+
+      states(first: 100) {
+        nodes {
+          id
+        }
+      }
+
       uri
       url
 

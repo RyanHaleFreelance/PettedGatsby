@@ -4,6 +4,8 @@ import * as Styles from './insurerSlider.module.scss'
 import c from 'classnames'
 import { useEffect, useState } from "react"
 import axios from 'axios';
+import ReviewNum from '../getReviewNum/getReviewNum'
+import GetStars from '../getStars/getStars'
 
 const Insurer = ({ section, images }) => {
 	const { wp } = useStaticQuery(graphql`
@@ -45,48 +47,6 @@ const Insurer = ({ section, images }) => {
 		let rating = current.rating;
 		let id = current.insurer.databaseId;
 		let title = current.insurer.title;
-		let halfs = Math.round(rating*2)/2;
-		let down = Math.floor(halfs);
-
-		for (let index = 0; index < down; index++) {
-			stars += '<img src="https://dev-petted2.pantheonsite.io/wp-content/plugins/site-reviews/assets/images/star-full.svg" alt="Star" />';
-		}
-
-		if(halfs % 1 != 0) {
-			stars += '<img src="https://dev-petted2.pantheonsite.io/wp-content/plugins/site-reviews/assets/images/star-half.svg" alt="Half Star" />';
-		}
-
-		getData(id, logo, uri, rec, rating, title, i, stars);
-	}
-
-	async function getData(id, logo, uri, rec, rating, title, i, stars) {
-		let mydata = '';
-		fetch("https://dev-petted2.pantheonsite.io/wp-json/site-reviews/v1/summary?_fields=average,reviews&assigned_posts=" + id, {
-			headers: {
-			  Authorization: "Basic cGV0dGVkYWRtaW46N0VnaW5pcE5aVlpqQml5TllOYzJoMmlS"
-			}
-		})
-		  .then((response) => response.json())
-		  .then(function(data) {
-			insurers[i] = {
-				databaseId: id,
-				insurer: {
-					insurerDetails: {
-						logo: {
-							sourceUrl: logo
-						},
-						title: title
-					},
-				},
-				uri: uri,
-				pettedRecommended: rec,
-				rating: rating,
-				stars: stars,
-				average: data.average,
-				reviews: data.reviews
-			};
-		});
-		return mydata;
 	}
 
 	let title = pagedata.is_title;
@@ -159,17 +119,11 @@ const Insurer = ({ section, images }) => {
 			settotal(response.data.reviews);
 		})
 		.catch(function (error) {
-			console.log(error);
+
 		})
 		.finally(function () {
 		});
 	}, [])
-
-
-
-	const [isHide, setIsHide] = useState(true);
-
-	setTimeout(() => setIsHide(false), 2000);
 
 	return (
 		<div className="section bg-alt">
@@ -207,10 +161,10 @@ const Insurer = ({ section, images }) => {
 									
 									<span className={Styles.insurerRating}>{section.rating}</span>
 									
-									<div className={Styles.stars} dangerouslySetInnerHTML={{__html: section.stars}}></div>
+									<GetStars section={section.rating} title={section.insurer.title} />
 
-									<p className={Styles.reviews}>{!isHide ? <span>{section.reviews}</span> : <div className={Styles.ldsDualRing}></div>} reviews</p>
-										
+									<ReviewNum section={section.insurer.databaseId} />
+								
 									<a href={section.insurer.uri} className="link--more">Read reviews</a>
 								</div>
 							</div>
@@ -230,14 +184,11 @@ const Insurer = ({ section, images }) => {
 						: ''
 					}
 
-					{total}
-
-					<p>Needs work to prevent duplicates</p>
-					
-					{/* <?php $count_posts = wp_count_posts( 'site-review' )->publish; ?>
-					<?php if ($count_posts > 999) : ?>
-						<p className="review-count"><img src="<?php echo get_template_directory_uri(); ?>/compiled/images/smiley.svg" alt="smiley face" /> <?php echo $count_posts; ?> reviews and counting!</p>
-					<?php endif; ?> */}
+					{
+						(total > 999) ?
+							<p className={Styles.reviewCount}><img src="https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/12/smiley.svg" alt="smiley face" /> {total} reviews and counting!</p>
+						: ''
+					}
 				</div>
 			</div>
 		</div>

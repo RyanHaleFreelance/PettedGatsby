@@ -1,0 +1,96 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+
+.headerAuthor {
+    grid-template-columns: max-content max-content;
+    grid-column-gap: 50px;
+    max-width: 920px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    padding: 0 10px;
+
+    @include respond-min($md) {
+        display: grid;
+        padding: 0;
+    }
+
+    &Image {
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid #fff;
+        width: 120px;
+
+        @include respond-min($md) {
+            width: 170px;
+            grid-column: 170px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &Meta {
+        h1 {
+            margin: $sp-unit 0 0;
+            @include font-size(30);
+            padding-right: 0;
+        }
+        p {
+            max-width: 630px;
+        }
+    }
+}
+
+
+.pageHeader {
+    background: rgb(116,82,255);
+    background: linear-gradient(148deg, rgba(116,82,255,1) 0%, rgba(69,128,216,1) 100%);
+    padding: 120px 0 40px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    margin-top: -60px;
+
+    @include respond-min($lg) {
+        padding: 120px 0;
+        margin-top: -86px;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/header-texture.png');
+        height: 1069px;
+        width: 1058px;
+        left: 40%;
+        bottom: -100px;
+        pointer-events: none;
+    }
+
+    &:after {
+        background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/wave-mobile.png');
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        content: "";
+        width: 100%;
+        position: absolute;
+        bottom: -10px;
+        height: 0;
+        padding-bottom: 13%;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+
+        @include respond-min($md) {
+            background-image: url('https://dev-petted2.pantheonsite.io/wp-content/uploads/2022/11/wave.png');
+            height: 71px;
+            left: 0;
+            bottom: -1px;
+            transform: none;
+        }
+    }
+}

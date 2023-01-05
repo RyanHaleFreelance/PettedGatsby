@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as Styles from './ratings.module.scss'
 import c from 'classnames'
 
-const Layout = ({ info }) => {
+const Layout = ({ info, title }) => {
 	let ratingName = info.ratingName;
 	let ratingNumber = info.ratingNumber;
 	let ratingStars = info.ratingStars;
@@ -16,6 +16,9 @@ const Layout = ({ info }) => {
 
 	return (
 		<div className={c(Styles.ratings, 'ratings')}>
+			{
+				(title) ?  <h5 class='no-bm'>{title}</h5> : ''
+			}
 			{
 				(ratingLink) ?  "<a href={ratingLink} target='_blank'>" : ''
 			}

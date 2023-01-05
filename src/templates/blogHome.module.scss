@@ -1,0 +1,330 @@
+@import "../../src/scss/utils/variables";
+@import "../../src/scss/utils/mixins";
+
+.blogFeatured,
+.postFeaturedPosts  {
+    &Wrapper,
+    &Wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+    }
+
+    .tns-controls {
+        display: none;
+    }
+
+    .tns-inner {
+        @include resp-max(650px) {
+            width: 75%; 
+        }
+    }
+
+    .tns-item:not(:last-child) {
+        margin-right: 20px;
+    }
+}
+
+.blog {
+    &Featured {
+        p {
+            font-weight: 700;
+            position: relative;
+            z-index: 10;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            color: $color-white;
+        }
+    }
+
+    &Wrapper {
+        position: relative;
+        min-height: 200px;
+    }
+
+    &CategoryWrapper {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    &Results {
+        width: 100%;
+        max-width: 1050px;
+        margin: 0 auto;
+    }
+
+    &NumbersInner {
+        display: flex;
+        align-items: center;
+    }
+
+    &Numbers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            font-size: 26px;
+            color: $base-color;
+            text-decoration: none;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        span a {
+            display: none;
+            font-size: 18px;
+            color: $base-color;
+            text-decoration: none;
+            margin: 0 2.5px;
+
+            &.is-active {
+                display: block;
+                border: 2px solid $base-color;
+                border-radius: 5px;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &Quote {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        margin-top: 80px;
+        margin-bottom: 50px;
+        align-items: center;
+
+        &Left {
+            width: 100%;
+            margin-bottom: 25px;
+            
+            @include resp-min($md) {
+                width: calc(50% - 20px);
+                margin-bottom: 0;
+            }
+
+            @include resp-min($lg) {
+                width: calc(60% - 40px);
+            }
+        }
+
+        &Right {
+            width: 100%;
+            text-align: center;
+            
+            @include resp-min($md) {
+                width: calc(50% - 20px);
+                text-align: left;
+            }
+
+            @include resp-min($lg) {
+                width: calc(40% - 40px);
+            }
+
+            h2 {
+                font-size: 30px;
+                margin-bottom: 20px;
+                font-weight: 700;
+                line-height: 1.2;
+
+                @include resp-min($lg) {
+                    font-size: 45px;
+                }
+            }
+
+            p {
+                margin-bottom: 15px;
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &Categories {
+        display: none;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 825px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+
+        @include resp-min(850px) {
+            display: flex;
+        }
+
+        a {
+            color: $base-color;
+            text-decoration: none;
+            padding: 10px;
+            position: relative;
+            font-size: 18px;
+            font-weight: 700;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $brand-color;
+            }
+        }
+    }
+
+    &CategoriesMobile {
+        position: relative;
+
+        @include resp-min(850px) {
+            display: none;
+        }
+
+        select {
+            -webkit-appearance: none;
+            padding: 10px 30px 10px 10px;
+            @include font-size(18);
+            border: none;
+            border-bottom: 4px solid $base-color;
+            cursor: pointer;
+            color: $base-color;
+            margin: 0;
+            border-radius: 0;
+            height: auto;
+            font-weight: 700;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'%3E%3Cpath d='M18.4,148.2l2.7,3.2l205.7,236.7c7,8,17.4,13,29,13c11.6,0,22.1-5.1,29-13l205.5-236.3l3.5-3.9c2.6-3.8,4.1-8.3,4.1-13.2 c0-13.2-11.2-23.9-25.1-23.9l0,0H39.1l0,0c-13.9,0-25.1,10.7-25.1,23.9C14,139.8,15.7,144.5,18.4,148.2z'/%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            pointer-events: none;
+        }
+    }
+
+    &FeaturedCard {
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        margin: 0 auto;
+        display: block;
+        text-decoration: none;
+        max-width: 400px;
+        margin-bottom: 40px;
+
+        &:hover {
+            text-decoration-color: $color-white;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(32.69deg, rgba(0, 0, 0, 0.5) 10.81%, rgba(0, 0, 0, 0) 71.12%);
+            z-index: 1;
+        }
+
+        @include resp-min($md) {
+            width: calc(33.33333% - 20px);
+            margin-bottom: 0;
+        }
+    }
+
+    &FeaturedCat {
+        margin-top: 150px;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 2;
+    }
+
+    &FeaturedTitle {
+        position: relative;
+        z-index: 2;
+
+        h2 {
+            color: $color-white;
+            margin: 0;
+        }
+
+        &Top {
+            margin-top: 190px;
+            // margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &LatestCat {
+
+        a,p {
+            color: $base-color;
+            text-decoration: none;
+            padding: 3px 15px 1px;
+            border-radius: 25px;
+            background-color: $brand-green;
+            display: inline-block;
+            margin: 0;
+            font-size: 11px;
+            font-weight: 600;
+        }
+    
+        &Behavior,
+        &Behaviour {
+            a,p {
+                background-color: #FFD84F;
+                color: $base-color;
+            }
+        }
+    
+        &Health {
+            a,p {
+                background-color: $brand-green;
+                color: $base-color;
+            }
+        }
+    
+        &Advice {
+            a,p {
+                background-color: $brand-color;
+                color: $color-white;
+            }
+        }
+    
+        &Fun {
+            a,p {
+                background-color: #F8426E;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.hasCat {
+    .blogFeaturedTitleTop {
+        margin-top: 0;
+    }
+}

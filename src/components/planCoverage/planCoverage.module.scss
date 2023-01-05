@@ -1,0 +1,56 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.planCoverage {
+    padding: 20px;
+    border: 1px solid #C9BCFF;
+    border-radius: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    @include respond-min($lg) {
+        padding: 40px;
+        padding-bottom: 25px;
+    }
+
+    &Title {
+        margin-bottom: 20px;
+
+        h3 {
+            color: $brand-color;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+        }
+    }
+
+    &List {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &Item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        width: 100%;
+
+        @include respond-min($lg) {
+            width: calc(50% - 20px);
+        }
+
+        img {
+            width: 100%;
+            max-width: 30px;
+            margin-right: 15px;
+        }
+
+        p {
+            color: #282828;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 0;
+        }
+    }
+}

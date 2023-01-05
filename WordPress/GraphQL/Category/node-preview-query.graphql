@@ -22,11 +22,82 @@ query PREVIEW_QUERY($id: ID!) {
     count
     databaseId
     description
+
+    featuredHero {
+      enableFeaturedHero
+      fieldGroupName
+
+      heroImage {
+        __typename
+        id
+      }
+
+      heroImageMobile {
+        __typename
+        id
+      }
+
+      heroVideoId
+      introduction
+      pageTitle
+      showBreadcrumbs
+    }
+
+    hero {
+      fieldGroupName
+
+      heroButtonLink {
+        target
+        title
+        url
+      }
+
+      heroButtonText
+      heroContent
+
+      heroImage {
+        __typename
+        id
+      }
+
+      heroMobileImage {
+        __typename
+        id
+      }
+    }
+
     id
     isContentNode
     isTermNode
     link
     name
+
+    noneHomeHeader {
+      fieldGroupName
+
+      nhhBackgroundImage {
+        __typename
+        id
+      }
+
+      nhhBackgroundImageMobile {
+        __typename
+        id
+      }
+
+      nhhImage {
+        __typename
+        id
+      }
+
+      nhhMoveImageDown
+    }
+
+    pageSettings {
+      altHeaderWave
+      fieldGroupName
+      noContainerOnMain
+    }
 
     wpParent: parent {
       node {

@@ -1,0 +1,61 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.blog {
+    &Quote {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        margin-top: 80px;
+        margin-bottom: 50px;
+        align-items: center;
+
+        &Left {
+            width: 100%;
+            margin-bottom: 25px;
+            
+            @include resp-min($md) {
+                width: calc(50% - 20px);
+                margin-bottom: 0;
+            }
+
+            @include resp-min($lg) {
+                width: calc(60% - 40px);
+            }
+        }
+
+        &Right {
+            width: 100%;
+            text-align: center;
+            
+            @include resp-min($md) {
+                width: calc(50% - 20px);
+                text-align: left;
+            }
+
+            @include resp-min($lg) {
+                width: calc(40% - 40px);
+            }
+
+            h2 {
+                font-size: 30px;
+                margin-bottom: 20px;
+                font-weight: 700;
+                line-height: 1.2;
+
+                @include resp-min($lg) {
+                    font-size: 45px;
+                }
+            }
+
+            p {
+                margin-bottom: 15px;
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+    }
+}

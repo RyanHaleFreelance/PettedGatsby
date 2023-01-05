@@ -1,0 +1,14 @@
+@import "../../../src/scss/utils/variables";
+@import "../../../src/scss/utils/mixins";
+
+.stars {
+  display: flex;
+  justify-content: center;
+
+  img {
+      width: 100%;
+      max-width: 1.5rem;
+  }
+}
+  
+  
