@@ -38,7 +38,9 @@ const WpPost = ({data}) => {
 
 		if(numPage == 1) {
 			setTimeout(() => {
-				document.querySelector('.next').style.display = 'none';
+				if (typeof window !== 'undefined') {
+					document.querySelector('.next').style.display = 'none';
+				}
 			}, 500);
 			
 		}
